@@ -13,6 +13,7 @@ export default function Home() {
       <h1> Hellow world</h1>
       <h1>welcome everyone</h1>
       <h3> Welcome by Nayon</h3>
+      <h1>this is a home page</h1>
     </>
   )
 }
