@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Pricing from '../Components/Pricing/Pricing'
+import Footer from '../Components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Pricing></Pricing>
       <h3> Welcome by Nayon</h3>
       <h1>this is a home page</h1>
+      <Footer></Footer>
     </>
   )
 }
