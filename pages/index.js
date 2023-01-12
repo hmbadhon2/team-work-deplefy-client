@@ -12,6 +12,7 @@ export default function Home() {
       <h1>Team teck airme</h1>
       <h1> Hellow world</h1>
       <h1>welcome everyone</h1>
+      <h3> Welcome by Nayon</h3>
     </>
   )
 }
