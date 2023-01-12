@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/lottie-player": "^1.6.3",
     "@next/font": "13.1.1",
     "daisyui": "^2.46.1",
     "next": "13.1.1",
