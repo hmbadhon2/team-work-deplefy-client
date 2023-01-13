@@ -24,13 +24,14 @@ a {
 }
 
 .pricing{
-  background-color: rgb(1, 1, 6);
+  background-color: black;
   border-radius: 10px;
   color: white;
   height: 510px;
 }
+
 .pricing:hover{
-  background: linear-gradient(90deg, rgba(10,2,10,1) 0%, rgba(144,122,7,1) 0%, rgba(125,30,9,1) 50%, rgba(121,29,9,1) 100%, rgba(0,212,255,1) 100%);
+  background: rgb(2, 2, 108);
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,1);
   transform: scale(1.1);
@@ -39,6 +40,7 @@ a {
   transition: 0.9s;
   transform: translateY(-30px);
 }
+
 
 
 
