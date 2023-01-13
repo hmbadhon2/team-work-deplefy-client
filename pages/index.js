@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className='bg-gradient-to-r from-indigo-200 via-purple-10'>
+    <div className='bg-gradient-to-r from-indigo-100 via-purple-10'>
     <div className='lg:max-w-[1140px] mx-auto'>
     <Header></Header>
       <Pricing></Pricing>
