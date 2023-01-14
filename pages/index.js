@@ -7,6 +7,7 @@ import Footer from '../Components/Footer/Footer'
 import Header from '../Components/Header/Header'
 import Subscribe from '../Components/Subscribe/Subscribe'
 import Banner from '../Components/Banner/Banner'
+import Navbar from '../Components/Navbar/Navbar'
 
 
 const inter = Inter({ subsets: ['latin'] })
