@@ -9,17 +9,17 @@ const Header = () => {
 				<div className="container flex justify-between h-16 mx-auto">
 					<div className="flex">
 						<a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
-							<Image src="/Perfect_unique_attractive_stylish_geometric_tech_PD_DP_P_D_initial_based_letter_icon_logo.-removebg-preview.png" width={150} height={150}></Image>
+							<Image src="/removebg-preview.png" width={150} height={150}></Image>
 						</a>
 						<ul className="items-stretch space-x-3 blog hidden md:flex">
 							<li className="flex">
-								<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Process</a>
+								<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 font-bold text-gray-400 ">Process</a>
 							</li>
 							<li className="flex">
-								<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Resources</a>
+								<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 font-bold text-gray-400  dark:text-violet-400 dark:border-violet-400">Resources</a>
 							</li>
 							<li className="flex">
-								<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Pricing</a>
+								<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 font-bold text-gray-400 ">Pricing</a>
 							</li>
 						</ul>
 					</div>

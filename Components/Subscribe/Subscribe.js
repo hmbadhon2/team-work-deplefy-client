@@ -5,7 +5,7 @@ const Subscribe = () => {
     return (
         <div>
              <div className="flex flex-col items-center mb-20 ">
-             <Image src="/Perfect_unique_attractive_stylish_geometric_tech_PD_DP_P_D_initial_based_letter_icon_logo.-removebg-preview.png" width={200} height={100}></Image>
+             <Image src="/removebg-preview.png" width={200} height={100}></Image>
 
 
                 <h1 className="font-sans font-normal">Stay up to date with all Jamstack & Deplipy news</h1>

@@ -8,7 +8,7 @@ const Footer = () => {
 		<div className="sm:text-centerlg:w-1/3">
 			<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 			
-				<Image src="/Perfect_unique_attractive_stylish_geometric_tech_PD_DP_P_D_initial_based_letter_icon_logo.-removebg-preview.png" width={200} height={200}></Image>
+				<Image src="/removebg-preview.png" width={200} height={200}></Image>
 			</a>
 		</div>
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">

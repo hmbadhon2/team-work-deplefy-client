@@ -17,6 +17,7 @@ export default function Home() {
     <div className='bg-gradient-to-r from-indigo-100 via-purple-10'>
     <div className='lg:max-w-[1140px] mx-auto'>
       <Header></Header>
+      <Navbar></Navbar>
       <Banner></Banner>
       <Pricing></Pricing>
       <Subscribe></Subscribe>
