@@ -76,7 +76,7 @@ const Footer = () => {
 			</div>
 		</div>
 	</div>
-	<div className=" text-sm text-center dark:text-gray-400">© 1968 Company Co. All rights reserved.</div>
+	<div className=" text-sm text-center dark:text-gray-400">© 2023 Team-Tech-army All rights reserved.</div>
 </footer>
     );
 };
