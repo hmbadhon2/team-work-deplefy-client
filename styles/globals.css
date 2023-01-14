@@ -23,6 +23,27 @@ a {
   text-decoration: none;
 }
 
+.pricing{
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  height: 510px;
+}
+
+.pricing:hover{
+  background: rgb(2, 2, 108);
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,1);
+  transform: scale(1.1);
+  border-radius: 10px;
+  margin: 0 10px;
+  transition: 0.9s;
+  transform: translateY(-30px);
+}
+
+
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
