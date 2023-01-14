@@ -7,7 +7,7 @@ const Banner = () => {
             <div className="hero-content flex-col md:flex-row-reverse">
             <Image src="/remove.png" width={800} height={800}></Image>
                 <div>
-                    <div className="text-4xl md:text-4xl lg:text-5xl font-bold text-pink-800">
+                    <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-pink-800">
                     <Typewriter
                         options={{
                             strings: ["Deploy Your Website With Deplify"],
