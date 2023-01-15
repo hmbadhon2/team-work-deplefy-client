@@ -6,7 +6,7 @@ const Header = () => {
 	return (
 		<div>
 			<header className="p-4 dark:bg-gray-800 dark:text-gray-100">
-				<div className="container flex justify-between h-16 mx-auto">
+				<div className="container flex justify-between h-16">
 					<div className="flex">
 						<a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
 							<Image src="/removebg-preview.png" width={150} height={150}></Image>
@@ -24,8 +24,8 @@ const Header = () => {
 						</ul>
 					</div>
 					<div className="items-center flex-shrink-0 hidden lg:flex">
-						<button className="btn btn-outline btn-info self-center px-6 py-3 rounded-3xl mr-5">Sign in</button>
-						<button className="btn btn-outline btn-info self-center px-6 py-3 font-semibold rounded-3xl">Sign up</button>
+						<button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button>
+						<button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button>
 					</div>
 				
 					<div className="dropdown dropdown-bottom dropdown-end lg:hidden">
@@ -38,6 +38,8 @@ const Header = () => {
 							<li><a>Process</a></li>
 							<li><a>Resources</a></li>
 							<li><a>Pricing</a></li>
+							<button className="manu-button  py-3 rounded-3xl mb-5">Login</button>
+						    <button className="manu-button py-3  rounded-3xl">Sign up</button>
 						</ul>
 					</div>
 				</div>
