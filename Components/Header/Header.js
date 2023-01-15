@@ -5,13 +5,13 @@ const Header = () => {
 	const [open, setOpen] = useState(false)
 	return (
 		<div>
-			<header className="p-4 dark:bg-gray-800 dark:text-gray-100">
+			<header className="py-4 dark:bg-gray-800 dark:text-gray-100">
 				<div className="container flex justify-between h-16">
 					<div className="flex">
 						<a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
 							<Image src="/removebg-preview.png" width={150} height={150}></Image>
 						</a>
-						<ul className="items-stretch space-x-3 blog hidden md:flex">
+						<ul className="items-stretch  blog hidden md:flex">
 							<li className="flex">
 								<a rel="noopener noreferrer" href="#" className="flex items-center px-4 -mb-1 font-bold text-gray-400 ">Process</a>
 							</li>

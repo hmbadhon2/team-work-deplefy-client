@@ -10,8 +10,8 @@ const Subscribe = () => {
 
                 <h1 className="font-sans font-normal">Stay up to date with all Jamstack & Deplipy news</h1>
                 <div className=" flex items-center mt-4">
-                <input type="email" placeholder="Email Address" className="input input-bordered mr-1" />
-                    <button className="manu-button py-2 px-6 rounded-2xl">Subscribe</button>
+                <input type="email" placeholder="Email Address" className="input input-bordered px-5 mr-1" />
+                    <button className="manu-button py-3 px-6 rounded-2xl">Subscribe</button>
                 </div>
              </div>
         </div>

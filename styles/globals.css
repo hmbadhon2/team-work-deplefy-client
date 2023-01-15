@@ -4,11 +4,11 @@
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  /* max-width: 100vw; */
+  /* overflow-x: hidden; */
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -21,7 +21,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 .pricing{
   background-color: black;
@@ -44,6 +44,7 @@ a {
 .manu-button{
   background-color: none;
   border: 1px solid rgb(157, 22, 77);
+  color: rgb(157, 22, 77);
 }
 .manu-button:hover{
   background-color: rgb(157, 22, 77);
