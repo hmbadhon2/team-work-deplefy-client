@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Header = () => {
@@ -28,8 +29,8 @@ const Header = () => {
 
 				<div className="navbar-end">
 					<div className="items-center flex-shrink-0 hidden lg:flex">
-						<button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button>
-						<button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button>
+						<Link href='/login'><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
+						<Link href='/signup'><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
 					</div>
 				</div>
 				<div className="dropdown dropdown-bottom dropdown-end lg:hidden">
