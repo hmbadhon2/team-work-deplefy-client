@@ -19,12 +19,12 @@ export default function App({ Component, pageProps }) {
 }
 
 
-// export default function App({ Component, pageProps }) {
-//   return <AuthProvider>
+export default function App({ Component, pageProps }) {
+  return <AuthProvider>
   
-//     <Component {...pageProps} />
-//     <ToastContainer />
-//   </AuthProvider>
+    <Component {...pageProps} />
+    <ToastContainer />
+  </AuthProvider>
   
-// }
+}
 

@@ -1,7 +1,7 @@
-import Pricing from '../Components/Pricing/Pricing'
-import Subscribe from '../Components/Subscribe/Subscribe'
-import Banner from '../Components/Banner/Banner'
-import Navbar from '../Components/Navbar/Navbar'
+import Pricing from '../Components/Home/Pricing/Pricing'
+import Banner from '../Components/Home/Banner/Banner'
+import Navbar from '../Components/Home/Practice/Practice'
+import Subscribe from '../Components/Home/Subscribe/Subscribe';
 
 const Home = () => {
     return (

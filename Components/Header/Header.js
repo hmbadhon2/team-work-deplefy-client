@@ -3,7 +3,17 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Header = () => {
-	const [open, setOpen] = useState(false)
+	const manuItem = <>
+		<li className="">
+			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Home</a>
+		</li>
+		<li className="">
+			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400">Resources</a>
+		</li>
+		<li className="">
+			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Pricing</a>
+		</li>
+	</>
 	return (
 		<div>
 			<div className="navbar">
@@ -14,15 +24,7 @@ const Header = () => {
 
 					<div className="ml-4">
 						<ul className="hidden md:flex">
-							<li className="flex">
-								<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Home</a>
-							</li>
-							<li className="flex">
-								<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400">Resources</a>
-							</li>
-							<li className="flex">
-								<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Pricing</a>
-							</li>
+						{manuItem}
 						</ul>
 					</div>
 				</div>
@@ -40,9 +42,7 @@ const Header = () => {
 						</svg>
 					</button></label>
 					<ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-						<li><a href="/Home" className="manu-item">Home</a></li>
-						<li><a className="manu-item">Resources</a></li>
-						<li><a className="manu-item">Pricing</a></li>
+					     {manuItem}
 						<Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
 						<Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
 					</ul>
