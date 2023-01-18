@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const Footer = () => {
 	return (
-		<footer className="px-4 dark:bg-gray-800 dark:text-gray-100">
+		<footer className="px-4 dark:bg-gray-800 dark:text-gray-100 py-4">
 			<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 				<div className="sm:text-centerlg:w-1/3">
 					<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 
-						<div className="w-20 rounded">
-							<img src="https://i.ibb.co/5GgkG1j/removebg-preview.png" />
+						<div className="w-24 rounded">
+							<img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" />
 						</div>
 					</a>
 				</div>

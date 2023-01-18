@@ -2,27 +2,23 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import Pricing from '../Components/Pricing/Pricing'
-import Footer from '../Components/Footer/Footer'
-import Header from '../Components/Header/Header'
-import Subscribe from '../Components/Subscribe/Subscribe'
-import Banner from '../Components/Banner/Banner'
-import Navbar from '../Components/Navbar/Navbar'
+import Pricing from '../Components/Home/Pricing/Pricing'
+import Banner from '../Components/Home/Banner/Banner'
+import Navbar from '../Components/Home/Practice/Practice'
+import Subscribe from '../Components/Home/Subscribe/Subscribe';
+import Team from '../Components/Home/Team/Team'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className='bg-gradient-to-r from-indigo-100 via-purple-10'>
     <div className='lg:max-w-[1140px] lg:mx-auto'>
-      <Header></Header>
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <Pricing></Pricing>
-      <Subscribe></Subscribe>
-      <Footer></Footer>
-    </div>
-    </div>
+    <Navbar></Navbar>
+    <Banner></Banner>
+    <Pricing></Pricing>
+    <Team></Team>
+    <Subscribe></Subscribe>
+</div>
   )
 }

@@ -1,8 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Header = () => {
-	const [open, setOpen] = useState(false)
+	const manuItem = <>
+		<li className="">
+			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Home</a>
+		</li>
+		<li className="">
+			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400">Resources</a>
+		</li>
+		<li className="">
+			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Pricing</a>
+		</li>
+	</>
 	return (
 		<div>
 			<div className="navbar">
@@ -13,23 +24,15 @@ const Header = () => {
 
 					<div className="ml-4">
 						<ul className="hidden md:flex">
-							<li className="flex">
-								<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Process</a>
-							</li>
-							<li className="flex">
-								<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400">Resources</a>
-							</li>
-							<li className="flex">
-								<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Pricing</a>
-							</li>
+						{manuItem}
 						</ul>
 					</div>
 				</div>
 
 				<div className="navbar-end">
 					<div className="items-center flex-shrink-0 hidden lg:flex">
-						<button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button>
-						<button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button>
+						<Link href='/login'><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
+						<Link href='/signup'><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
 					</div>
 				</div>
 				<div className="dropdown dropdown-bottom dropdown-end lg:hidden">
@@ -39,11 +42,9 @@ const Header = () => {
 						</svg>
 					</button></label>
 					<ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-						<li><a className="manu-item">Process</a></li>
-						<li><a className="manu-item">Resources</a></li>
-						<li><a className="manu-item">Pricing</a></li>
-						<button className="manu-button  py-3 rounded-3xl mb-5">Login</button>
-						<button className="manu-button py-3  rounded-3xl">Sign up</button>
+					     {manuItem}
+						<Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
+						<Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
 					</ul>
 				</div>
 			</div>

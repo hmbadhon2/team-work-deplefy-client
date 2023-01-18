@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 
-const Navbar = () => {
+const Practice = () => {
     return (
         <div>
-       
+
         </div>
     );
 };
 
-export default Navbar;
+export default Practice;
