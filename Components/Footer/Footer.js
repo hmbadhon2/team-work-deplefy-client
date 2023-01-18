@@ -9,7 +9,7 @@ const Footer = () => {
 					<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 
 						<div className="w-24 rounded">
-							<img src="https://i.ibb.co/xJ3Pb6X/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-1-removebg.png" />
+							<img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" />
 						</div>
 					</a>
 				</div>

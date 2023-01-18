@@ -2,6 +2,7 @@ import Pricing from '../Components/Home/Pricing/Pricing'
 import Banner from '../Components/Home/Banner/Banner'
 import Navbar from '../Components/Home/Practice/Practice'
 import Subscribe from '../Components/Home/Subscribe/Subscribe';
+import Team from '../Components/Home/Team/Team';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <Pricing></Pricing>
+            <Team></Team>
             <Subscribe></Subscribe>
         </div>
     );
