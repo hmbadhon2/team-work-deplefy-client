@@ -8,10 +8,6 @@ import { AuthContext } from '../context/AuthContext';
 import Link from 'next/link';
 
 
-
-
-
-
 const Signup = () => {
  
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -82,9 +78,6 @@ const Signup = () => {
             })
     }
 
-
-
-
     return (
         <div>
             <div className="hero min-h-screen ">
@@ -126,7 +119,7 @@ const Signup = () => {
                             </form>
                             <p>Already have an account <Link href="/login" className='text-secondary' >Please Login</Link></p>
                             <div className="divider">OR</div>
-                            <button onClick={handleGoogleSingIn} className='btn btn-outline  btn-primary  w-full'><FaGoogle className='mr-2 font-bold text-2xl '></FaGoogle>Sign Up with Google</button>   
+                            <button onClick={handleGoogleSingIn} className='btn btn-outline  btn-primary  w-full'><FaGoogle className='mr-2 font-bold text-2xl '></FaGoogle>Google Sign Up</button>   
                         </div>
                     </div>
                 </div>
