@@ -11,7 +11,7 @@ const Team = () => {
                 <div className="flex flex-col justify-center p-4 mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         <div className='bg-gray-300 shadow-lg'>
-                            <img className="object-cover w-full dark:bg-gray-500 aspect-square" src="https://scontent.fcgp31-1.fna.fbcdn.net/v/t39.30808-6/276134923_464282752108411_7308729828953499704_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeGbpVYsze6vqG-ZM-CMKdNpclS6S6ZVjPlyVLpLplWM-dnsN6KEjWnxBE7JwTYCaNXnUsE-fbgk9ioyXHm8vf_C&_nc_ohc=eUAAbjb8VScAX9nOitV&_nc_oc=AQl5lVA_3m7W4woG6Z_0KzVywFjr-JB0tzlHJ_x13vRd4MbT3pz6etkJS6C5oaPoS4Y&_nc_ht=scontent.fcgp31-1.fna&oh=00_AfBRu0MySF5i5l73TDtj5wGyHM0SNJj9S5OzZz-pRDR4cg&oe=63CC3B94" />
+                            <img className="object-cover w-full dark:bg-gray-500 aspect-square" src="https://i.ibb.co/CKWqfck/276134923-464282752108411-7308729828953499704-n.jpg" />
                             <div className='pt-5 pl-2'>
                                 <h1 className='text-pink-800 font-bold'>HM Mizanur Rahman Badhon</h1>
                                 <p className='font-bold'>Team Leader</p>
@@ -34,7 +34,7 @@ const Team = () => {
                         </div>
 
                         <div className='bg-gray-300 shadow-lg'>
-                            <img className="object-cover w-full dark:bg-gray-500 aspect-square" src="https://scontent.fcgp31-1.fna.fbcdn.net/v/t1.6435-9/95138857_10220568390431649_1696556186939162624_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_eui2=AeHMOvt7Huau6PJKISmQTjSj0QjCuWuc7dPRCMK5a5zt05DLnhAjefirQv_5VagkDygl4QFDODhpO61LDR21MwB_&_nc_ohc=o4otrr_HIn8AX9zJ-ik&_nc_ht=scontent.fcgp31-1.fna&oh=00_AfAYcEvKPylP2y-LlmIuCXkSVCahM9ZBHPS1kTDO7_x0Hw&oe=63EE5936" />
+                            <img className="object-cover w-full dark:bg-gray-500 aspect-square" src="https://i.ibb.co/6Y5cR0B/95138857-10220568390431649-1696556186939162624-n.jpg" />
                             <div className='pt-5 pl-2'>
                                 <h1 className='text-pink-800 font-bold'>Rakibul Hassan Nayon</h1>
                                 <p className='font-bold'>Team Member</p>

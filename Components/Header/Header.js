@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
+	const{user, logOut}= useContext(AuthContext)
 	const manuItem = <>
 		<li className="">
 			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Home</a>
@@ -14,6 +16,13 @@ const Header = () => {
 			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Pricing</a>
 		</li>
 	</>
+
+   const handleLogOut=()=>{
+	logOut()
+	.then(() => { })
+    .catch(() => { })
+   }
+
 	return (
 		<div>
 			<div className="navbar">
@@ -31,8 +40,15 @@ const Header = () => {
 
 				<div className="navbar-end">
 					<div className="items-center flex-shrink-0 hidden lg:flex">
-						<Link href='/login'><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
+						{
+							user?.uid? <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
+							:
+							<>
+							<Link href='/login'><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
 						<Link href='/signup'><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
+							</>
+						}
+						
 					</div>
 				</div>
 				<div className="dropdown dropdown-bottom dropdown-end lg:hidden">
@@ -43,8 +59,15 @@ const Header = () => {
 					</button></label>
 					<ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
 					     {manuItem}
-						<Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
+						  {
+							user?.uid? <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
+							:
+							<>
+							<Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
 						<Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
+							</>
+						  }
+						
 					</ul>
 				</div>
 			</div>

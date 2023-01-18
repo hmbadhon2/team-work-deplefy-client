@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const Signup = () => {
  
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUser, googleSingIn } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
     const [createdUserEmail, setCreatedUserEmail] = useState('')
@@ -45,6 +45,7 @@ const Signup = () => {
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
+                reset();
                 toast.success('User created Successfully', {
                     position: toast.POSITION.TOP_CENTER
                 })
@@ -55,6 +56,7 @@ const Signup = () => {
                     .then(() => {
                         console.log(data.name, data.email)
                         saveUser(data.name, data.email, data.userType);
+                      
                     })
                     .catch(error => console.log(error))
             })
@@ -113,13 +115,13 @@ const Signup = () => {
                                     })} className="input input-bordered w-full max-w-xs" />
                                     {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                                 </div>
-                                <input className='btn btn-primary w-full mt-4' value="Sign Up" type="submit" />
+                                <input className='login-button py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
                             <p>Already have an account <Link href="/login" className='text-secondary' >Please Login</Link></p>
                             <div className="divider">OR</div>
-                            <button onClick={handleGoogleSingIn} className='btn btn-outline  btn-primary  w-full'><FaGoogle className='mr-2 font-bold text-2xl '></FaGoogle>Google Sign Up</button>   
+                            <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Google Sign Up</div></button> 
                         </div>
                     </div>
                 </div>
