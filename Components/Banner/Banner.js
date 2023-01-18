@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Typewriter from 'typewriter-effect';
 
+
 const Banner = () => {
     return (
         <div className="hero">
