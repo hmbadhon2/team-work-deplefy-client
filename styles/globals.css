@@ -22,7 +22,9 @@ a {
   color: inherit;
   text-decoration: none;
 } */
-
+/* .navbar{
+  position: sticky;
+} */
 .pricing{
   background-color: black;
   border-radius: 10px;
@@ -58,6 +60,26 @@ a {
   color: white;
   font-weight: bold;
 }
+.login-button{
+  background-color: rgb(157, 22, 77);
+  color: white;
+  font-weight: bolder;
+}
+
+.google-button{
+  background-color: none;
+  border: 1px solid rgb(157, 22, 77);
+  color: rgb(157, 22, 77);
+  font-weight: bolder;
+  padding: 12px 0;
+}
+.google-button:hover{
+  background-color: rgb(157, 22, 77);
+  color: white;
+}
+
+
+/* ....................................... */
 
 
 @media (prefers-color-scheme: dark) {
