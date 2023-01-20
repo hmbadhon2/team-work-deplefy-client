@@ -22,9 +22,13 @@ a {
   color: inherit;
   text-decoration: none;
 } */
-/* .navbar{
-  position: sticky;
-} */
+.navbar{
+  position: fixed; 
+  top: 0;
+  right: 0;
+  /* left: 0; */
+  z-index: 50;
+}
 .pricing{
   background-color: black;
   border-radius: 10px;
