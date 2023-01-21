@@ -7,7 +7,7 @@ import Team from '../Components/Home/Team/Team';
 
 const Home = () => {
     return (
-        <div className='lg:max-w-[1140px] lg:mx-auto'>
+        <div className='md:max-w-[1140px] md:mx-auto'>
             <Navbar></Navbar>
             <Banner></Banner>
             <Pricing></Pricing>

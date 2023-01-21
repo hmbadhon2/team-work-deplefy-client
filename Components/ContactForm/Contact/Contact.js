@@ -52,7 +52,7 @@ const Contact = () => {
 
                         <div className="flex">
                             <input onChange={(e) => setMessage(e.target.value)} type="text" className="w-80 py-2 rounded-l" />
-                            <button onClick={handleSubmit} className="bg-pink-800 px-5 text-white rounded-r">send</button>
+                            <button onClick={handleSubmit} className="bg-pink-800 px-5 text-white rounded-r">Send</button>
 
                         </div>
                     </div>

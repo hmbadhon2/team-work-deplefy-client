@@ -26,7 +26,7 @@ const Header = () => {
 
 	return (
 		<div className="pt-24">
-			<div className="navbar md:px-28 shadow">
+			<div className="navbar lg:px-28 shadow">
 				<div className="navbar-start">
 					<div className="w-14 rounded">
 						<img src="https://i.ibb.co/5GgkG1j/removebg-preview.png" />
@@ -40,7 +40,7 @@ const Header = () => {
 				</div>
 
 				<div className="navbar-end">
-					<div className="items-center flex-shrink-0 hidden lg:flex">
+					<div className="items-center flex-shrink-0 hidden md:flex">
 						{
 							user?.uid ? <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
 								:
@@ -52,7 +52,7 @@ const Header = () => {
 
 					</div>
 				</div>
-				<div className="dropdown dropdown-bottom dropdown-end lg:hidden">
+				<div className="dropdown dropdown-bottom dropdown-end md:hidden">
 
 				   <div>
 					{isOpen ?

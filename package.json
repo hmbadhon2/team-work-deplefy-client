@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@lottiefiles/lottie-player": "^1.6.3",
+    "@material-tailwind/react": "^1.2.5",
     "@mui/material": "^5.11.5",
     "@next/font": "13.1.1",
     "bootstrap": "^5.2.3",
