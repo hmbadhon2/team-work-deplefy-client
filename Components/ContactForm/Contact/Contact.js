@@ -20,11 +20,6 @@ const Contact = () => {
         setGetMessage([...getMessage, data])
     })
 
-    // useEffect(() => {
-    //     socket.on("showMessage", (data) => {
-    //         setGetMessage(data.message)
-    //     })
-    // }, [socket])
     return (
         <div>
             <section className="p-6 dark:text-gray-400">
