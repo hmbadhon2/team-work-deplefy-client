@@ -4,12 +4,12 @@ import Typewriter from 'typewriter-effect';
 
 const Banner = () => {
     return (
-        <div className="hero">
+        <div className="hero ">
             <div className="hero-content flex-col md:flex-row-reverse">
               <div className="">
               <Image src="/remove.png" width={700} height={700}></Image>
               </div>
-                <div className="mr-5">
+                <div className="">
                     <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-pink-800">
                     <Typewriter
                         options={{
