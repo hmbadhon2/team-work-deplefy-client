@@ -26,7 +26,7 @@ const Header = () => {
 
 	return (
 		<div className="pt-24">
-			<div className="navbar lg:px-28 shadow">
+			<div className="navbar bg-blue-50 lg:px-28 shadow">
 				<div className="navbar-start">
 					<div className="w-14 rounded">
 						<img src="https://i.ibb.co/5GgkG1j/removebg-preview.png" />
