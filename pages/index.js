@@ -9,6 +9,8 @@ import Subscribe from '../Components/Home/Subscribe/Subscribe';
 import Team from '../Components/Home/Team/Team'
 
 
+
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -19,6 +21,7 @@ export default function Home() {
     <Pricing></Pricing>
     <Team></Team>
     <Subscribe></Subscribe>
+   
 </div>
   )
 }

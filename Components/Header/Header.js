@@ -10,9 +10,16 @@ const Header = () => {
 		<li className="">
 			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Home</a>
 		</li>
+
+		<li className="">
+			<a rel="noopener noreferrer" href="/Site" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Deploy</a>
+		</li>
+
 		<li className="">
 			<a rel="noopener noreferrer" href="/Contact" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400">Contact</a>
 		</li>
+
+
 		<li className="">
 			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Pricing</a>
 		</li>

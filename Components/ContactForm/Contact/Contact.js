@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { io } from "socket.io-client"
 import { AuthContext } from "../../../context/AuthContext";
 
+
 const Contact = () => {
     const socket = io("http://localhost:5000", { transports: ['websocket'] });
     const [message, setMessage] = useState("")
