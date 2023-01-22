@@ -12,7 +12,7 @@ const Header = () => {
 		</li>
 
 		<li className="">
-			<a rel="noopener noreferrer" href="/Deploys" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Deploy</a>
+			<a rel="noopener noreferrer" href="/Sites" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Sites</a>
 		</li>
 
 		<li className="">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Deploy = () => {
+const Siter = () => {
     return (
         <div className='my-16 mx-2 '>
 
@@ -189,4 +189,4 @@ const Deploy = () => {
     );
 };
 
-export default Deploy;
+export default Siter;
