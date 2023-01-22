@@ -81,7 +81,9 @@ a {
   background-color: rgb(157, 22, 77);
   color: white;
 }
-
+.dragAndDrop{
+  border: 1px dotted grey;
+}
 
 /* ....................................... */
 
