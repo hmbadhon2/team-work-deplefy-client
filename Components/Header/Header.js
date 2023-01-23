@@ -61,22 +61,23 @@ const Header = () => {
 				</div>
 				<div className="dropdown dropdown-bottom dropdown-end md:hidden">
 
-				   <div>
-					{isOpen ?
-						<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-						</svg>
-					</button></label>
-					:
-					<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-pink-900">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-100">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-						</svg>
-					</button></label>
+					<div>
+						{isOpen ?
+							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+									<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+								</svg>
 
-					}
-				   </div>
+							</button></label>
+							:
+							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-pink-900">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-100">
+									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+								</svg>
+							</button></label>
+
+						}
+					</div>
 					{
 						isOpen && (
 							<ul onClick={() => setIsOpen(!isOpen)} tabIndex={1} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">

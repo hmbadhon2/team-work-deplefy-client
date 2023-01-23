@@ -6,11 +6,11 @@ const Siter = () => {
 
     
                 <div className='flex md:justify-between items-center'>
-                    <input type="search" name="search" id="" placeholder='Search site' className="input input-bordered w-64 md:w-80" />
+                    <input type="search" name="search" id="" placeholder='Search site' className="input input-bordered w-60 md:w-80" />
         
         
                     <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-info font-semibold m-1 md:px-5">Add New Site</label>
+                        <label tabIndex={0} className="btn btn-info  m-1 md:px-5">Add New Site</label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box md:w-52">
                             <li><a className='font-serif'>Deploy Manually </a></li>
                             <li><a className='font-serif'>Tamplate</a></li>
