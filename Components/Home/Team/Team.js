@@ -7,7 +7,7 @@ const Team = () => {
                 <p className='text-pink-800 font-bold text-xl'>Our Team</p>
                 <h1 className="text-xl font-bold md:text-2xl">Meet With <span className='text-pink-800'>Our Team</span></h1>
             </div>
-            <section className="py-6 dark:bg-gray-800">
+            <section className="py-6 ">
                 <div className="flex flex-col justify-center p-4 mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         <div className='bg-gray-300 shadow-lg'>

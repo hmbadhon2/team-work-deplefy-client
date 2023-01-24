@@ -6,7 +6,7 @@ const Siter = () => {
 
     
                 <div className='flex md:justify-between items-center'>
-                    <input type="search" name="search" id="" placeholder='Search site' className="input input-bordered w-60 md:w-80" />
+                    <input type="search" name="search" id="" placeholder='Search site' className="input input-bordered w-60 md:w-80 dark:text-black" />
         
         
                     <div className="dropdown">

@@ -6,6 +6,7 @@ html,
 body {
   /* max-width: 100vw; */
   /* overflow-x: hidden; */
+  @apply bg-gray-50 text-gray-900 dark:text-white;
 }
 
 /* body {
@@ -30,7 +31,7 @@ a {
   z-index: 50;
 }
 .pricing{
-  background-color: black;
+  background-color: rgb(20, 17, 17);
   border-radius: 10px;
   color: white;
   height: 510px;

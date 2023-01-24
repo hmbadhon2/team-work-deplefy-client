@@ -1,11 +1,19 @@
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
 	const { user, logOut } = useContext(AuthContext)
 	const [isOpen, setIsOpen] = useState(false);
+	const {systemTheme, theme, setTheme } = useTheme();
+	const [mounted, setMounted]= useState(false);
+
+	useEffect(()=>{
+        setMounted(true)
+	},[])
+
 	const manuItem = <>
 		<li className="">
 			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Home</a>
@@ -31,23 +39,52 @@ const Header = () => {
 			.catch(() => { })
 	}
 
+
+	const renderThemeChanger = () => {
+		if(!mounted) return null;
+		const currentTheme = theme ==="system" ? systemTheme : theme;
+
+		if (currentTheme === "dark") {
+			return (
+				<div onClick={()=>setTheme('light')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-pink-800">
+					<path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+				</svg></div>
+
+			)
+		}
+		else {
+			return (
+				<div onClick={()=>setTheme('dark')}>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-pink-800">
+						<path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+					</svg>
+
+				</div>
+			)
+		}
+	}
 	return (
 		<div className="pt-24">
-			<div className="navbar bg-blue-50 lg:px-28 shadow">
+			<div className="navbar bg-blue-50 dark:bg-black dark:text-white lg:px-28 shadow">
 				<div className="navbar-start">
 					<div className="w-14 rounded">
-						<img src="https://i.ibb.co/5GgkG1j/removebg-preview.png" />
+						<img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" />
 					</div>
 
 					<div className="ml-4">
 						<ul className="hidden md:flex">
 							{manuItem}
+							
 						</ul>
 					</div>
 				</div>
 
 				<div className="navbar-end">
+				
 					<div className="items-center flex-shrink-0 hidden md:flex">
+					<div className="mr-2">
+				  {renderThemeChanger()}
+				  </div>
 						{
 							user?.uid ? <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
 								:
@@ -58,10 +95,12 @@ const Header = () => {
 						}
 
 					</div>
+					
 				</div>
-				<div className="dropdown dropdown-bottom dropdown-end md:hidden">
-
+				<div className="dropdown dropdown-bottom dropdown-end flex items-center md:hidden">
+				{renderThemeChanger()}
 					<div>
+					
 						{isOpen ?
 							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-pink-800 font-bold">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

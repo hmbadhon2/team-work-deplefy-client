@@ -10,7 +10,7 @@ const Banner = () => {
               <Image src="/remove.png" width={700} height={700}></Image>
               </div>
                 <div className="">
-                    <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-pink-800">
+                    <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-pink-800 dark:text-info">
                     <Typewriter
                         options={{
                             strings: ["Deploy Your Website <br> With Deplify."],

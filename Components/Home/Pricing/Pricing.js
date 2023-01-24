@@ -4,7 +4,7 @@
 const Pricing = () => {
     return (
         <div>
-            <section className="py-20 dark:bg-gray-800 dark:text-gray-100">
+            <section className="py-20">
                 <div className="px-4 mx-auto">
                     <div className="max-w-2xl mx-auto mb-16 text-center">
                     
@@ -13,7 +13,7 @@ const Pricing = () => {
 
                     <div className="gap-y-16 gap-x-8 md:my-0 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 ">
                         <div>
-                            <div className="my-4 md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
+                            <div className="my-4 md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded shadow sm:p-8">
                                 <div className="space-y-2">
                                     <h4 className="text-2xl font-bold mb-5">Starter</h4>
                                     <span className="text-6xl font-bold">$19
@@ -57,7 +57,7 @@ const Pricing = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="my-4 md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
+                            <div className="my-4 md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded shadow sm:p-8">
                                 <div className="space-y-2 ">
                                     <h4 className="text-2xl font-bold mb-5">Advanced</h4>
                                     <span className="text-6xl font-bold">$29
@@ -100,7 +100,7 @@ const Pricing = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="my-4 md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
+                            <div className="my-4 md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded shadow sm:p-8">
                                 <div className="space-y-2">
                                     <h4 className="text-2xl font-bold mb-5">Premium</h4>
                                     <span className="text-6xl font-bold">$49
