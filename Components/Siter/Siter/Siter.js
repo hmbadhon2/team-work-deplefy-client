@@ -10,7 +10,7 @@ const Siter = () => {
         
         
                     <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-info  m-1 md:px-5">Add New Site</label>
+                        <label tabIndex={0} className="site-button rounded-lg dark:bg-info dark:text-black m-1 md:px-5">Add New Site</label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box md:w-52">
                             <li><a className='font-serif'>Deploy Manually </a></li>
                             <li><a className='font-serif'>Tamplate</a></li>
@@ -56,7 +56,7 @@ const Siter = () => {
                     </div>
         
                     <div className=' ml-4 mt-4 md:mt-0 lg:ml-auto flex md:justify-center lg:justify-end md:items-center'>
-                        <button className="btn btn-sm btn-info">View site</button>
+                    <button className="site-button rounded-lg dark:bg-info dark:text-black">View Site</button>
                     </div>
                 </div>
         
@@ -93,7 +93,7 @@ const Siter = () => {
         
         
                     <div className=' ml-4 mt-4 md:mt-0 lg:ml-auto flex md:justify-center lg:justify-end md:items-center'>
-                        <button className="btn btn-sm btn-info">View site</button>
+                        <button className="site-button rounded-lg dark:bg-info dark:text-black">View Site</button>
                     </div>
                 </div>
         
@@ -129,7 +129,7 @@ const Siter = () => {
         
         
                     <div className=' ml-4 mt-4 md:mt-0 lg:ml-auto flex md:justify-center lg:justify-end md:items-center'>
-                        <button className="btn btn-sm btn-info">View site</button>
+                    <button className="site-button rounded-lg dark:bg-info dark:text-black">View Site</button>
                     </div>
                 </div>
         
@@ -165,7 +165,7 @@ const Siter = () => {
                     </div>
         
                     <div className=' ml-4 mt-4 md:mt-0 lg:ml-auto flex md:justify-center lg:justify-end md:items-center'>
-                        <button className="btn btn-sm btn-info">View site</button>
+                    <button className="site-button rounded-lg dark:bg-info dark:text-black">View Site</button>
                     </div>
                 </div>
         

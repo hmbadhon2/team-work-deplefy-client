@@ -11,7 +11,7 @@ const Subscribe = () => {
                 <h1 className="text-black font-semibold dark:text-white">Stay up to date with all Jamstack & Deplify news</h1>
                 <div className=" flex items-center mt-4">
                     <input type="email" name="email" placeholder="Email Address" className="input md:w-80 input-bordered mr-1 dark:text-black" />
-                    <button className="subscribe-button py-3 px-6 rounded-lg">Subscribe</button>
+                    <button className="subscribe-button dark:bg-orange-700 dark:text-black py-3 px-6 rounded-lg">Subscribe</button>
                 </div>
             </div>
         </div>

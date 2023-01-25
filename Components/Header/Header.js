@@ -69,7 +69,7 @@ const Header = () => {
 	}
 	return (
 		<div className="pt-24">
-			<div className="navbar bg-blue-50 dark:bg-black dark:text-white lg:px-28 shadow">
+			<div className="navbar bg-blue-50 dark:bg-black dark:text-white dark:border-b-2 dark:border-slate-900 lg:px-28 shadow">
 				<div className="navbar-start">
 					<div className="w-14 rounded">
 						<img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" />
@@ -86,7 +86,7 @@ const Header = () => {
 				<div className="navbar-end">
 				
 					<div className="items-center flex-shrink-0 hidden md:flex">
-					<div className="mr-2">
+					<div className="mr-4">
 				  {renderThemeChanger()}
 				  </div>
 						{
@@ -101,8 +101,10 @@ const Header = () => {
 					</div>
 					
 				</div>
-				<div className="dropdown dropdown-bottom dropdown-end flex items-center md:hidden">
-				{renderThemeChanger()}
+				<div className="dropdown dropdown-bottom dropdown-end flex  md:hidden">
+				  <div className="mr-2">
+				  {renderThemeChanger()}
+				  </div>
 					<div>
 					
 						{isOpen ?

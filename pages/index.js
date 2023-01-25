@@ -6,8 +6,9 @@ import Pricing from '../Components/Home/Pricing/Pricing'
 import Banner from '../Components/Home/Banner/Banner'
 import Navbar from '../Components/Home/Practice/Practice'
 import Subscribe from '../Components/Home/Subscribe/Subscribe';
-import Team from '../Components/Home/Team/Team'
 import Practice from '../Components/Home/Practice/Practice'
+import TeamMember from '../Components/Home/TeamMember/TeamMember'
+
 
 
 
@@ -19,7 +20,7 @@ export default function Home() {
     <div className='md:max-w-[1140px] md:mx-auto'>
     <Banner></Banner>
     <Pricing></Pricing>
-    <Team></Team>
+    <TeamMember></TeamMember>
     <Subscribe></Subscribe>
     <Practice></Practice>
 </div>

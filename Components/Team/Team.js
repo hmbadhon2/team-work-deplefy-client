@@ -22,7 +22,7 @@ const Team = () => {
             {/* Secound step */}
 
 
-            <div className='my-10 flex flex-col md:flex-row '>
+            <div className='my-10 md:flex flex-col md:flex-row '>
 
 
                 <div className=' w-full md:w-1/4 h-48 border border-gray-300 flex justify-center md:justify-start'>
@@ -36,21 +36,6 @@ const Team = () => {
                         </div>
                     </ul>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
