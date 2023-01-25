@@ -16,24 +16,24 @@ const Header = () => {
 
 	const manuItem = <>
 		<li className="">
-			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Home</a>
+			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Home</a>
 		</li>
 
 		<li className="">
-			<a rel="noopener noreferrer" href="/Sites" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Sites</a>
+			<a rel="noopener noreferrer" href="/Sites" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Sites</a>
 		</li>
 
 		<li className="">
-			<a rel="noopener noreferrer" href="/Contact" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400">Contact</a>
+			<a rel="noopener noreferrer" href="/Contact" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Contact</a>
 		</li>
 
 
 		<li className="">
-			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Pricing</a>
+			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Pricing</a>
 		</li>
 
 		<li className="">
-			<a rel="noopener noreferrer" href="/Teams" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-400 ">Team settings</a>
+			<a rel="noopener noreferrer" href="/Teams" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Team settings</a>
 		</li>
 	</>
 
@@ -102,7 +102,7 @@ const Header = () => {
 					
 				</div>
 				<div className="dropdown dropdown-bottom dropdown-end flex  md:hidden">
-				  <div className="mr-2">
+				  <div className="mr-3">
 				  {renderThemeChanger()}
 				  </div>
 					<div>

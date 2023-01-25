@@ -53,7 +53,7 @@ const Pricing = () => {
                                         <span>Slack integration</span>
                                     </li>
                                 </ul>
-                                <button className="btn btn-outline btn-info">Add To Cart</button>
+                                <button className="btn btn-outline btn-warning">Add To Cart</button>
                             </div>
                         </div>
                         <div>
@@ -96,7 +96,7 @@ const Pricing = () => {
                                         <span>Deployment Insights</span>
                                     </li>
                                 </ul>
-                                <button className="btn btn-outline btn-info">Add To Cart</button>
+                                <button className="btn btn-outline btn-warning">Add To Cart</button>
                             </div>
                         </div>
                         <div>
@@ -151,7 +151,7 @@ const Pricing = () => {
                                         <span>Multi Cloud Support</span>
                                     </li>
                                 </ul>
-                                <button className="btn btn-outline btn-info">Add To Cart</button>
+                                <button className="btn btn-outline btn-warning">Add To Cart</button>
                             </div>
                         </div>
                     </div>
