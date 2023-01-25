@@ -6,7 +6,7 @@ const Team = () => {
 
 
     return (
-        <div className='my-20'>
+        <div className='my-20 overflow-hidden'>
 
             <div className='border w-full md:w-1/2 px-4 py-7 mb-14  border-gray-300'>
                 <h1 className=' text-lg md:text-3xl mb-3'>Settings for <span>Register team name</span></h1>

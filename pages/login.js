@@ -57,15 +57,15 @@ const Login = () => {
 
 
     return (
-        <div >
-            <div className="hero min-h-screen ">
+        <div className=''>
+            <div className="hero dark:text-black ">
                 <div className="hero-content flex-col lg:flex-row-reverse justify-between">
                     {/* <img src={loginImg} className="max-w-sm md:max-w-lg rounded-lg shadow-2xl lg:ml-10" alt='login' /> */}
                     <div>
-                        <div className='w-96 p-7'>
+                        <div className='w-full md:w-96 p-7'>
                             <form onSubmit={handleSubmit(handleLogin)}>
                                 <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text">Email</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Email</span></label>
                                     <input type="text"
                                         {...register("email", {
                                             required: "Email Address is required"
@@ -74,14 +74,14 @@ const Login = () => {
                                     {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
                                 </div>
                                 <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text">Password</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Password</span></label>
                                     <input type="password"
                                         {...register("password", {
                                             required: "Password is required",
                                             minLength: { value: 6, message: 'Password must be 6 characters or longer' }
                                         })}
                                         className="input input-bordered w-full" />
-                                    <label className="label"> <span className="label-text">Forget Password?</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Forget Password?</span></label>
                                     {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                                 </div>
                                 <input className='login-button py-3 rounded-lg w-full' value="Login" type="submit" />
@@ -89,8 +89,8 @@ const Login = () => {
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>
                             </form>
-                            <p>New to Deplify <Link className='text-secondary' href="/signup">Create a New Account</Link></p>
-                            <div className="divider">OR</div>
+                            <p className='dark:text-white'>New to Deplify <Link className='text-secondary' href="/signup">Create a New Account</Link></p>
+                            <div className="divider dark:text-white">OR</div>
                             <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
                         </div>
                     </div>

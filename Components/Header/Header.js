@@ -28,9 +28,9 @@ const Header = () => {
 		</li>
 
 
-		<li className="">
+		{/* <li className="">
 			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Pricing</a>
-		</li>
+		</li> */}
 
 		<li className="">
 			<a rel="noopener noreferrer" href="/Teams" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Team settings</a>

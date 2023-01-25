@@ -2,16 +2,17 @@ import React from 'react';
 
 const Siter = () => {
     return (
-        <div className='my-16 mx-2 '>
+        <div className='my-16 mx-2'>
 
     
                 <div className='flex md:justify-between items-center'>
-                    <input type="search" name="search" id="" placeholder='Search site' className="input input-bordered w-60 md:w-80 dark:text-black" />
+                    <input type="search" name="search" id="" placeholder='Search site' className="input input-bordered w-80 md:w-80 dark:text-black" />
         
         
                     <div className="dropdown">
-                        <label tabIndex={0} className="site-button rounded-lg dark:bg-info dark:text-black m-1 md:px-5">Add New Site</label>
-                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box md:w-52">
+                        
+                        <label tabIndex={0} className="new-site rounded-lg dark:bg-info dark:text-black m-1 py-16 px-5">Add New Site</label>
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box md:w-52 dark:text-black">
                             <li><a className='font-serif'>Deploy Manually </a></li>
                             <li><a className='font-serif'>Tamplate</a></li>
                         </ul>

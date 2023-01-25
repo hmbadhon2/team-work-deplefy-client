@@ -81,15 +81,15 @@ const Signup = () => {
     }
 
     return (
-        <div>
-            <div className="hero min-h-screen ">
+        <div className=''>
+            <div className="hero dark:text-black">
                 <div className="hero-content flex-col lg:flex-row-reverse justify-between">
                     {/* <img src className="max-w-sm md:max-w-lg rounded-lg shadow-2xl lg:ml-10" alt='login' /> */}
                     <div>
-                        <div className='w-96 p-7'>
+                        <div className='w-full md:w-96 p-7'>
                             <form onSubmit={handleSubmit(handleSignUp)}>
                                 <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text">Name</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Name</span></label>
                                     <input type="text" {...register("name", {
                                         required: "Name is Required"
                                     })} className="input input-bordered w-full" />
@@ -97,7 +97,7 @@ const Signup = () => {
                                 </div>
 
                                 <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text">Email</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Email</span></label>
                                     <input type="text"
                                         {...register("email", {
                                             required: "Email Address is required"
@@ -107,7 +107,7 @@ const Signup = () => {
                                 </div>
 
                                 <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text">Password</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Password</span></label>
                                     <input type="password" {...register("password", {
                                         required: "Password is required",
                                         minLength: { value: 6, message: "Password must be 6 characters long" },
@@ -119,8 +119,8 @@ const Signup = () => {
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
-                            <p>Already have an account <Link href="/login" className='text-secondary' >Please Login</Link></p>
-                            <div className="divider">OR</div>
+                            <p className='dark:text-white'>Already have an account <Link href="/login" className='text-secondary' >Please Login</Link></p>
+                            <div className="divider dark:text-white">OR</div>
                             <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Google Sign Up</div></button>
                         </div>
                     </div>
