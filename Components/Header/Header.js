@@ -14,6 +14,9 @@ const Header = () => {
 		setMounted(true)
 	}, [])
 
+	if (!mounted) return null;
+	const currentTheme = theme === "system" ? systemTheme : theme;
+
 	const manuItem = <>
 		<li className="">
 			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Home</a>
@@ -45,8 +48,7 @@ const Header = () => {
 
 
 	const renderThemeChanger = () => {
-		if (!mounted) return null;
-		const currentTheme = theme === "system" ? systemTheme : theme;
+	
 
 		if (currentTheme === "dark") {
 			return (
@@ -67,6 +69,8 @@ const Header = () => {
 			)
 		}
 	}
+
+
 	return (
 		<div className="pt-24">
 			<div className="navbar bg-blue-50 dark:bg-black dark:text-white dark:border-b-2 dark:border-slate-900 lg:px-28 shadow">
@@ -80,7 +84,7 @@ const Header = () => {
 					<div className="ml-4">
 						<ul className="hidden md:flex">
 							{manuItem}
-
+                         
 						</ul>
 					</div>
 				</div>
@@ -93,11 +97,11 @@ const Header = () => {
 						</div>
 						{
 							user?.uid ? <div> {
-								theme==="dark"?  <button onClick={handleLogOut} className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5">Log Out</button> : <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
+								currentTheme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5">Log Out</button> : <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
 							}
 							</div>
-							
-							
+
+
 								:
 								<>
 
@@ -110,9 +114,9 @@ const Header = () => {
 										{
 											theme === "dark" ? <Link href='/signup'><button className=" btn btn-outline btn-info px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
 										}
-										</div>
+									</div>
 
-									
+
 								</>
 						}
 
@@ -126,13 +130,13 @@ const Header = () => {
 					<div>
 
 						{isOpen ?
-							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-pink-800 font-bold">
+							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-pink-800 dark:text-info font-bold">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
 									<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 								</svg>
 							</button></label>
 							:
-							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-pink-800 font-bold">
+							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-pink-800 dark:text-info font-bold">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 								</svg>
@@ -143,14 +147,29 @@ const Header = () => {
 					</div>
 					{
 						isOpen && (
-							<ul onClick={() => setIsOpen(!isOpen)} tabIndex={1} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+							<ul onClick={() => setIsOpen(!isOpen)} tabIndex={1} className="dropdown-content menu p-2 shadow bg-base-100 dark:bg-black rounded-box w-52">
 								{manuItem}
 								{
-									user?.uid ? <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
+									user?.uid ? <div>
+										{
+											theme==="dark"? <button onClick={handleLogOut} className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
+										}
+									</div>
+									
 										:
 										<>
-											<Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
-											<Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
+										  <div>
+											{
+												theme==="dark"? <Link href='/login'><button className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
+											}
+										  </div>
+										  <div>
+											{
+												theme==="dark"? <Link href='/signup'><button className="btn btn-outline btn-info px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
+											}
+										  </div>
+											
+											
 										</>
 								}
 

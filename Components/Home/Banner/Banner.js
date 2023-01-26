@@ -1,10 +1,20 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import Typewriter from 'typewriter-effect';
+import { useEffect } from "react";
+import { useState } from "react";
 
 
 const Banner = () => {
-    const{theme, setTheme}=useTheme(false);
+    const{theme, setTheme}=useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	if (!mounted) return null;
+		const currentTheme = theme === "system" ? systemTheme : theme;
 
     
     return (
@@ -30,7 +40,7 @@ const Banner = () => {
 
                     <div>
 						{
-						theme =="dark"?<button className="btn btn-outline btn-info px-6 py-3 rounded-3xl mr-5">Get Started</button> : <button className="manu-button px-6 py-3 rounded-3xl mr-5">Get Started</button>
+						currentTheme =="dark"?<button className="btn btn-outline btn-info px-6 py-3 rounded-3xl mr-5">Get Started</button> : <button className="manu-button px-6 py-3 rounded-3xl mr-5">Get Started</button>
 						}
 					</div>
                 </div>

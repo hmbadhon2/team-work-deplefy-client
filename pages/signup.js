@@ -1,11 +1,12 @@
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaGoogle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../context/AuthContext';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 
 const Signup = () => {
@@ -80,6 +81,17 @@ const Signup = () => {
             })
     }
 
+
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null;
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
     return (
         <div className=''>
             <div className="hero dark:text-black">
@@ -115,13 +127,17 @@ const Signup = () => {
                                     })} className="input input-bordered w-full" />
                                     {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                                 </div>
-                                <input className='login-button py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
+                                <input className='login-button dark:bg-info dark:text-black py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
-                            <p className='dark:text-white'>Already have an account <Link href="/login" className='text-secondary' >Please Login</Link></p>
+                            <p className='dark:text-white'>Already have an account <Link href="/login" className='text-secondary dark:text-info' >Please Login</Link></p>
                             <div className="divider dark:text-white">OR</div>
-                            <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Google Sign Up</div></button>
+                            <div>
+                                {
+                                    currentTheme == "dark" ? <button onClick={handleGoogleSingIn} className='btn btn-outline btn-info rounded-lg w-full'><div className='flex items-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

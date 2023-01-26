@@ -1,9 +1,19 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect } from "react";
+import { useState } from "react";
 
 
 const Footer = () => {
-	const{theme, setTheme}=useTheme(false);
+	const{theme, setTheme}=useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	if (!mounted) return null;
+		const currentTheme = theme === "system" ? systemTheme : theme;
 	
 	return (
 		<footer className="px-4 dark:text-gray-100 py-4">
@@ -13,7 +23,7 @@ const Footer = () => {
 
 						<div className="w-24 rounded">
 						{
-                        theme==="dark"? <img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" /> : <img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" /> 
+                       currentTheme==="dark"? <img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" /> : <img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" /> 
                     }
 						</div>
 					</a>

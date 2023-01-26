@@ -1,15 +1,24 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 
 const Subscribe = () => {
-    const{theme, setTheme}=useTheme(false)
+    const{theme, setTheme}=useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	if (!mounted) return null;
+		const currentTheme = theme === "system" ? systemTheme : theme;
     return (
         <div>
             <div className="flex flex-col items-center mb-20 ">
                 <div className="w-20 mb-5 rounded">
                     {
-                        theme==="dark"? <img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" /> : <img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" /> 
+                        currentTheme==="dark"? <img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" /> : <img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" /> 
                     }
                    
                 </div>
