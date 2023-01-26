@@ -1,7 +1,10 @@
+import { useTheme } from "next-themes";
 import Image from "next/image";
 
 
 const Footer = () => {
+	const{theme, setTheme}=useTheme(false);
+	
 	return (
 		<footer className="px-4 dark:text-gray-100 py-4">
 			<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -9,7 +12,9 @@ const Footer = () => {
 					<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 
 						<div className="w-24 rounded">
-							<img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" />
+						{
+                        theme==="dark"? <img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" /> : <img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" /> 
+                    }
 						</div>
 					</a>
 				</div>

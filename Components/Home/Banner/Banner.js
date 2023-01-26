@@ -1,8 +1,12 @@
 import Image from "next/image";
+import { useTheme } from "next-themes";
 import Typewriter from 'typewriter-effect';
 
 
 const Banner = () => {
+    const{theme, setTheme}=useTheme(false);
+
+    
     return (
         <div className="hero ">
             <div className="hero-content flex-col md:flex-row-reverse">
@@ -22,7 +26,13 @@ const Banner = () => {
                     </div>
                     
                     <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="manu-button px-6 py-3 rounded-3xl mr-5">Get Started</button>
+                    
+
+                    <div>
+						{
+						theme =="dark"?<button className="btn btn-outline btn-info px-6 py-3 rounded-3xl mr-5">Get Started</button> : <button className="manu-button px-6 py-3 rounded-3xl mr-5">Get Started</button>
+						}
+					</div>
                 </div>
             </div>
         </div>
