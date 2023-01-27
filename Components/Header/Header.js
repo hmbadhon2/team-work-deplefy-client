@@ -147,7 +147,7 @@ const Header = () => {
 					</div>
 					{
 						isOpen && (
-							<ul onClick={() => setIsOpen(!isOpen)} tabIndex={1} className="dropdown-content menu p-2 shadow bg-base-100 dark:bg-black rounded-box w-52">
+							<ul onClick={() => setIsOpen(!isOpen)} tabIndex={1} className="dropdown-content menu p-2 shadow bg-white dark:bg-black rounded-box w-52">
 								{manuItem}
 								{
 									user?.uid ? <div>
