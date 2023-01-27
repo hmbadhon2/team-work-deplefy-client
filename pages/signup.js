@@ -1,11 +1,12 @@
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaGoogle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../context/AuthContext';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 
 const Signup = () => {
@@ -80,16 +81,27 @@ const Signup = () => {
             })
     }
 
+
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null;
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
     return (
-        <div>
-            <div className="hero min-h-screen ">
+        <div className=''>
+            <div className="hero dark:text-black">
                 <div className="hero-content flex-col lg:flex-row-reverse justify-between">
                     {/* <img src className="max-w-sm md:max-w-lg rounded-lg shadow-2xl lg:ml-10" alt='login' /> */}
                     <div>
-                        <div className='w-96 p-7'>
+                        <div className='w-full md:w-96 p-7'>
                             <form onSubmit={handleSubmit(handleSignUp)}>
                                 <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text">Name</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Name</span></label>
                                     <input type="text" {...register("name", {
                                         required: "Name is Required"
                                     })} className="input input-bordered w-full" />
@@ -97,7 +109,7 @@ const Signup = () => {
                                 </div>
 
                                 <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text">Email</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Email</span></label>
                                     <input type="text"
                                         {...register("email", {
                                             required: "Email Address is required"
@@ -107,7 +119,7 @@ const Signup = () => {
                                 </div>
 
                                 <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text">Password</span></label>
+                                    <label className="label"> <span className="label-text dark:text-white">Password</span></label>
                                     <input type="password" {...register("password", {
                                         required: "Password is required",
                                         minLength: { value: 6, message: "Password must be 6 characters long" },
@@ -115,13 +127,17 @@ const Signup = () => {
                                     })} className="input input-bordered w-full" />
                                     {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                                 </div>
-                                <input className='login-button py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
+                                <input className='login-button dark:bg-info dark:text-black py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
-                            <p>Already have an account <Link href="/login" className='text-secondary' >Please Login</Link></p>
-                            <div className="divider">OR</div>
-                            <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Google Sign Up</div></button>
+                            <p className='dark:text-white'>Already have an account <Link href="/login" className='text-secondary dark:text-info' >Please Login</Link></p>
+                            <div className="divider dark:text-white">OR</div>
+                            <div>
+                                {
+                                    currentTheme == "dark" ? <button onClick={handleGoogleSingIn} className='btn btn-outline btn-info rounded-lg w-full'><div className='flex items-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

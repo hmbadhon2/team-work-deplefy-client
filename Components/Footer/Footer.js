@@ -1,15 +1,30 @@
+import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect } from "react";
+import { useState } from "react";
 
 
 const Footer = () => {
+	const{theme, setTheme}=useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	if (!mounted) return null;
+		const currentTheme = theme === "system" ? systemTheme : theme;
+	
 	return (
-		<footer className="px-4 dark:bg-gray-800 dark:text-gray-100 py-4">
+		<footer className="px-4 dark:text-gray-100 py-4">
 			<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 				<div className="sm:text-centerlg:w-1/3">
 					<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 
 						<div className="w-24 rounded">
-							<img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" />
+						{
+                       currentTheme==="dark"? <img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" /> : <img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" /> 
+                    }
 						</div>
 					</a>
 				</div>

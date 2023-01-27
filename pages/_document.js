@@ -4,10 +4,13 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className='bg-gradient-to-r from-indigo-100 via-purple-10'>
+      <body className=' dark:bg-black'>
         <Main />
         <NextScript />
       </body>
     </Html>
   )
 }
+
+
+// bg-gradient-to-r from-indigo-100 via-purple-10
