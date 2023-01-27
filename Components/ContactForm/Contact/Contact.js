@@ -8,7 +8,7 @@ const Contact = () => {
     const socket = io("http://localhost:5000", { transports: ['websocket'] });
     const [message, setMessage] = useState("")
     const [getMessage, setGetMessage] = useState([])
-    const { user } = useContext(AuthContext)
+    const { user} = useContext(AuthContext)
 
 
     const handleSubmit = (e) => {
