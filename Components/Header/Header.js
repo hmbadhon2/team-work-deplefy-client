@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
-	const { user, logOut } = useContext(AuthContext)
+	const {user, logOut } = useContext(AuthContext)
 	const [isOpen, setIsOpen] = useState(false);
 	const {theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
