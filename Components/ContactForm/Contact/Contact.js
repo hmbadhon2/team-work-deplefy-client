@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import { io } from "socket.io-client"
 import { AuthContext } from "../../../context/AuthContext";

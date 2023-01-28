@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import Image from "next/image";
+// import Image from "next/image";
 import { useEffect } from "react";
 import { useState } from "react";
 

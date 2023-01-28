@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Header = () => {
 	const { user, logOut } = useContext(AuthContext)
 	const [isOpen, setIsOpen] = useState(false);
-	const { systemTheme, theme, setTheme } = useTheme();
+	const {theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
@@ -15,7 +15,7 @@ const Header = () => {
 	}, [])
 
 	if (!mounted) return null;
-	// const currentTheme = theme === "system" ? systemTheme : theme;
+	
 
 	const manuItem = <>
 		<li className="">
