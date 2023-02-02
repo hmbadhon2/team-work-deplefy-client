@@ -5,9 +5,9 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
-	const {user, logOut } = useContext(AuthContext)
+	const { user, logOut } = useContext(AuthContext)
 	const [isOpen, setIsOpen] = useState(false);
-	const {theme, setTheme } = useTheme();
+	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
@@ -15,7 +15,7 @@ const Header = () => {
 	}, [])
 
 	if (!mounted) return null;
-	
+
 
 	const manuItem = <>
 		<li className="">
@@ -29,14 +29,11 @@ const Header = () => {
 		<li className="">
 			<a rel="noopener noreferrer" href="/Contact" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Contact</a>
 		</li>
-
-
-		{/* <li className="">
-			<a rel="noopener noreferrer" href="#" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Pricing</a>
-		</li> */}
-
 		<li className="">
 			<a rel="noopener noreferrer" href="/Teams" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Team settings</a>
+		</li>
+		<li className="">
+			<a rel="noopener noreferrer" href="/Builds" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Builds</a>
 		</li>
 	</>
 
@@ -48,7 +45,7 @@ const Header = () => {
 
 
 	const renderThemeChanger = () => {
-	
+
 
 		if (theme === "dark") {
 			return (
@@ -84,7 +81,7 @@ const Header = () => {
 					<div className="ml-4">
 						<ul className="hidden md:flex">
 							{manuItem}
-                         
+
 						</ul>
 					</div>
 				</div>
@@ -152,24 +149,24 @@ const Header = () => {
 								{
 									user?.uid ? <div>
 										{
-											theme==="dark"? <button onClick={handleLogOut} className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
+											theme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
 										}
 									</div>
-									
+
 										:
 										<>
-										  <div>
-											{
-												theme==="dark"? <Link href='/login'><button className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
-											}
-										  </div>
-										  <div>
-											{
-												theme==="dark"? <Link href='/signup'><button className="btn btn-outline btn-info px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
-											}
-										  </div>
-											
-											
+											<div>
+												{
+													theme === "dark" ? <Link href='/login'><button className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
+												}
+											</div>
+											<div>
+												{
+													theme === "dark" ? <Link href='/signup'><button className="btn btn-outline btn-info px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
+												}
+											</div>
+
+
 										</>
 								}
 
