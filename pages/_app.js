@@ -6,10 +6,18 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import '../styles/globals.css'
 import { ThemeProvider } from 'next-themes';
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps }) {
 
   return <ThemeProvider enableSystem={true} attribute="class">
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
     <AuthProvider>
     <div>
       <div className="header lg:px-[108px]">
@@ -22,6 +30,8 @@ export default function App({ Component, pageProps }) {
       </div>
     </div>
   </AuthProvider>
+      </Hydrate>
+    </QueryClientProvider>
   </ThemeProvider>
 }
 
