@@ -12,7 +12,7 @@ import { useTheme } from 'next-themes';
 const Signup = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser, updateUser, googleSingIn } = useContext(AuthContext);
+    const { user, createUser, updateUser, googleSingIn } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
     const [createdUserEmail, setCreatedUserEmail] = useState('')
     // const [token] = useToken(createdUserEmail);
@@ -21,7 +21,7 @@ const Signup = () => {
     // if (token) {
     //     navigate('/');
     // }
-
+console.log(user)
     const handleGoogleSingIn = () => {
         googleSingIn()
             .then(result => {
