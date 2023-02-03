@@ -100,7 +100,7 @@ const Header = () => {
 							user?.uid ? <> {user?.photoURL ?
 								<img className='h-12 rounded-full' src={user?.photoURL} alt="userImage" />
 								: <FaUser className='mt-3 text-yellow-300'></FaUser>}
-								<li className='font-semibold'><Link href='/dashboard'>Dashboard</Link></li> {
+								<li className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5"  ><Link href='/dashboard' >Dashboard</Link></li> {
 								theme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5">Log Out</button> : <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
 							}
 							</>
