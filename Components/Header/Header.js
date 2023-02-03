@@ -74,7 +74,7 @@ const Header = () => {
 				<div className="navbar-start">
 					<div className="w-14 rounded">
 						{
-							theme === "dark" ? <img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" /> : <img src="https://i.ibb.co/hRPJLC7/1-removebg-preview.png" />
+							theme === "dark" ? <img src="https://i.ibb.co/d4q9bJQ/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/XkgWB8H/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
 						}
 					</div>
 
