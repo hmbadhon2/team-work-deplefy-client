@@ -67,7 +67,7 @@ const Signup = () => {
     }
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType };
-        fetch('https://server-sooty-five.vercel.app/users', {
+        fetch('https://deplefy-server-rhn007.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
