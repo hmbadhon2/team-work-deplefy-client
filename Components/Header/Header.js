@@ -35,6 +35,9 @@ const Header = () => {
 		<li className="">
 			<a rel="noopener noreferrer" href="/Builds" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Builds</a>
 		</li>
+		<li className="">
+			<a rel="noopener noreferrer" href="/Analysis" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Analysis</a>
+		</li>
 	</>
 
 	const handleLogOut = () => {
