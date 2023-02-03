@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
 	const { user, logOut } = useContext(AuthContext)
@@ -96,10 +97,13 @@ const Header = () => {
 							{renderThemeChanger()}
 						</div>
 						{
-							user?.uid ? <div> {
+							user?.uid ? <> {user?.photoURL ?
+								<img className='h-12 rounded-full' src={user?.photoURL} alt="userImage" />
+								: <FaUser className='mt-3 text-yellow-300'></FaUser>}
+								<li className='font-semibold'><Link href='/dashboard'>Dashboard</Link></li> {
 								theme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5">Log Out</button> : <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
 							}
-							</div>
+							</>
 
 
 								:
