@@ -65,7 +65,7 @@ const Team = () => {
                             </div>
 
 
-                            <div>
+                            <div className='mb-5'>
                                 {
                                     user?.uid ?
                                         <>
@@ -90,7 +90,7 @@ const Team = () => {
 
                         {/* <button className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-info dark:text-black mt-10">Edit Team Information</button> */}
 
-                        <label htmlFor="my-modal-3" className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-info dark:text-black mt-10">Edit Team Information</label>
+                        <label htmlFor="my-modal-3" className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-info dark:text-black">Edit Team Information</label>
                     </div>
 
                 </div>

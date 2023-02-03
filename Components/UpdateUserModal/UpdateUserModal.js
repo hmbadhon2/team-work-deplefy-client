@@ -2,7 +2,7 @@ import React from 'react';
 
 const UpdateUserModal = () => {
     return (
-        <div>
+        <div className='dark:text-black'>
             {/* The button to open modal */}
             
 
