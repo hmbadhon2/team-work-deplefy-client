@@ -8,9 +8,9 @@ const Team = () => {
 
  
     return (
-        <div className='my-20 overflow-hidden'>
+        <div className='my-20'>
 
-            <div className='border shadow-lg w-full md:w-1/2 px-4 py-7 mb-14  border-gray-300'>
+            <div className='border shadow-lg w-full md:w-1/2 md:px-4 py-7 mb-14  border-gray-300'>
                 <h1 className=' text-lg md:text-3xl mb-3'>Settings for <span>Register team name</span></h1>
                 <h2 className=' text-sm md:text-xl mb-3'>1 team member</h2>
                 <h1 className=' text-sm md:text-xl mb-3'>Team created on Jul 25, 2022 (6 months ago).</h1>
@@ -27,8 +27,8 @@ const Team = () => {
             <div className='my-10 md:flex flex-col md:flex-row'>
 
 
-                <div className=' w-full shadow-lg md:w-1/4 h-48 border border-gray-300 flex justify-center md:justify-start'>
-                    <ul className='ml-6'>
+                <div className=' w-full shadow-lg md:w-1/4 h-48 border border-gray-300 flex md:justify-center md:justify-start'>
+                    <ul className='md:ml-6'>
                         <li className='text-gray-500 mb-3 text-lg'>Genaral</li>
                         <div className='ml-2'>
                             <li className='text-gray-500 mb-3'>Team Datails</li>
@@ -41,7 +41,7 @@ const Team = () => {
 
 
 
-                <div className=' w-full md:w-2/3 border ml-6 mt-7 md:mt-0 px-6 py-10 shadow-lg'>
+                <div className=' w-full md:w-2/3 border md:ml-6 mt-7 md:mt-0 px-6 py-10 shadow-lg'>
                     <div className='mb-10 py-10'>
                         <h1 className='text-3xl '>Team Details</h1>
                         <h1 >Your team’s profile and single sign-on information</h1>
@@ -65,7 +65,7 @@ const Team = () => {
                             </div>
 
 
-                            <div>
+                            <div className='mb-5'>
                                 {
                                     user?.uid ?
                                         <>
@@ -90,7 +90,7 @@ const Team = () => {
 
                         {/* <button className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-info dark:text-black mt-10">Edit Team Information</button> */}
 
-                        <label htmlFor="my-modal-3" className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-info dark:text-black mt-10">Edit Team Information</label>
+                        <label htmlFor="my-modal-3" className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-info dark:text-black">Edit Team Information</label>
                     </div>
 
                 </div>

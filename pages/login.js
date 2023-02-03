@@ -60,7 +60,7 @@ const Login = () => {
                 const credential = GoogleAuthProvider.credentialFromResult(result)
                 const token = credential.accessToken;
                 const user = result.user;
-                toast.success('Please Login Successfully');
+                toast.success('You have login Successfully');
                 console.log(user)
             })
             .catch(error => {
