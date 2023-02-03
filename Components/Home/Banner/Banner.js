@@ -18,10 +18,10 @@ const Banner = () => {
 
     
     return (
-        <div className="hero ">
+        <div className="hero pb-5">
             <div className="hero-content flex-col md:flex-row-reverse">
               <div className="">
-              <Image src="/remove.png" width={700} height={700}></Image>
+              <Image src="/remove.png" width={750} height={750}></Image>
               </div>
                 <div className="">
                     <div className="text-4xl md:text-5xl lg:text-5xl font-bold text-pink-800 dark:text-info">
