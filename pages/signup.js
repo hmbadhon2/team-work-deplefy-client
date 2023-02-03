@@ -67,7 +67,7 @@ const Signup = () => {
     }
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType };
-        fetch('https://server-sooty-five.vercel.app/users', {
+        fetch('https://deplefy-server-rhn007.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -90,7 +90,7 @@ const Signup = () => {
     }, [])
 
     if (!mounted) return null;
-    const currentTheme = theme === "system" ? systemTheme : theme;
+
 
     return (
         <div className=''>
@@ -135,7 +135,7 @@ const Signup = () => {
                             <div className="divider dark:text-white">OR</div>
                             <div>
                                 {
-                                    currentTheme == "dark" ? <button onClick={handleGoogleSingIn} className='btn btn-outline btn-info rounded-lg w-full'><div className='flex items-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
+                                    theme == "dark" ? <button onClick={handleGoogleSingIn} className='btn btn-outline btn-info rounded-lg w-full'><div className='flex items-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
                                 }
                             </div>
                         </div>

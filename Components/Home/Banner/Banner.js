@@ -14,7 +14,7 @@ const Banner = () => {
 	}, [])
 
 	if (!mounted) return null;
-		const currentTheme = theme === "system" ? systemTheme : theme;
+		
 
     
     return (
@@ -38,9 +38,9 @@ const Banner = () => {
                     <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     
 
-                    <div>
+                     <div>
 						{
-						currentTheme =="dark"?<button className="btn btn-outline btn-info px-6 py-3 rounded-3xl mr-5">Get Started</button> : <button className="manu-button px-6 py-3 rounded-3xl mr-5">Get Started</button>
+					     theme =="dark"?<button className="btn btn-outline btn-info px-6 py-3 rounded-3xl mr-5">Get Started</button> : <button className="manu-button px-6 py-3 rounded-3xl mr-5">Get Started</button>
 						}
 					</div>
                 </div>

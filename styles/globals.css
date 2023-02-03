@@ -100,6 +100,13 @@ a {
   padding: 13px 16px;
   font-weight: bold;
 }
+
+.builds-button{
+  background-color: rgb(157, 22, 77);
+  color: white;
+}
+
+
 /* ....................................... */
 
 
