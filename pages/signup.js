@@ -51,8 +51,12 @@ console.log(user)
                     position: toast.POSITION.TOP_CENTER
                 })
                 const userInfo = {
-                    displayName: data.name
+                    displayName: data.name,
+                    email: data.email
+
+                
                 }
+                console.log(userInfo)
                 updateUser(userInfo)
                     .then(() => {
                         console.log(data.name, data.email)
