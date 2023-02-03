@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
 	const { user, logOut } = useContext(AuthContext)
@@ -35,6 +36,7 @@ const Header = () => {
 		<li className="">
 			<a rel="noopener noreferrer" href="/Builds" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Builds</a>
 		</li>
+	
 	</>
 
 	const handleLogOut = () => {
@@ -93,10 +95,17 @@ const Header = () => {
 							{renderThemeChanger()}
 						</div>
 						{
-							user?.uid ? <div> {
+							user?.uid ? <> 
+								{user?.photoURL ?
+									<img className='h-12 rounded-full' src={user?.photoURL} alt="userImage" />
+									: <FaUser className='mt-3 '></FaUser>}
+								<li className='ml-2 mt-3 list-none'>{user?.displayName}</li>
+								<li className='font-semibold list-none'><Link href='/dashboard'>Dashboard</Link></li>
+								
+								{
 								theme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5">Log Out</button> : <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
 							}
-							</div>
+							</>
 
 
 								:
