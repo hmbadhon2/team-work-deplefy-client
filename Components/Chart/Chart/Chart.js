@@ -48,7 +48,7 @@ const Chart = () => {
     ];
 
     return (
-        <div>
+        <div className="overflow-hidden">
             <LineChart width={500} height={400} data={data}>
 
                 <Line type="monotone" dataKey="user" stroke="#82ca9d" />
