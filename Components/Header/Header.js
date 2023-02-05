@@ -59,7 +59,7 @@ const Header = () => {
 							}}
 						>
 							<MenuHandler>
-								<Button variant="gradient"><img className='h-12 rounded-full' src={user?.photoURL} alt="userImage" /></Button>
+								<Button variant="gradient"><img className='h-12 rounded-full' src={user?.photoURL} alt="" /></Button>
 							</MenuHandler>
 							<MenuList>
 								<div className="h-full p-3 space-y-2 w-60 dark:bg-black dark:text-gray-100">
@@ -96,6 +96,7 @@ const Header = () => {
 															</a>
 														</li>
 													</Link>
+													
 
 										</ul>
 										<ul className="pt-4 pb-2 space-y-1 text-sm">
