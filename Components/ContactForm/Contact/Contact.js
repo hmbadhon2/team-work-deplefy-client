@@ -5,7 +5,7 @@ import { AuthContext } from "../../../context/AuthContext";
 
 
 const Contact = () => {
-    const socket = io("http://localhost:5000", { transports: ['websocket'] });
+    const socket = io("https://practice-549484f.onrender.com/", { transports: ['websocket'] });
     const [message, setMessage] = useState("")
     const [getMessage, setGetMessage] = useState([])
     const { user} = useContext(AuthContext)
