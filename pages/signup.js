@@ -29,6 +29,7 @@ console.log(user)
                 const token = credential.accessToken;
                 const user = result.user
                 console.log(user)
+                saveUser(user?.displayName, user?.email);
             })
             .catch(error => {
                 console.log(error)
@@ -59,7 +60,7 @@ console.log(user)
                 console.log(userInfo)
                 updateUser(userInfo)
                     .then(() => {
-                        console.log(data.name, data.email)
+                        console.log(data.name, data.email, data.userType);
                         saveUser(data.name, data.email, data.userType);
 
                     })
