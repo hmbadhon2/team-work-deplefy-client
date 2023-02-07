@@ -167,7 +167,8 @@ const UserProfile = () => {
 													<input placeholder='Team Name' type="text" required {...register("team", { required: 'Team is Required' })} className="input input-bordered w-full " />
 													{errors.team && <p role="alert" className='text-red-500'>{errors.team?.message}</p>}
 												</div>
-												<label htmlFor="my-modal-6"><button type='submit' className="btn w-full btn-info btn-sm">Submit</button></label>
+												{/* <label htmlFor="my-modal-6"><button type='submit' className="btn w-full btn-info btn-sm">Submit</button></label> */}
+											<button className="btn w-full btn-info btn-sm"><label type='submit' htmlFor="my-modal-6">Submit</label></button>
 											 </div>
 											</form>
 

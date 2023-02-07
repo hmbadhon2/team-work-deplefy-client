@@ -98,15 +98,12 @@
 // export default Practice;
 
 import React from 'react';
-import {Player} from '@lottiefiles/react-lottie-player'
+
 
 const Practice = () => {
     return (
         <div>
-  <Player
-				autoplay
-				loop
-				src="https://assets5.lottiefiles.com/packages/lf20_lc7svuzc.json"></Player>
+  
         </div>
     );
 };
