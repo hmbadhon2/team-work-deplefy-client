@@ -10,14 +10,14 @@ const AllUsers = () => {
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('https://deplefy-server-rhn007.vercel.app/users');
+            const res = await fetch('https://deplefy-server.vercel.app/users');
             const data = await res.json();
             return data;
         }
     });
 
     const handleMakeAdmin = id => {
-        fetch(`https://deplefy-server-rhn007.vercel.app/users/admin/${id}`, {
+        fetch(`https://deplefy-server.vercel.app/users/admin/${id}`, {
             method: 'PUT',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,7 @@ const AllUsers = () => {
     }
 
     const handleUserStatusUpdate = (id) => {
-        fetch(`https://deplefy-server-rhn007.vercel.app/users/${id}`, {
+        fetch(`https://deplefy-server.vercel.app/users/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -63,7 +63,7 @@ const AllUsers = () => {
 
 
     const handleUserDelete = (user) => {
-        fetch(`https://deplefy-server-rhn007.vercel.app/users/${user._id}`, {
+        fetch(`https://deplefy-server.vercel.app/users/${user._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
