@@ -1,23 +1,28 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { FaUser } from 'react-icons/fa';
 import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
+import { async } from "@firebase/util";
+
 
 const Header = () => {
-	const { user, logOut } = useContext(AuthContext)
+	const { user, logOut, profileImage} = useContext(AuthContext)
 	const [isOpen, setIsOpen] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
+	const [data, setData] = useState()
+
+
 
 	useEffect(() => {
 		setMounted(true)
 	}, [])
 
 	if (!mounted) return null;
-
 
 	const manuItem = <>
 		<li className="">
@@ -51,6 +56,13 @@ const Header = () => {
 	}
 	// ................Image Manu...........................
 
+
+
+
+
+
+// console.log(profileImage)
+
 	const imageManu = <>
 		<Menu
 			animate={{
@@ -60,10 +72,7 @@ const Header = () => {
 		>
 			<MenuHandler>
 				{
-					user?.photoURL ? <Button variant="gradient"><img className='h-12 rounded-full' src={user?.photoURL} alt="" /></Button> : <Button variant="gradient"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-						<path fillRule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clipRule="evenodd" />
-					</svg>
-					</Button>
+					profileImage[0]?.image ? <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={profileImage[0]?.image} alt="" /></Button> : <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={user?.photoURL} alt="" /></Button> 
 				}
 
 
@@ -73,12 +82,17 @@ const Header = () => {
 					<div className="flex items-center p-2 space-x-4">
 						<div className="avatar">
 							<div className="w-12 h-12 rounded-full">
-								<img src={user?.photoURL} />
+								
+								{
+									profileImage[0]?.image ? <img src={profileImage[0]?.image} /> : <img src={user?.photoURL} />
+								}
 							</div>
 						</div>
 						{/* <img src={user?.photoURL} alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" /> */}
 						<div>
-							<h2 className="text-lg font-semibold">{user?.displayName}</h2>
+							{
+								profileImage[0]?.name? <h2 className="text-lg font-semibold">{profileImage[0]?.name}</h2> : <h2 className="text-lg font-semibold">{user?.displayName}</h2>
+							}
 							<span className="flex items-center space-x-1">
 								<a rel="noopener noreferrer" href="/Profile" className="text-xs hover:underline dark:text-gray-400">View profile</a>
 							</span>
@@ -93,6 +107,7 @@ const Header = () => {
 											<path d="M68.983,382.642l171.35,98.928a32.082,32.082,0,0,0,32,0l171.352-98.929a32.093,32.093,0,0,0,16-27.713V157.071a32.092,32.092,0,0,0-16-27.713L272.334,30.429a32.086,32.086,0,0,0-32,0L68.983,129.358a32.09,32.09,0,0,0-16,27.713V354.929A32.09,32.09,0,0,0,68.983,382.642ZM272.333,67.38l155.351,89.691V334.449L272.333,246.642ZM256.282,274.327l157.155,88.828-157.1,90.7L99.179,363.125ZM84.983,157.071,240.333,67.38v179.2L84.983,334.39Z"></path>
 										</svg>
 										<span>Team settings</span>
+										
 									</a>
 								</li>
 							</Link>

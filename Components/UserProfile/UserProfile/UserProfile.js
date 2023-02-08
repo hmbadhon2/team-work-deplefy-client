@@ -1,8 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
+import moment from 'moment/moment';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthContext';
+import Header from '../../Header/Header';
 
 const UserProfile = () => {
 	const { user } = useContext(AuthContext);
@@ -63,23 +65,25 @@ const UserProfile = () => {
 	}
 
 
-	console.log(profileData)
 	return (
 		<div>
-			<div className="mx-3 p-8 md:w-1/2 flex justify-between sm:space-x-6 shadow-lg dark:bg-gray-900 dark:text-gray-100">
+			<div className="mx-3 p-8 md:w-1/2 border  flex justify-between sm:space-x-6 shadow-lg  dark:text-gray-100">
 
 				<div className="flex flex-col space-y-4">
 					<div className=''>
-						<h2 className="text-2xl font-semibold">{profileData[0]?.name}</h2>
-						<span className=" dark:text-gray-400">{profileData[0]?.email}</span>
+					{profileData[0]?.name? <h2 className="text-2xl font-semibold">{profileData[0]?.name}</h2> : <h2 className="text-2xl font-semibold">{user?.displayName}</h2>}
+					{profileData[0]?.email? <span className=" dark:text-gray-400">{profileData[0]?.email}</span> : <span className=" dark:text-gray-400">{user?.email}</span>}
+						
 					</div>
 					<div className="space-y-1">
-						<h2>Joined Deflify on Jul 25, 2022 (6 months ago).</h2>
-						<h2>Created 22 sites. Collaborates on 1 team.</h2>
+						<h2>Joined Deflify on {moment(profileData[0]?.date).format('LL')} ({moment(profileData[0]?.month).startOf('hour').fromNow()}). Created 22 sites. Collaborates on {profileData?.length ? profileData?.length : 1} team.</h2>
 					</div>
 				</div>
 				<div className="flex-shrink-0 md:mr-6 mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
-					<img src={profileData[0]?.image} alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />
+					<div>
+					{profileData[0]?.image? <img src={profileData[0]?.image} alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />: <img src={user?.photoURL} alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />}
+					</div>
+					
 
 				</div>
 			</div>
@@ -91,20 +95,24 @@ const UserProfile = () => {
 					<p>Your personal information</p>
 				</div>
 			</div>
-			<div className="px-2 py-6 mx-3 md:px-6 dark:bg-gray-900 shadow-lg dark:text-gray-100 mb-10">
+			<div className="px-2 py-6 mx-3 md:px-6 border shadow-lg dark:text-gray-100 mb-10">
 				<div className="flex sm:flex-row">
 				
 					<div className="flex flex-col">
 						<div className=''>
 
 							<h1 className='text-2xl md:text-3xl mb-5'>Personal information</h1>
-							<div className='flex '>
-							<img src={profileData[0]?.image} alt="" className="flex-shrink-0 border w-16 h-16 md:w-28 md:h-28 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" />
+							<div className='flex justify-center mb-3'>
+							{profileData[0]?.image ? <img src={profileData[0]?.image} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />: <img src={user?.photoURL} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />}
+							
+							</div>
+							<div className='flex'>
+							{profileData[0]?.image ? <img src={profileData[0]?.image} alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" /> : <img src={user?.photoURL} alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" />}
+							
 								<div>
-									<h1 className='mb-3 '>Name:</h1>
-									<h1 className='mb-3'>Team Name:</h1>
-									<h1 className='mb-3'>Email:</h1>
-									<h1 className='mb-3'>Phone:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3 '>Name:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3'>Email:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3'>Phone:</h1>
 
 								</div>
 
@@ -112,16 +120,15 @@ const UserProfile = () => {
 								<div className=''>
 									{
 										user?.uid ?
-											<>
-												<h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.name}</h1>
-												<h1 className='ml-5 md:ml-12 mb-3'>{profileData[0]?.team}</h1>
-												<h1 className='ml-5 md:ml-12 mb-3'>{profileData[0]?.email}</h1>
-												<h1 className='ml-5 md:ml-12 mb-3'>{profileData[0]?.phone}</h1>
+										
+											<>  
+											    {profileData[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.name}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.displayName}</h1>}
+											    {profileData[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.email}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.email}</h1>}
+											    {profileData[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>User Phone</h1>}
 											</>
 											:
 											<>
 												<h1 className='ml-5 md:ml-12 mb-3 '>User Name</h1>
-												<h1 className='ml-5 md:ml-12 mb-3'>Service Team</h1>
 												<h1 className='ml-5 md:ml-12 mb-3'>User Email</h1>
 												<h1 className='ml-5 md:ml-12 mb-3'>User Phone</h1>
 											</>
@@ -133,7 +140,7 @@ const UserProfile = () => {
 							{/* ....................................... */}
 
 							<div className='mt-5'>
-								<label htmlFor="my-modal-6" className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-info dark:text-black">Edit Profile</label>
+								<label htmlFor="my-modal-6" className="builds-button ml-5 md:ml-0 px-4 py-2 rounded-lg font-semibold dark:bg-info dark:text-black">Edit Profile</label>
 								<div className='dark:text-black dark:bg-black'>
 									{/* The button to open modal */}
 
@@ -163,12 +170,8 @@ const UserProfile = () => {
 													<input placeholder='Phone Number' type="number" required {...register("phone", { required: 'Phone Number is Required' })} className="input input-bordered w-full " />
 													{errors.number && <p role="alert" className='text-red-500'>{errors.number?.message}</p>}
 												</div>
-												<div className="form-control w-full mb-5">
-													<input placeholder='Team Name' type="text" required {...register("team", { required: 'Team is Required' })} className="input input-bordered w-full " />
-													{errors.team && <p role="alert" className='text-red-500'>{errors.team?.message}</p>}
-												</div>
 												{/* <label htmlFor="my-modal-6"><button type='submit' className="btn w-full btn-info btn-sm">Submit</button></label> */}
-											<button className="btn w-full btn-info btn-sm"><label type='submit' htmlFor="my-modal-6">Submit</label></button>
+											<button type='submit' className="btn w-full btn-info btn-sm"><label htmlFor="my-modal-6">Submit</label></button>
 											 </div>
 											</form>
 
@@ -176,6 +179,9 @@ const UserProfile = () => {
 									</div>
 								</div>
 
+							</div>
+							<div>
+								<Header profileData={profileData}></Header>
 							</div>
 						</div>
 					</div>

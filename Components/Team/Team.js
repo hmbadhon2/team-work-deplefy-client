@@ -58,9 +58,9 @@ const Team = () => {
 
                             <div>
                                 <h1 className='text-lg font-serif mb-3 '>Name:</h1>
-                                <h1 className='text-lg font-serif mb-3'>Team Name:</h1>
-                                <h1 className='text-lg font-serif mb-3'>Email:</h1>
-                                <h1 className='text-lg font-serif mb-3'>Phone:</h1>
+                                <h1 className='text-lg font-serif mb-3'>Slug:</h1>
+                                <h1 className='text-lg font-serif mb-3'>Logo:</h1>
+                                <h1 className='text-lg font-serif mb-3'>Current plan:</h1>
 
                             </div>
 

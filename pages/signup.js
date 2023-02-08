@@ -21,7 +21,10 @@ const Signup = () => {
     // if (token) {
     //     navigate('/');
     // }
-console.log(user)
+const date =new Date();
+const month= new Date();
+
+
     const handleGoogleSingIn = () => {
         googleSingIn()
             .then(result => {
@@ -54,6 +57,7 @@ console.log(user)
                 const userInfo = {
                     displayName: data.name,
                     email: data.email
+                    
 
                 
                 }
@@ -71,7 +75,7 @@ console.log(user)
             })
     }
     const saveUser = (name, email, userType) => {
-        const user = { name, email, userType };
+        const user = { name, email, userType, date, month};
         fetch('https://deplefy-server.vercel.app/users', {
             method: 'POST',
             headers: {
