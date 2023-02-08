@@ -10,7 +10,7 @@ import { async } from "@firebase/util";
 
 
 const Header = () => {
-	const { user, logOut, profileImage} = useContext(AuthContext)
+	const { user, logOut, profileImage, isFetching} = useContext(AuthContext)
 	const [isOpen, setIsOpen] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
@@ -23,6 +23,12 @@ const Header = () => {
 	}, [])
 
 	if (!mounted) return null;
+
+	if(isFetching){
+		return <div>
+			<div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+		</div>
+	}
 
 	const manuItem = <>
 		<li className="">
@@ -72,7 +78,14 @@ const Header = () => {
 		>
 			<MenuHandler>
 				{
-					profileImage[0]?.image ? <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={profileImage[0]?.image} alt="" /></Button> : <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={user?.photoURL} alt="" /></Button> 
+					profileImage[0]?.image ? <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={profileImage[0]?.image} alt="" /></Button> : 
+					<div>
+						{
+						user?.photoURL?  <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={user?.photoURL} alt="" /></Button> :  <Button variant="gradient"><img className='w-12 h-12 rounded-full' src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" /></Button> 
+						}
+                     
+					</div>
+					
 				}
 
 
@@ -84,7 +97,11 @@ const Header = () => {
 							<div className="w-12 h-12 rounded-full">
 								
 								{
-									profileImage[0]?.image ? <img src={profileImage[0]?.image} /> : <img src={user?.photoURL} />
+									profileImage[0]?.image ? <img src={profileImage[0]?.image} /> 
+									: 
+									<div>
+										{user?.photoURL? <img src={user?.photoURL} />: <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' />}
+									</div>
 								}
 							</div>
 						</div>

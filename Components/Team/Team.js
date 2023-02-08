@@ -1,10 +1,11 @@
+import moment from 'moment/moment';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
 
 const Team = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, profileImage } = useContext(AuthContext)
 
  
     return (
@@ -12,8 +13,8 @@ const Team = () => {
 
             <div className='border shadow-lg w-full md:w-1/2 md:px-4 py-7 mb-14  border-gray-300'>
                 <h1 className=' text-lg md:text-3xl mb-3'>Settings for <span>Register team name</span></h1>
-                <h2 className=' text-sm md:text-xl mb-3'>1 team member</h2>
-                <h1 className=' text-sm md:text-xl mb-3'>Team created on Jul 25, 2022 (6 months ago).</h1>
+                <h2 className=' text-sm md:text-xl mb-3'>{profileImage?.length ? profileImage?.length : 1} team member</h2>
+                <h1 className=' text-sm md:text-xl mb-3'>Team created on {moment(profileImage[0]?.date).format('LL')} ({moment(profileImage[0]?.date).startOf('hour').fromNow()}).</h1>
             </div>
 
 

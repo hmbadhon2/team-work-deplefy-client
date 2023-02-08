@@ -4,10 +4,9 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthContext';
-import Header from '../../Header/Header';
 
 const UserProfile = () => {
-	const { user } = useContext(AuthContext);
+	const { user, refetch:load } = useContext(AuthContext);
 	const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
 
@@ -58,6 +57,7 @@ const UserProfile = () => {
 						.then(data => {
 							toast.success('Profile Edit is Successfully');
 							refetch();
+							load()
 							reset()
 						})
 				}
@@ -76,12 +76,18 @@ const UserProfile = () => {
 						
 					</div>
 					<div className="space-y-1">
-						<h2>Joined Deflify on {moment(profileData[0]?.date).format('LL')} ({moment(profileData[0]?.month).startOf('hour').fromNow()}). Created 22 sites. Collaborates on {profileData?.length ? profileData?.length : 1} team.</h2>
+						<h2>Joined Deflify on {moment(profileData[0]?.date).format('LL')} ({moment(profileData[0]?.date).startOf('hour').fromNow()}). Created 22 sites. Collaborates on {profileData?.length ? profileData?.length : 1} team.</h2>
 					</div>
 				</div>
 				<div className="flex-shrink-0 md:mr-6 mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
 					<div>
-					{profileData[0]?.image? <img src={profileData[0]?.image} alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />: <img src={user?.photoURL} alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />}
+					{profileData[0]?.image? <img src={profileData[0]?.image} alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />: 
+					<div>
+						{
+							user?.photoURL? <img src={user?.photoURL} alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" /> : <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />
+						}
+					</div>
+					}
 					</div>
 					
 
@@ -103,11 +109,23 @@ const UserProfile = () => {
 
 							<h1 className='text-2xl md:text-3xl mb-5'>Personal information</h1>
 							<div className='flex justify-center mb-3'>
-							{profileData[0]?.image ? <img src={profileData[0]?.image} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />: <img src={user?.photoURL} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />}
+							{profileData[0]?.image ? <img src={profileData[0]?.image} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />
+							: 
+							<div>
+								{user?.photoURL? <img src={user?.photoURL} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" /> : <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />}
+							</div>
+							}
+							
 							
 							</div>
 							<div className='flex'>
-							{profileData[0]?.image ? <img src={profileData[0]?.image} alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" /> : <img src={user?.photoURL} alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" />}
+							{profileData[0]?.image ? <img src={profileData[0]?.image} alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" /> : 
+							<div>
+							{user?.photoURL? <img src={user?.photoURL} alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" /> : <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" />}
+							</div>
+							}
+
+							
 							
 								<div>
 									<h1 className='pl-5 md:pl-0 mb-3 '>Name:</h1>
@@ -123,8 +141,8 @@ const UserProfile = () => {
 										
 											<>  
 											    {profileData[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.name}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.displayName}</h1>}
-											    {profileData[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.email}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.email}</h1>}
-											    {profileData[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>User Phone</h1>}
+											    {profileData[0]?.email ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.email}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.email}</h1>}
+											    {profileData[0]?.phone ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>User Phone</h1>}
 											</>
 											:
 											<>
@@ -179,9 +197,6 @@ const UserProfile = () => {
 									</div>
 								</div>
 
-							</div>
-							<div>
-								<Header profileData={profileData}></Header>
 							</div>
 						</div>
 					</div>

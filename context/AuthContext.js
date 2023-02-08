@@ -50,7 +50,7 @@ const AuthProvider = ({children}) => {
     }, [])
 
 
-    const { data: profileImage = [], refetch, isLoading } = useQuery({
+    const { data: profileImage = [], refetch, isFetching } = useQuery({
 
 		queryKey: ['profiledata', user?.email],
 		queryFn: async () => {
@@ -60,6 +60,21 @@ const AuthProvider = ({children}) => {
 		}
 	})
 
+    const saveUser = (name, email, userType) => {
+        const user = { name, email, userType, date};
+        fetch('https://deplefy-server.vercel.app/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setCreatedUserEmail(email);
+                console.log(data)
+            })
+    }
 
 	console.log(profileImage)
     const authInfo = {
@@ -71,7 +86,7 @@ const AuthProvider = ({children}) => {
         loading,
         googleSingIn,
         profileImage,
-        isLoading
+        refetch
     }
     return (
         <AuthContext.Provider value={authInfo}>

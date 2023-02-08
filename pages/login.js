@@ -23,6 +23,25 @@ const Login = () => {
     // if (token) {
     //     navigate(from, { replace: true });
     // }
+
+    const date =new Date();
+
+    const saveUser = (name, email, userType) => {
+        const user = { name, email, userType, date};
+        fetch('https://deplefy-server.vercel.app/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setLoginUserEmail(email);
+                console.log(data)
+            })
+    }
+
     const handleLogin = (data) => {
         setLoginError('')
         signIn(data.email, data.password)
@@ -31,11 +50,23 @@ const Login = () => {
                 reset();
                 console.log(user)
                 setLoginUserEmail(data.email);
-
                 toast.success('Please Login Successfully');
 
 
             })
+
+            const userInfo = {
+                displayName: data.name,
+                email: data.email
+            }
+            console.log(userInfo)
+            updateUser(userInfo)
+                .then(() => {
+                    console.log(data.name, data.email, data.userType);
+                    saveUser(data.name, data.email, data.userType);
+
+                })
+                .catch(error => console.log(error))
             .catch(err => {
                 console.log(err.message)
                 setLoginError(err.message)
@@ -62,6 +93,7 @@ const Login = () => {
                 const user = result.user;
                 toast.success('You have login Successfully');
                 console.log(user)
+                saveUser(user?.displayName, user?.email);
             })
             .catch(error => {
                 console.log(error)
