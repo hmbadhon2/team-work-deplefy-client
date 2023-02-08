@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 
 
@@ -25,8 +26,23 @@ const AddSiteModal = () => {
             image,
             website,
         }
+       
 
-        console.log(addSiteData)
+        fetch('http://localhost:9000/addNewSite',{
+           method:"POST",
+           headers:{
+            "content-type": "application/json"
+           },
+           body:JSON.stringify(addSiteData)
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+            
+            toast.success("Succesful Data")
+        })
+        .catch((err)=>{
+            toast.error("Sorry, Filed Post data")
+        })
     }
 
 
