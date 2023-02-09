@@ -41,9 +41,10 @@ const UserProfile = () => {
 						sellerName: user?.displayName,
 						email: user?.email,
 						name: data?.name,
-						team: data?.team,
 						image: imageData.data.url,
 						phone: data?.phone,
+						country: data?.country,
+						location: data?.location,
 
 					}
 					fetch(`https://deplefy-server.vercel.app/profile?email=${user?.email}`, {
@@ -131,27 +132,19 @@ const UserProfile = () => {
 									<h1 className='pl-5 md:pl-0 mb-3 '>Name:</h1>
 									<h1 className='pl-5 md:pl-0 mb-3'>Email:</h1>
 									<h1 className='pl-5 md:pl-0 mb-3'>Phone:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3'>Country:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3'>Location:</h1>
 
 								</div>
 
 
 								<div className=''>
-									{
-										user?.uid ?
-										
-											<>  
+									
 											    {profileData[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.name}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.displayName}</h1>}
 											    {profileData[0]?.email ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.email}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.email}</h1>}
-											    {profileData[0]?.phone ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>User Phone</h1>}
-											</>
-											:
-											<>
-												<h1 className='ml-5 md:ml-12 mb-3 '>User Name</h1>
-												<h1 className='ml-5 md:ml-12 mb-3'>User Email</h1>
-												<h1 className='ml-5 md:ml-12 mb-3'>User Phone</h1>
-											</>
-									}
-
+											    {profileData[0]?.phone ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
+											    {profileData[0]?.country ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.country}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
+											    {profileData[0]?.location? <h1 className='ml-5 md:ml-12 mb-3 '>{profileData[0]?.location}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
 								</div>
 							</div>
 
@@ -187,6 +180,14 @@ const UserProfile = () => {
 												<div className="form-control w-full my-5">
 													<input placeholder='Phone Number' type="number" required {...register("phone", { required: 'Phone Number is Required' })} className="input input-bordered w-full " />
 													{errors.number && <p role="alert" className='text-red-500'>{errors.number?.message}</p>}
+												</div>
+												<div className="form-control w-full my-5">
+													<input placeholder='Country' type="text" required {...register("country", { required: 'Country is Required' })} className="input input-bordered w-full " />
+													{errors.country && <p role="alert" className='text-red-500'>{errors.country?.message}</p>}
+												</div>
+												<div className="form-control w-full my-5">
+													<input placeholder='Location' type="text" required {...register("location", { required: 'Location is Required' })} className="input input-bordered w-full " />
+													{errors.location && <p role="alert" className='text-red-500'>{errors.location?.message}</p>}
 												</div>
 												{/* <label htmlFor="my-modal-6"><button type='submit' className="btn w-full btn-info btn-sm">Submit</button></label> */}
 											<button type='submit' className="btn w-full btn-info btn-sm"><label htmlFor="my-modal-6">Submit</label></button>

@@ -24,7 +24,7 @@ const Contact = () => {
     return (
         <div>
             <section className="p-6 dark:text-gray-400">
-                <div novalidate="" className="container md:w-96 bg-black max-w-xl mx-auto space-y-6 rounded-md shadow dark:bg-gray-900 ng-untouched ng-pristine ng-valid">
+                <div novalidate="" className="container md:w-96 bg-black max-w-xl mx-auto  rounded-md shadow dark:bg-gray-900 ng-untouched ng-pristine ng-valid">
                     <div className="border-b-2 flex justify-between px-5 md:w-full text-white text-center py-5 border-white">
                         <h1 className="font-bold">My Chats</h1>
                         <div className="flex">
