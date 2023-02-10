@@ -2,6 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import {Player} from '@lottiefiles/react-lottie-player'
 
+
+
+
 const Builder = () => {
     return (
         <div>
@@ -13,6 +16,9 @@ const Builder = () => {
 				autoplay
 				loop
 				src="https://assets7.lottiefiles.com/private_files/lf30_jlkylbqc.json"></Player>
+
+                
+                
                    
                     </div>
                    

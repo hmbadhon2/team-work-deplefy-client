@@ -1,12 +1,20 @@
 import Pricing from '../Components/Home/Pricing/Pricing'
 import Banner from '../Components/Home/Banner/Banner'
 import Subscribe from '../Components/Home/Subscribe/Subscribe';
+<<<<<<< HEAD
 import Practice from '../Components/Home/Practice/Practice';
 import TeamMember from '../Components/Home/TeamMember/TeamMember';
 import Domain from '../Components/Home/Domain/Domain';
 import ChoseUs from '../Components/Home/ChooseUs/ChoseUs';
 import DataCenter from '../Components/Home/DataCenter/DataCenter';
 
+=======
+import Practice from '../Components/Home/Practice/Practice'
+import TeamMember from '../Components/Home/TeamMember/TeamMember'
+import Domain from '../Components/Home/Domain/Domain'
+import ChoseUs from '../Components/Home/ChooseUs/ChoseUs'
+import DataCenter from '../Components/Home/DataCenter/DataCenter'
+>>>>>>> a55610884da491ef95a141459c77bcade846d26f
 
 
 
