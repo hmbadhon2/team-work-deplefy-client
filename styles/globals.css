@@ -109,19 +109,15 @@ a {
   color: white;
 }
 
-<<<<<<< HEAD
 
 .bg {
   background-image: '/data_center_bg.jpg';
-=======
-.bg {
-  background-image: '/data_center_bg.jpg'
 }
 
-.deployAnimation{
+/* .deployAnimation{
   /* width: 500px; */
->>>>>>> a55610884da491ef95a141459c77bcade846d26f
-}
+
+
 
 /* ....................................... */
 
