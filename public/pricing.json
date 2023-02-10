@@ -1,0 +1,35 @@
+[
+    {
+      "package": "REGULER",
+      "money": "19",
+      "month": "month",
+       "categorie_one": "1 Environments",
+       "categorie_two": "50 Applications",
+       "categorie_three": "100 Deployments",
+       "categorie_four": "Integrated Cl/CD",
+       "categorie_five": "Slack integration"
+    },
+    {
+      "package": "ADVANCED",
+      "money": "29",
+      "month": "month",
+       "categorie_one": "3 Environments",
+       "categorie_two": "150 Applications",
+       "categorie_three": "500 Deployments",
+       "categorie_four": "Automated rolbacks",
+       "categorie_five": "Deployment Insights"
+    },
+    {
+      "package": "PREMIUM",
+      "money": "49",
+      "month": "month",
+       "categorie_one": "Custom Environments",
+       "categorie_two": "Custom Applications",
+       "categorie_three": "Custom Deployments",
+       "categorie_four": "Environment Replication",
+       "categorie_five": "Multi Cloud Support"
+    }
+  ]
+
+
+

@@ -23,7 +23,7 @@ const Footer = () => {
 
 						<div className="w-24 rounded">
 						{
-                       theme==="dark"? <img src="https://i.ibb.co/d4q9bJQ/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/XkgWB8H/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> 
+                       theme==="dark"? <img src="https://i.ibb.co/d4q9bJQ/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> 
                     }
 						</div>
 					</a>

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useContext } from "react";
-import Header from "../Components/Header/Header";
-import useAdmin from "../Components/Hooks/useAdmin";
-import Loading from "../Components/Shared/Loading";
-import { AuthContext } from "../context/AuthContext";
+import Header from "../../Components/Header/Header";
+import useAdmin from "../../Components/Hooks/useAdmin";
+import Loading from "../../Components/Shared/Loading";
+import { AuthContext } from "../../context/AuthContext";
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
@@ -45,7 +45,7 @@ const Dashboard = () => {
 
                             <>
                                 <li><Link href="/AllUsers">All users</Link></li>
-                               
+                                <li><Link href="/dashboard/cart">Cart</Link></li>
                             </>
 
                         }

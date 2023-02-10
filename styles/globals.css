@@ -49,25 +49,28 @@ a {
   /* transform: translateY(-30px); */
 }
 .manu-item:hover{
-  color: rgb(157, 22, 77);
+  color: navy;
 }
 .manu-button{
   background-color: none;
-  border: 1px solid rgb(157, 22, 77);
-  color: rgb(157, 22, 77);
+  border: 1px solid navy;
+  color: navy;
 }
 .manu-button:hover{
-  background-color: rgb(157, 22, 77);
+  background-color: navy;
   color: white;
+}
+.teamNameColor{
+  color: navy;
 }
 
 .subscribe-button{
-  background-color: rgb(157, 22, 77);
+  background-color: navy;
   color: white;
   font-weight: bold;
 }
 .login-button{
-  background-color: rgb(157, 22, 77);
+  background-color: navy;
   color: white;
   font-weight: bolder;
   
@@ -75,44 +78,46 @@ a {
 
 .google-button{
   background-color: none;
-  border: 1px solid rgb(157, 22, 77);
-  color: rgb(157, 22, 77);
+  border: 1px solid navy;
+  color: navy;
   font-weight: bolder;
   padding: 12px 0;
 }
 .google-button:hover{
-  background-color: rgb(157, 22, 77);
+  background-color: navy;
   color: white;
 }
 .dragAndDrop{
   border: 1px dotted grey;
 }
 .site-button{
-  background-color: rgb(157, 22, 77);
+  background-color: navy;
   color: white;
   padding: 6px 16px;
   font-weight: bold;
 }
 
 .new-site{
-  background-color: rgb(157, 22, 77);
+  background-color: navy;
   color: white;
   padding: 13px 16px;
   font-weight: bold;
 }
 
 .builds-button{
-  background-color: rgb(157, 22, 77);
+  background-color: navy;
   color: white;
 }
 
+
 .bg {
-  background-image: '/data_center_bg.jpg'
+  background-image: '/data_center_bg.jpg';
 }
 
-.deployAnimation{
+/* .deployAnimation{
   /* width: 500px; */
-}
+
+
 
 /* ....................................... */
 

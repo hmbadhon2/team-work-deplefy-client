@@ -54,7 +54,7 @@ const AuthProvider = ({children}) => {
 
 		queryKey: ['profiledata', user?.email],
 		queryFn: async () => {
-			const res = await fetch(`https://deplefy-server.vercel.app/profile?email=${user?.email}`)
+			const res = await fetch(`https://deplefy-server-mocha.vercel.app/profile?email=${user?.email}`)
 			const data = await res.json();
 			return data;
 		}
@@ -62,7 +62,7 @@ const AuthProvider = ({children}) => {
 
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType, date};
-        fetch('https://deplefy-server.vercel.app/users', {
+        fetch('https://deplefy-server-mocha.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

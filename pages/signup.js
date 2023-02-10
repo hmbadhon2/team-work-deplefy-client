@@ -75,7 +75,7 @@ const date =new Date();
     }
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType, date};
-        fetch('https://deplefy-server.vercel.app/users', {
+        fetch('https://deplefy-server-mocha.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -139,7 +139,7 @@ const date =new Date();
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
-                            <p className='dark:text-white'>Already have an account <Link href="/login" className='text-secondary dark:text-info' >Please Login</Link></p>
+                            <p className='dark:text-white'>Already have an account <Link href="/login" className='teamNameColor font-bold dark:text-info' >Please Login</Link></p>
                             <div className="divider dark:text-white">OR</div>
                             <div>
                                 {

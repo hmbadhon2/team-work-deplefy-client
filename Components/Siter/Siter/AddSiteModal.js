@@ -28,7 +28,7 @@ const AddSiteModal = () => {
         }
        
 
-        fetch('http://localhost:9000/addNewSite',{
+        fetch('https://deplefy-server-mocha.vercel.appaddNewSite',{
            method:"POST",
            headers:{
             "content-type": "application/json"

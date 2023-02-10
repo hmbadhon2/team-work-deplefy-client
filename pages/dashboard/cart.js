@@ -1,10 +1,11 @@
 import { async } from "@firebase/util";
 import { useQuery } from "@tanstack/react-query";
-import { useContext } from "react";
+import Link from "next/link";
+import { useContext, useState } from "react";
+import ConfirmationModal from "../../Components/Shared/ConfirmationModal";
 import { AuthContext } from "../../context/AuthContext";
 
 
-import ConfirmationModal from "../Shared/ConfirmationModal";
 
 
 const AddToCart = () => {
@@ -13,16 +14,16 @@ const AddToCart = () => {
     const closeModal = () => {
         setDeletedWish(null)
     }
-    const url = `https://deplefy-server.vercel.app/bookings?email=${user?.email}`;
-    // const url = `https://server-sooty-five.vercel.app/bookings`; 
+    const url = `https://deplefy-server-mocha.vercel.app/bookings?email=${user?.email}`;
+    // const url = `https://deplefy-server-mocha.vercel.app/bookings`;
 
     const { data: bookings = [], refetch } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
+                // headers: {
+                //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+                // }
             })
             const data = await res.json()
             return data;
@@ -31,7 +32,7 @@ const AddToCart = () => {
     })
     const handleDeleteWishlist = ad => {
         console.log(ad)
-        fetch(`https://deplefy-server.vercel.app/bookings/${ad._id}`, {
+        fetch(`https://deplefy-server-mocha.vercel.app/bookings/${ad._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -54,13 +55,12 @@ const AddToCart = () => {
 
     return (
         <div>
-            <h3 className="text-3xl mb-5">My Bookings</h3>
+            <h3 className="text-3xl mb-5">My Cart</h3>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
-                            <th>image</th>
                             <th>Name</th>
                             <th>Brand</th>
                             <th>Price</th>
@@ -79,11 +79,11 @@ const AddToCart = () => {
                                 <td>{booking.name}</td>
                                 <td>{booking.brand}</td>
                                 <td>
-                                    ${booking.price}
+                                    ${booking.money}
                                     {
-                                        booking.price && !booking.paid &&
+                                        booking.money && !booking.paid &&
 
-                                        <Link to={`/dashboard/payment/${booking._id}`}>    <button className='btn btn-primary btn-sm'
+                                        <Link href={`/dashboard/payment/${booking._id}`}>    <button className='btn btn-primary btn-sm'
 
                                         >Pay</button></Link>
                                     }

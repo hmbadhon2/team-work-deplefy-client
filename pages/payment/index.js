@@ -1,7 +1,7 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import Loading from '../../Components/Shared/Loading';
-import CheckoutForm from './CheckoutForm';
+import CheckoutForm from './[CheckoutForm]';
 
 
 const stripePromise = loadStripe('pk_test_51M6sjdFjPzqrkDjrkcgbelCERmUXETNeWM2erbBhpt9zxFDgfcgt9gLZHnhKDald7391EL2pOL16WEV7eCPQSO9l00Af5H7uCh');
