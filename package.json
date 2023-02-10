@@ -19,6 +19,7 @@
     "bootstrap": "^5.2.3",
     "daisyui": "^2.46.1",
     "firebase": "^9.15.0",
+    "framer-motion": "^9.0.1",
     "next": "^13.1.1",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
@@ -38,5 +39,17 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4",
     "theme-ui": "^0.15.4"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmbadhon2/team-work-deplefy-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmbadhon2/team-work-deplefy-client/issues"
+  },
+  "homepage": "https://github.com/hmbadhon2/team-work-deplefy-client#readme"
 }

@@ -6,7 +6,7 @@ html,
 body {
   /* max-width: 100vw; */
   /* overflow-x: hidden; */
-  @apply bg-gray-50 text-gray-900 dark:text-white;
+  @apply bg-gray-100 text-gray-900 dark:text-white;
 }
 
 /* body {
@@ -33,21 +33,20 @@ a {
   z-index: 50;
 }
 .pricing{
-  background-color: rgb(41, 1, 1);
+  background-color:#FFFFFF;
   border-radius: 10px;
-  color: rgb(251, 248, 248);
-  height: 510px;
+  color:#4F80FF;
+  height: 550px;
 }
 
 .pricing:hover{
-  background: rgb(2, 2, 108);
-  color: white;
+  /* background: rgb(2, 2, 108); */
+  color:#4F80FF;
   box-shadow: 0 0 15px rgba(0,0,0,1);
-  transform: scale(1.1);
   border-radius: 10px;
-  margin: 0 10px;
-  transition: 0.9s;
-  transform: translateY(-30px);
+  /* margin: 0 10px; */
+  transition: 0.2s;
+  /* transform: translateY(-30px); */
 }
 .manu-item:hover{
   color: rgb(157, 22, 77);
@@ -107,6 +106,9 @@ a {
   color: white;
 }
 
+.bg {
+  background-image: '/data_center_bg.jpg';
+}
 
 /* ....................................... */
 
