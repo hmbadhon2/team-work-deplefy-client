@@ -24,7 +24,7 @@ const Banner = () => {
               <Image src="/hero-banner-removebg-preview.png" width={900} height={900}></Image>
               </div>
                 <div className=" md:w-1/2">
-                    <div className="text-4xl leading-8 md:text-6xl lg:text-6xl font-bold text-violet-900 dark:text-info">
+                    <div className="text-4xl leading-8 md:text-6xl lg:text-6xl font-bold teamNameColor dark:text-info">
                     {/* <Typewriter
                         options={{
                             strings: [" <p> Deploy Solution </p> <br> <p> .</p>"],

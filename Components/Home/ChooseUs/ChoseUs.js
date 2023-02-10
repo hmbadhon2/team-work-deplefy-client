@@ -9,7 +9,7 @@ const ChoseUs = () => {
             <h2 className="font-semibold text-5xl mb-7">Why Choose Deplify</h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 py-12 px-12 bg-gray-100 rounded text-black">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-12 px-12 bg-gray-100 rounded text-black">
                     <div className=" flex items-center flex-col rounded border border-gary-200 p-10 text-center hover:bg-white">
                         <Image src="/Choose us Logo/Best Price Logo.png" height={80} width={80}></Image>
                         <h3 className="font-semibold text-3xl my-10">Best Pricing Deals</h3>
