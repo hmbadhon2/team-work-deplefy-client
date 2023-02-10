@@ -137,7 +137,7 @@ const Login = () => {
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>
                             </form>
-                            <p className='dark:text-white'>New to Deplify <Link className='text-secondary dark:text-info' href="/signup">Create a New Account</Link></p>
+                            <p className='dark:text-white'>New to Deplify <Link className='teamNameColor font-bold dark:text-info' href="/signup">Create a New Account</Link></p>
                             <div className="divider dark:text-white">OR</div>
 
                             <div>

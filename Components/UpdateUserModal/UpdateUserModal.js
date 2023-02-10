@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/AuthContext';
 
-const UpdateUserModal = ({refetch}) => {
+const UpdateUserModal = ({teamRefetch}) => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const{user}=useContext(AuthContext)
+    const{user, refetch:loader}=useContext(AuthContext)
 
     const handleTeam = (data) => {
 
@@ -39,8 +39,10 @@ const UpdateUserModal = ({refetch}) => {
 					})
 						.then(res => res.json())
 						.then(data => {
-							toast.success('Profile Edit is Successfully');
-							refetch();
+							toast.success('Team setting Edit is Successfully');
+							// refetch();
+                            teamRefetch();
+                            loader()
 							reset()
 						})
 				}

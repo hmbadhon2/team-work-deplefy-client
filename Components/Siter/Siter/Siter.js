@@ -8,7 +8,7 @@ const Siter = () => {
     const [siteData, setSiteData] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:9000/addNewSite')
+        fetch('https://deplefy-server.vercel.app/addNewSite')
             .then((res) => res.json())
             .then((data) => setSiteData(data))
     }, [])

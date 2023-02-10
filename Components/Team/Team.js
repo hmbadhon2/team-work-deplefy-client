@@ -12,7 +12,7 @@ const Team = () => {
 
 
 
-  const { data: teamData = [], refetch } = useQuery({
+  const { data: teamData = [], refetch:teamRefetch } = useQuery({
 
     queryKey: ['TeamDatabase', user?.email],
     queryFn: async () => {
@@ -147,7 +147,10 @@ const Team = () => {
 
       </div>
       <div>
-        <UpdateUserModal refetch={refetch}></UpdateUserModal>
+        <UpdateUserModal teamRefetch={teamRefetch}></UpdateUserModal>
+      </div>
+      <div>
+        
       </div>
 
 

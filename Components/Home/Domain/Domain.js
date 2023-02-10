@@ -6,7 +6,7 @@ const Domain = () => {
             <div className="p-12 text-center">
                 <h3 className="text-3xl text-white mb-10"> Do You Want Your Premium Domain?</h3>
                 <form className="p-2 mx-24 bg-white rounded-full mb-10">
-                    <div className="flex flex-row justify-between">
+                    <div className="md:flex md:flex-row justify-between">
                         <input 
                          type="text" 
                          name="" 
@@ -14,6 +14,7 @@ const Domain = () => {
                          placeholder="Type your domain address"
                          className="rounded-full px-10" 
                          />
+                         
                         <input 
                          type="text" 
                          name="" 
