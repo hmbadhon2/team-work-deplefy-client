@@ -10,14 +10,14 @@ const AllUsers = () => {
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('https://deplefy-server-rhn007.vercel.app/users');
+            const res = await fetch('https://deplefy-server.vercel.app/users');
             const data = await res.json();
             return data;
         }
     });
 
     const handleMakeAdmin = id => {
-        fetch(`https://deplefy-server-rhn007.vercel.app/users/admin/${id}`, {
+        fetch(`https://deplefy-server.vercel.app/users/admin/${id}`, {
             method: 'PUT',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,7 @@ const AllUsers = () => {
     }
 
     const handleUserStatusUpdate = (id) => {
-        fetch(`https://deplefy-server-rhn007.vercel.app/users/${id}`, {
+        fetch(`https://deplefy-server.vercel.app/users/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -63,7 +63,7 @@ const AllUsers = () => {
 
 
     const handleUserDelete = (user) => {
-        fetch(`https://deplefy-server-rhn007.vercel.app/users/${user._id}`, {
+        fetch(`https://deplefy-server.vercel.app/users/${user._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -85,9 +85,9 @@ const AllUsers = () => {
 
 
     return (
-        <div>
-            <h2 className="text-3xl">All Users</h2>
-            <div className="overflow-x-auto">
+        <div className='md:max-w-[1140px] md:mx-auto dark:text-black my-10'>
+            <h2 className="text-3xl dark:text-white">All Users</h2>
+            <div className="">
                 <table className="table w-full">
                     <thead>
                         <tr>
@@ -103,17 +103,17 @@ const AllUsers = () => {
                     <tbody>
                         {
                             users.map((user, i) => <tr key={user._id}>
-                                <th>{i + 1}</th>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td className='font-bold text-primary'>{user.userType}</td>
-                                <td>
+                                <td className='font-bold' data-label="SL.No">{i + 1}</td>
+                                <td data-label="NAME">{user.name}</td>
+                                <td data-label="EMAIL">{user.email}</td>
+                                <td data-label="USER TYPE" className='font-bold text-primary'>{user.userType}</td>
+                                <td data-label="VERIFICATION">
                                     <label
                                         onClick={() => handleUserStatusUpdate(user._id)}
                                         className="btn  btn-accent btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
                                 </td>
-                                <td>{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
-                                <td><button onClick={() => handleUserDelete(user)} className='btn btn-xs btn-danger'>Delete</button></td>
+                                <td data-label="ADMIN">{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
+                                <td data-label="ACTION"><button onClick={() => handleUserDelete(user)} className='btn btn-xs btn-danger'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>

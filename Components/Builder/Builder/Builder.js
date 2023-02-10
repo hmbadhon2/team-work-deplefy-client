@@ -1,13 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
+import {Player} from '@lottiefiles/react-lottie-player'
 
 const Builder = () => {
     return (
         <div>
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className='w-2/2 relative my-16 md:ml-6'>
-                    <Image src="/builds.png" width={2700} height={2700}></Image>
+                    <div className='deployAnimation relative mb-8'>
+                    {/* <Image src="/builds.png" width={2700} height={2700}></Image> */}
+                    <Player className='w-max'
+				autoplay
+				loop
+				src="https://assets7.lottiefiles.com/private_files/lf30_jlkylbqc.json"></Player>
                    
                     </div>
                    

@@ -21,7 +21,9 @@ const Signup = () => {
     // if (token) {
     //     navigate('/');
     // }
-console.log(user)
+const date =new Date();
+
+
     const handleGoogleSingIn = () => {
         googleSingIn()
             .then(result => {
@@ -29,6 +31,7 @@ console.log(user)
                 const token = credential.accessToken;
                 const user = result.user
                 console.log(user)
+                saveUser(user?.displayName, user?.email);
             })
             .catch(error => {
                 console.log(error)
@@ -53,13 +56,14 @@ console.log(user)
                 const userInfo = {
                     displayName: data.name,
                     email: data.email
+                    
 
                 
                 }
                 console.log(userInfo)
                 updateUser(userInfo)
                     .then(() => {
-                        console.log(data.name, data.email)
+                        console.log(data.name, data.email, data.userType);
                         saveUser(data.name, data.email, data.userType);
 
                     })
@@ -70,8 +74,8 @@ console.log(user)
             })
     }
     const saveUser = (name, email, userType) => {
-        const user = { name, email, userType };
-        fetch('https://deplefy-server-rhn007.vercel.app/users', {
+        const user = { name, email, userType, date};
+        fetch('https://deplefy-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -146,6 +150,7 @@ console.log(user)
                     </div>
                 </div>
             </div>
+           
         </div>
     );
 };
