@@ -106,13 +106,12 @@ a {
   color: white;
 }
 
-<<<<<<< HEAD
 .bg {
-  background-image: '/data_center_bg.jpg';
-=======
+  background-image: '/data_center_bg.jpg'
+}
+
 .deployAnimation{
   /* width: 500px; */
->>>>>>> 27ab90c61b4d55ae26c2d2c9c1ce5a8fb369f49d
 }
 
 /* ....................................... */
