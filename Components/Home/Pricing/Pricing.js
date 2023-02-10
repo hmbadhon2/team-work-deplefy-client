@@ -26,7 +26,6 @@ const Pricing = () => {
 
     return (
         <div>
-           <h1>{pricings.length}</h1>
 
            <section className="py-20">
                 <div className="px-4 mx-auto">
