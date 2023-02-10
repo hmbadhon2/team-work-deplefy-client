@@ -51,7 +51,7 @@ const Team = () => {
             <Player className=' w-full md:w-3/4'
               autoplay
               loop
-              src="https://assets10.lottiefiles.com/packages/lf20_z3pnisgt.json"></Player>
+              src="https://assets7.lottiefiles.com/packages/lf20_3rqwsqnj.json"></Player>
 
 
 
