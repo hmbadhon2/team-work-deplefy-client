@@ -60,6 +60,9 @@ a {
   background-color: navy;
   color: white;
 }
+
+
+
 .teamNameColor{
   color: navy;
 }
@@ -114,25 +117,42 @@ a {
 .bg {
   background-image: '/data_center_bg.jpg';
 }
+.manu-two{
+  background-color: blue;
+}
 
-/* .deployAnimation{
-  /* width: 500px; */
+/* ................Dark Mode..................... */
 
+.manu-buttonDark{
+  background-color: none;
+  border: 1px solid #65A30D;
+  color: #65A30D;
+}
+.manu-buttonDark:hover{
+  background-color: #65A30D;
+  color: black;
+}
 
+.google-buttonDark{
+  background-color: none;
+  border: 1px solid #65A30D;
+  color: #65A30D;
+  font-weight: bolder;
+  padding: 12px 0;
+}
+.google-buttonDark:hover{
+  background-color: #65A30D;
+  color: black;
+}
 
-/* ....................................... */
+/* ................Responsive Design.................. */
 
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
 
 
 @media (max-width: 576px) {
   .table thead {
     display: none;
+    
   }
 
   .table,
@@ -140,13 +160,17 @@ a {
   .table tr,
   .table td {
     display: block;
-    width: 100%;
+    
+    /* width: 100%; */
+    
   }
   .table tr {
     margin-bottom: 15px;
   }
   .table td {
-    padding-left: 50%;
+    padding-left: 40%;
+    padding-bottom: 25px;
+    padding-top: 10px;
     text-align: left;
     position: relative;
   }
@@ -156,8 +180,8 @@ a {
     left: 0;
     width: 50%;
     padding-left: 15px;
-    font-size: 15px;
-    font-weight: bold;
+    /* font-size: 15px; */
+    /* font-weight: bold; */
     text-align: left;
   }
 }

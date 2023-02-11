@@ -233,12 +233,12 @@ const Header = () => {
 
 											<div>
 												{
-													theme === "dark" ? <Link href='/login'><button className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5">Login</button></Link> : <Link href='/login'><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
+													theme === "dark" ? <Link href='/login'><button className="manu-buttonDark px-5 py-2 rounded-3xl mr-5">Login</button></Link> : <Link href='/login'><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
 												}
 											</div>
 											<div>
 												{
-													theme === "dark" ? <Link href='/signup'><button className=" btn btn-outline btn-info px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
+													theme === "dark" ? <Link href='/signup'><button className="manu-buttonDark px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
 												}
 											</div>
 

@@ -137,12 +137,12 @@ const Login = () => {
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>
                             </form>
-                            <p className='dark:text-white'>New to Deplify <Link className='teamNameColor font-bold dark:text-info' href="/signup">Create a New Account</Link></p>
+                            <p className='dark:text-white'>New to Deplify <Link className='teamNameColor font-bold dark:text-lime-600' href="/signup">Create a New Account</Link></p>
                             <div className="divider dark:text-white">OR</div>
 
                             <div>
                                 {
-                                    theme == "dark" ? <button onClick={handleGoogleSingIn} className='btn btn-outline btn-info rounded-lg w-full'><div className='flex items-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
+                                    theme == "dark" ? <button onClick={handleGoogleSingIn} className='google-buttonDark rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
                                 }
                             </div>
 

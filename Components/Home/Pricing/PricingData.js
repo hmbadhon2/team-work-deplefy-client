@@ -17,7 +17,7 @@ const PricingData = ({ pricing }) => {
                 transition={{ type: 'spring', stiffness: 50 }}
                 whileHover="hover"
             >
-                <div className="my-4  md:my-0 pricing dark:bg-lime-700 shadow-2xl flex flex-col p-6 space-y-6 rounded dark:shadow-slate-800 sm:p-8">
+                <div className="my-4  md:my-0 pricing  shadow-2xl flex flex-col p-6 space-y-6 rounded dark:shadow-slate-800 sm:p-8">
                     <div className="space-y-2">
                         <div className="flex flex-row items-center mb-10">
                             <Image src="/Pricing Logo/Pricing_Reguler_logo-removebg-preview.png" width={80} height={80}></Image>
