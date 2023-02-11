@@ -132,7 +132,7 @@ const Login = () => {
                                     <label className="label"> <span className="label-text dark:text-white">Forget Password?</span></label>
                                     {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                                 </div>
-                                <input className='login-button dark:bg-info dark:text-black py-3 rounded-lg w-full' value="Login" type="submit" />
+                                <input className='login-button dark:bg-lime-600 dark:text-black py-3 rounded-lg w-full' value="Login" type="submit" />
                                 <div>
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>

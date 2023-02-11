@@ -29,7 +29,7 @@ const Siter = () => {
 
                 <div className="dropdown">
 
-                    <label tabIndex={0} className="new-site rounded-lg dark:bg-info dark:text-black m-1 py-16 px-5">Add New Site</label>
+                    <label tabIndex={0} className="new-site rounded-lg dark:bg-lime-600 dark:text-black m-1 py-16 px-5">Add New Site</label>
                     <ul tabIndex={0} className="dropdown-content menu mt-4 p-2 shadow bg-white dark:bg-black dark:text-white rounded-box md:w-52 dark:text-black">
                         <label htmlFor="my-modal-3" className='font-serif ml-3'>Deploy Manually</label>
                         <li><a className='font-serif'>Tamplate</a></li>

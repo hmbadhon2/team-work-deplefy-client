@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
       </div>
       <Component {...pageProps} />
       <ToastContainer />
-      <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px]  text-white dark:bg-slate-900 lg:px-[108px]">
+      <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px]  text-white dark:bg-gradient-to-tr dark:from-lime-800 dark:to-lime-500 dark:text-black lg:px-[108px]">
         <Footer></Footer>
       </div>
     </div>

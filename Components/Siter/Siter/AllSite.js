@@ -50,8 +50,9 @@ const AllSite = ({ site }) => {
 
 
                 <div className=' ml-4 mt-4 md:mt-0 lg:ml-auto flex md:justify-center lg:justify-end md:items-center'>
-                    <button className="site-button rounded-lg dark:bg-info dark:text-black">
-                        <a href={website}> View site</a>
+                    <button className="site-button rounded-lg dark:bg-lime-600 dark:text-black">
+                        <a> </a>
+                        <a href={website} target="_blank" rel="noopener noreferrer">View site</a>
                     </button>
                 </div>
 

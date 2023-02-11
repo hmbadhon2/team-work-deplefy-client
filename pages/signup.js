@@ -135,7 +135,7 @@ const date =new Date();
                                     })} className="input input-bordered w-full" />
                                     {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                                 </div>
-                                <input className='login-button dark:bg-info dark:text-black py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
+                                <input className='login-button dark:bg-lime-600 dark:text-black py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
