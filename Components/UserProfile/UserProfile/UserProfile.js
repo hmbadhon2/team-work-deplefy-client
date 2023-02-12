@@ -93,8 +93,8 @@ const UserProfile = () => {
 			{/* ................................................. */}
 			<div className='mb-5 mt-16 mx-3'>
 				<div>
-					<h1 className='text-3xl'>Profile</h1>
-					<p>Your personal information</p>
+					<h1 className='text-3xl font-semibold'>Profile</h1>
+					<p className=' teamNameColor text-2xl'>Your personal information</p>
 				</div>
 			</div>
 			<div className="px-2 py-6 mx-3 md:px-6 border shadow-lg dark:text-gray-100 mb-10">
@@ -103,7 +103,7 @@ const UserProfile = () => {
 					<div className="flex flex-col">
 						<div className=''>
 
-							<h1 className='text-2xl md:text-3xl mb-5'>Personal information</h1>
+							<h1 className='text-2xl md:text-3xl  mb-5'>Personal information</h1>
 							<div className='flex justify-center mb-3'>
 							{profileImage[0]?.image ? <img src={profileImage[0]?.image} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />
 							: 
