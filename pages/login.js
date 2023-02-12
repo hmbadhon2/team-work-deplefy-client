@@ -24,6 +24,19 @@ const Login = () => {
     //     navigate(from, { replace: true });
     // }
 
+    const navigate = useNavig();
+    const location= useLocation();
+
+  
+
+    // const from = location.state?.from?.pathname || '/';
+    
+    // useEffect(()=>{
+    //     if(token){
+    //         navigate(from, {replace: true})
+    //     }
+    // }, [from, navigate, token])
+
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
@@ -47,7 +60,7 @@ const Login = () => {
                 console.log(user)
                 setLoginUserEmail(data.email);
                 toast.success('Please Login Successfully');
-
+                // navigate(from, {replace: true})
 
             })
 
