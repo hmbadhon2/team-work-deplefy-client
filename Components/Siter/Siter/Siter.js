@@ -6,7 +6,7 @@ import AllSite from './AllSite';
 
 
 const Siter = () => {
-    const{ siteData}=useContext(ShareContext)
+    const{siteData}=useContext(ShareContext);
 
     return (
         <div className='my-16 mx-2'>
