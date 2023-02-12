@@ -93,8 +93,8 @@ const UserProfile = () => {
 			{/* ................................................. */}
 			<div className='mb-5 mt-16 mx-3'>
 				<div>
-					<h1 className='text-3xl font-semibold'>Profile</h1>
-					<p className=' teamNameColor text-2xl'>Your personal information</p>
+					<h1 className='teamNameColor dark:text-lime-600 text-3xl font-semibold'>Profile</h1>
+					<p className='  text-2xl'>Your personal information</p>
 				</div>
 			</div>
 			<div className="px-2 py-6 mx-3 md:px-6 border shadow-lg dark:text-gray-100 mb-10">
