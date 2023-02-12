@@ -24,8 +24,8 @@ const Login = () => {
     //     navigate(from, { replace: true });
     // }
 
-    // const navigate = useNavig();
-    // const location= useLocation();
+    const navigate = useNavig();
+    const location= useLocation();
 
   
 
