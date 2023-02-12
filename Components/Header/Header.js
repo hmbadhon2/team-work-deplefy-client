@@ -7,10 +7,12 @@ import { AuthContext } from "../../context/AuthContext";
 import { FaUser } from 'react-icons/fa';
 import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
 import { async } from "@firebase/util";
+import { ShareContext } from "../../ShareProvider/ShareProvider";
 
 
 const Header = () => {
-	const { user, logOut, profileImage, isFetching } = useContext(AuthContext)
+	const { user, logOut } = useContext(AuthContext);
+	const {profileImage, isFetching}=useContext(ShareContext);
 	const [isOpen, setIsOpen] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
@@ -111,13 +113,13 @@ const Header = () => {
 								profileImage[0]?.name ? <h2 className="text-lg font-semibold">{profileImage[0]?.name}</h2> : <h2 className="text-lg font-semibold">{user?.displayName}</h2>
 							}
 							<span className="flex items-center space-x-1">
-								<a rel="noopener noreferrer" href="/Profile" className="text-xs hover:underline dark:text-gray-400">View profile</a>
+								<Link href="/Profile" passHref rel="noopener noreferrer" className="text-xs hover:underline dark:text-gray-400">View profile</Link>
 							</span>
 						</div>
 					</div>
 					<div className="divide-y divide-gray-700">
 						<ul className="pt-2 pb-4 space-y-1 text-sm">
-							<Link href='/Teams'>
+							<Link href='/Teams' passHref>
 								<li className="icon">
 									<a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current text-black dark:text-white">
@@ -129,7 +131,7 @@ const Header = () => {
 								</li>
 							</Link>
 
-							<Link href='/Analysis'>
+							<Link href='/Analysis' passHref>
 								<li><a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current text-black dark:text-white">
 										<path d="M203.247,386.414,208,381.185V355.4L130.125,191H93.875L16,355.4v27.042l4.234,4.595a124.347,124.347,0,0,0,91.224,39.982h.42A124.343,124.343,0,0,0,203.247,386.414ZM176,368.608a90.924,90.924,0,0,1-64.231,26.413h-.33A90.907,90.907,0,0,1,48,369.667V362.6l64-135.112L176,362.6Z"></path>
@@ -201,11 +203,13 @@ const Header = () => {
 		<div className="pt-24">
 			<div className="navbar bg-blue-50 dark:bg-black dark:text-white dark:border-b-2 dark:border-slate-900 lg:px-28 shadow">
 				<div className="navbar-start">
-					<div className="w-14 rounded">
+				<Link href='/' p>
+				<div className="w-14 rounded">
 						{
 							theme === "dark" ? <img src="https://i.ibb.co/cky6b16/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
 						}
 					</div>
+				</Link>
 
 					<div className="ml-4">
 						<ul className="hidden md:flex">
@@ -233,12 +237,12 @@ const Header = () => {
 
 											<div>
 												{
-													theme === "dark" ? <Link href='/login'><button className="manu-buttonDark px-5 py-2 rounded-3xl mr-5">Login</button></Link> : <Link href='/login'><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
+													theme === "dark" ? <Link href='/login' passHref><button className="manu-buttonDark px-5 py-2 rounded-3xl mr-5">Login</button></Link> : <Link href='/login' passHref><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
 												}
 											</div>
 											<div>
 												{
-													theme === "dark" ? <Link href='/signup'><button className="manu-buttonDark px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
+													theme === "dark" ? <Link href='/signup' passHref><button className="manu-buttonDark px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
 												}
 											</div>
 
@@ -306,12 +310,12 @@ const Header = () => {
 										<>
 											<div>
 												{
-													theme === "dark" ? <Link href='/login'><button className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
+													theme === "dark" ? <Link href='/login' passHref><button className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login' passHref><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
 												}
 											</div>
 											<div>
 												{
-													theme === "dark" ? <Link href='/signup'><button className="btn btn-outline btn-info px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
+													theme === "dark" ? <Link href='/signup' passHref><button className="btn btn-outline btn-info px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
 												}
 											</div>
 

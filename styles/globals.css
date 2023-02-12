@@ -55,6 +55,7 @@ a {
   background-color: none;
   border: 1px solid navy;
   color: navy;
+  font-weight: bold;
 }
 .manu-button:hover{
   background-color: navy;
@@ -127,6 +128,7 @@ a {
   background-color: none;
   border: 1px solid #65A30D;
   color: #65A30D;
+  font-weight: bold;
 }
 .manu-buttonDark:hover{
   background-color: #65A30D;
@@ -145,6 +147,13 @@ a {
   color: black;
 }
 
+.darkModeTextColor{
+  color: #65A30D;
+}
+
+.table{
+  background-color: #65A30D;
+}
 /* ................Responsive Design.................. */
 
 

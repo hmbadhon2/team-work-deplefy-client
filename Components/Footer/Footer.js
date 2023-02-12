@@ -4,10 +4,12 @@ import { useTheme } from "next-themes";
 import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { ShareContext } from "../../ShareProvider/ShareProvider";
 
 
 const Footer = () => {
-	const { user, profileImage } = useContext(AuthContext)
+	const { user } = useContext(AuthContext);
+	const{profileImage}=useContext(ShareContext);
 	const{theme, setTheme}=useTheme();
 	const [mounted, setMounted] = useState(false);
 

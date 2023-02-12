@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, spring } from "framer-motion"
 import Image from 'next/image';
+
 const buttonVariants = {
     hover: {
         scale: 1.1

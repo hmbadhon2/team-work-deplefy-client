@@ -20,9 +20,13 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 text-base-content dark:text-white">
-                        <li><Link href="/dashboard">Dashboard</Link></li>
-
+                    <ul className="menu p-4 text-base-content">
+                        <li className="">
+                        <Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Dashboard</Link>
+                        </li>
+                        <li className="">
+                            <Link rel="noopener noreferrer" href="/AllUsers" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">All Users</Link>
+                        </li>
                         {/* {
                             isBuyer &&
 
@@ -43,10 +47,10 @@ const Dashboard = () => {
                         {
                             // isAdmin &&
 
-                            <>
-                                <li><Link href="/AllUsers">All users</Link></li>
-                               
-                            </>
+                            // <>
+                            //     <li className="font-bold manu-item dark:hover:text-lime-600"><Link href="/AllUsers">All users</Link></li>
+
+                            // </>
 
                         }
 

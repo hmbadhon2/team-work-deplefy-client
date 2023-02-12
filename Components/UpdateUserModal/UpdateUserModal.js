@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/AuthContext';
+import { ShareContext } from '../../ShareProvider/ShareProvider';
 
-const UpdateUserModal = ({teamRefetch}) => {
+const UpdateUserModal = ({refetch}) => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const{user, refetch:loader}=useContext(AuthContext)
+    const{user}=useContext(AuthContext);
 
     const handleTeam = (data) => {
 
@@ -40,9 +41,7 @@ const UpdateUserModal = ({teamRefetch}) => {
 						.then(res => res.json())
 						.then(data => {
 							toast.success('Team setting Edit is Successfully');
-							// refetch();
-                            teamRefetch();
-                            loader()
+                            refetch();
 							reset()
 						})
 				}

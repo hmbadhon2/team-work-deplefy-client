@@ -1,23 +1,12 @@
 
 
 import React, { useContext, useEffect, useState } from 'react';
+import { ShareContext } from '../../../ShareProvider/ShareProvider';
 import AllSite from './AllSite';
 
 
 const Siter = () => {
-    const [siteData, setSiteData] = useState([])
-
-    useEffect(() => {
-        fetch('https://deplefy-server.vercel.app/addNewSite')
-            .then((res) => res.json())
-            .then((data) => setSiteData(data))
-    }, [])
-
-
-
-
-
-
+    const{ siteData}=useContext(ShareContext)
 
     return (
         <div className='my-16 mx-2'>

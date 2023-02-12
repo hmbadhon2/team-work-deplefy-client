@@ -11,6 +11,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import ShareProvider from '../ShareProvider/ShareProvider';
 const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps }) {
@@ -19,7 +20,8 @@ export default function App({ Component, pageProps }) {
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
     <AuthProvider>
-    <div>
+     <ShareProvider>
+     <div>
       <div className="header lg:px-[108px]">
         <Header></Header>
       </div>
@@ -29,6 +31,7 @@ export default function App({ Component, pageProps }) {
         <Footer></Footer>
       </div>
     </div>
+     </ShareProvider>
   </AuthProvider>
       </Hydrate>
     </QueryClientProvider>

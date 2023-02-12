@@ -24,23 +24,19 @@ const Login = () => {
     //     navigate(from, { replace: true });
     // }
 
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null;
+
+
     const date =new Date();
 
-    const saveUser = (name, email, userType) => {
-        const user = { name, email, userType, date};
-        fetch('https://deplefy-server.vercel.app/users', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then(res => res.json())
-            .then(data => {
-                setLoginUserEmail(email);
-                console.log(data)
-            })
-    }
+
 
     const handleLogin = (data) => {
         setLoginError('')
@@ -55,18 +51,7 @@ const Login = () => {
 
             })
 
-            const userInfo = {
-                displayName: data.name,
-                email: data.email
-            }
-            console.log(userInfo)
-            updateUser(userInfo)
-                .then(() => {
-                    console.log(data.name, data.email, data.userType);
-                    saveUser(data.name, data.email, data.userType);
 
-                })
-                .catch(error => console.log(error))
             .catch(err => {
                 console.log(err.message)
                 setLoginError(err.message)
@@ -74,14 +59,23 @@ const Login = () => {
     }
 
 
-    const { theme, setTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
+    const saveUser = (name, email, userType, date) => {
+        const user = { name, email, userType, date};
+        fetch('https://deplefy-server.vercel.app/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // setLoginUserEmail(email);
+                console.log(data)
+            })
+    };
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
 
-    if (!mounted) return null;
 
 
     const handleGoogleSingIn = () => {
