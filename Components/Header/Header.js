@@ -302,7 +302,7 @@ const Header = () => {
 								{
 									user?.uid ? <div>
 										{
-											theme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
+											theme === "dark" ? <button onClick={handleLogOut} className="manu-buttonDark px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
 										}
 									</div>
 
@@ -310,12 +310,12 @@ const Header = () => {
 										<>
 											<div>
 												{
-													theme === "dark" ? <Link href='/login' passHref><button className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login' passHref><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
+													theme === "dark" ? <Link href='/login' passHref><button className="manu-buttonDark px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login' passHref><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
 												}
 											</div>
 											<div>
 												{
-													theme === "dark" ? <Link href='/signup' passHref><button className="btn btn-outline btn-info px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
+													theme === "dark" ? <Link href='/signup' passHref><button className="manu-buttonDark px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
 												}
 											</div>
 

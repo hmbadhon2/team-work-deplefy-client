@@ -85,7 +85,7 @@ const Team = () => {
                       </div>
                     </td>
                     <td>
-                      {profileImage[0]?.teamName ? <h1 className='ml-20 text-lg font-serif'>{profileImage[0]?.teamName}</h1> : <h1 className='ml-20 text-lg font-serif'>Team Name</h1>}
+                      {profileImage[0]?.teamName ? <h1 className='ml-20 text-lg font-serif'>{profileImage[0]?.teamName}</h1> : <h1 className='ml-20 text-lg font-serif'></h1>}
                     </td>
                   </tr>
 

@@ -72,8 +72,8 @@ const Login = () => {
     }
 
 
-    const saveUser = (name, email, userType, date) => {
-        const user = { name, email, userType, date};
+    const saveUser = (name, email, date) => {
+        const user = { name, email, date};
         fetch('https://deplefy-server.vercel.app/users', {
             method: 'POST',
             headers: {
@@ -100,7 +100,7 @@ const Login = () => {
                 const user = result.user;
                 toast.success('You have login Successfully');
                 console.log(user)
-                saveUser(user?.displayName, user?.email);
+                saveUser(user?.displayName, user?.email, date);
             })
             .catch(error => {
                 console.log(error)

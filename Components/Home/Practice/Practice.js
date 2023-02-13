@@ -4,7 +4,7 @@
 
 // const socket = io.connect("http://localhost:5000")
 
-// const Practice = () => {
+// const Practice = () => 
 //     const[me, setMe] =useState("");
 //     const[stream, setStream] =useState();
 //     const[receivingCall, setReceivingCall]=useState(false);
