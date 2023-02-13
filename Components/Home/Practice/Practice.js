@@ -97,8 +97,8 @@
 
 // export default Practice;
 
-import React from 'react';
-import { GiAirplaneDeparture } from "react-icons/Gi";
+// import React from 'react';
+// import { GiAirplaneDeparture } from "react-icons/Gi";
 
 
 const Practice = () => {
