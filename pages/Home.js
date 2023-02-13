@@ -20,13 +20,13 @@ const Home = () => {
         <div className='md:max-w-[1140px] md:mx-auto my-12'>
             <Pricing/>
         </div>   
-        <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px] dark:bg-gradient-to-tr dark:from-lime-800 dark:to-lime-500 rounded-br-[250px] text-white pt-24 pb-64  md:py-24 my-12">
+        <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px] dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 rounded-br-[250px] text-white pt-24 pb-64  md:py-24 my-12">
             <ChoseUs/>
         </div>   
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <TeamMember/>
         </div>
-        <div className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-800 dark:to-lime-500 dark:text-black py-12 my-12 rounded" >
+        <div className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black py-12 my-12 rounded" >
             <DataCenter/>
         </div>
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
