@@ -37,7 +37,7 @@ const TeamMember = () => {
                             <img className="object-cover w-full dark:bg-gray-500 aspect-square" src="https://i.ibb.co/6Y5cR0B/95138857-10220568390431649-1696556186939162624-n.jpg" />
                             <div className='pt-5 pl-2'>
                                 <h1 className='teamNameColor font-bold dark:text-lime-500'>Rakibul Hassan Nayon</h1>
-                                <p className='font-bold dark:text-white'>Team Member</p>
+                                <p className='font-bold dark:text-blue'>Team Member</p>
                             </div>
                             <div className="flex justify-start space-x-3 pt-3 pb-5 pl-2">
                                 <a rel="noopener noreferrer" href="#" target="_blank" title="Facebook" className="flex items-center p-1 ">
