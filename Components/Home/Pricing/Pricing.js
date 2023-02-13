@@ -34,7 +34,7 @@ const Pricing = () => {
                         <h2 className="text-4xl font-bold lg:text-5xl ">Get the plan <br></br> that works for you</h2>
                     </div>
 
-                    <div className="gap-y-16 gap-x-8 md:my-0 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 ">
+                    <div className="gap-y-16 gap-x-8 md:my-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
                        
                     {
                 pricings?.map(pricing=><PricingData key={pricing._id} pricing={pricing}></PricingData>)

@@ -63,7 +63,7 @@ const UserProfile = () => {
 
 	return (
 		<div>
-			<div className="mx-3 p-8 md:w-1/2 border  flex justify-between sm:space-x-6 shadow-lg  dark:text-gray-100">
+			<div className="mx-3 p-8 md:w-2/3 lg:w-1/2 border  flex justify-between sm:space-x-6 shadow-lg  dark:text-gray-100">
 
 				<div className="flex flex-col space-y-4">
 					<div className=''>
@@ -94,11 +94,11 @@ const UserProfile = () => {
 			<div className='mb-5 mt-16 mx-3'>
 				<div>
 					<h1 className='teamNameColor dark:text-lime-800 text-3xl font-semibold'>Profile</h1>
-					<p className='text-blue-800  text-2xl'>Your personal information</p>
+					<p className='text-2xl'>Your personal information</p>
 				</div>
 			</div>
 			<div className="px-2 py-6 mx-3 md:px-6 border shadow-lg dark:text-gray-100 mb-10">
-				<div className=" lg:flex md:justify-between md:items-center">
+				<div className=" md:flex md:justify-between md:items-center">
 
 					<div className="flex flex-col">
 						<div className=''>
@@ -111,19 +111,19 @@ const UserProfile = () => {
 								<h1 className='text-2xl md:text-3xl  mb-5'>Personal information</h1>
 							</div>
 							<div className='flex justify-center mb-3'>
-								{profileImage[0]?.image ? <img src={profileImage[0]?.image} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />
+								{profileImage[0]?.image ? <img src={profileImage[0]?.image} alt="" className="lg:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />
 									:
 									<div>
-										{user?.photoURL ? <img src={user?.photoURL} alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" /> : <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" className="md:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />}
+										{user?.photoURL ? <img src={user?.photoURL} alt="" className="lg:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" /> : <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" className="lg:hidden flex-shrink-0 border w-20 h-20 md:w-28 md:h-28 dark:bg-gray-500 dark:border-gray-700" />}
 									</div>
 								}
 
 
 							</div>
 							<div className='flex'>
-								{profileImage[0]?.image ? <img src={profileImage[0]?.image} alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" /> :
+								{profileImage[0]?.image ? <img src={profileImage[0]?.image} alt="" className="hidden lg:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" /> :
 									<div>
-										{user?.photoURL ? <img src={user?.photoURL} alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" /> : <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" className="hidden md:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" />}
+										{user?.photoURL ? <img src={user?.photoURL} alt="" className="hidden lg:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" /> : <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" className="hidden lg:flex flex-shrink-0 border w-16 h-16 md:w-28 md:h-32 mr-2 md:mr-6 dark:bg-gray-500 dark:border-gray-700" />}
 									</div>
 								}
 
