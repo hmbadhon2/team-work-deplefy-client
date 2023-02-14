@@ -16,6 +16,8 @@
     "@material-tailwind/react": "^1.2.5",
     "@mui/material": "^5.11.5",
     "@next/font": "13.1.1",
+    "@stripe/react-stripe-js": "^1.16.4",
+    "@stripe/stripe-js": "^1.46.0",
     "@tanstack/react-query": "^4.24.4",
     "bootstrap": "^5.2.3",
     "daisyui": "^2.46.1",
@@ -38,6 +40,7 @@
     "recharts": "^2.3.2",
     "simple-peer": "^9.11.1",
     "socket.io-client": "^4.5.4",
+    "stripe": "^11.10.0",
     "typewriter-effect": "^2.19.0"
   }
   

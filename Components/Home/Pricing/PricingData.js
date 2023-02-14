@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion, spring } from "framer-motion"
 import Image from 'next/image';
-
 const buttonVariants = {
     hover: {
         scale: 1.1
     }
 }
 
-const PricingData = ({ pricing }) => {
-    const { _id, text, money, month, categorie_one, categorie_two, categorie_three, categorie_four, categorie_five } = pricing;
+const PricingData = ({pricing}) => {
+    const{_id, text, money, month, categorie_one,categorie_two, categorie_three, categorie_four, categorie_five}=pricing;
     return (
         <div>
             <motion.div
@@ -32,46 +31,46 @@ const PricingData = ({ pricing }) => {
 
                     </div>
 
-                    <ul className="flex-1 space-y-2 leading-12 ">
-                        <li className="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6 text-indigo-900 dark:text-black dark:text-black">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                            </svg>
-                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">{categorie_one}</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6 text-indigo-900 dark:text-black">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                            </svg>
-                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">{categorie_two}</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6 text-indigo-900 dark:text-black">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                            </svg>
-                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">{categorie_three}</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6 text-indigo-900 dark:text-black">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                            </svg>
-                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">{categorie_four}</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6 text-indigo-900 dark:text-black">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                            </svg>
-                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">{categorie_five}</span>
-                        </li>
-                    </ul>
-                    <motion.button
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        className="rounded py-3 px-4 text-black bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-black dark:to-black dark:text-white font-semibold text-lg">
-                        Add To Cart
-                    </motion.button>
-                </div>
-            </motion.div>
+                                <ul className="flex-1 space-y-2 leading-12 ">
+                                    <li className="flex items-center space-x-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                                        </svg>
+                                        <span className="text-indigo-900 text-lg font-semibold">{categorie_one}</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                                        </svg>
+                                        <span className="text-indigo-900 text-lg font-semibold">{categorie_two}</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                                        </svg>
+                                        <span className="text-indigo-900 text-lg font-semibold">{categorie_three}</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                                        </svg>
+                                        <span className="text-indigo-900 text-lg font-semibold">{categorie_four}</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                                        </svg>
+                                        <span className="text-indigo-900 text-lg font-semibold">{categorie_five}</span>
+                                    </li>
+                                </ul>
+                                <motion.button
+                                  variants={buttonVariants}
+                                  whileHover="hover"
+                                  className="rounded py-3 px-4 text-white bg-gradient-to-tr from-violet-900 to-blue-600 font-semibold text-lg">
+                               Add To Cart
+                             </motion.button>
+                            </div>
+                        </motion.div>
         </div>
     );
 };

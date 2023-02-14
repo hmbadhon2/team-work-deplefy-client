@@ -17,6 +17,18 @@ const UserProfile = () => {
 
 	// const imgHost = d0ee0f160648d3906c64599f51fb220b
 
+<<<<<<< HEAD
+	const { data: profileData = [], refetch } = useQuery({
+
+		queryKey: ['profileDatabase', user?.email],
+		queryFn: async () => {
+			const res = await fetch(`https://deplefy-server-mocha.vercel.app/profile?email=${user?.email}`)
+			const data = await res.json();
+			return data;
+		}
+	})
+=======
+>>>>>>> f1fa137d463b8171ada76eb10373d0e21c80acf8
 
 	const handleEditProfile = (data) => {
 
@@ -43,7 +55,7 @@ const UserProfile = () => {
 						location: data?.location,
 
 					}
-					fetch(`https://deplefy-server.vercel.app/profile?email=${user?.email}`, {
+					fetch(`https://deplefy-server-mocha.vercel.app/profile?email=${user?.email}`, {
 						method: 'PUT',
 						headers: {
 							'content-type': 'application/json'

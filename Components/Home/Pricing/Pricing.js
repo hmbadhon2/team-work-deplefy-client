@@ -18,7 +18,7 @@ const Pricing = () => {
 
 		queryKey: ['profileDatabase'],
 		queryFn: async () => {
-			const res = await fetch('https://deplefy-server.vercel.app/pricing')
+			const res = await fetch('https://deplefy-server-mocha.vercel.app/pricing')
 			const data = await res.json();
 			return data;
 		}
@@ -37,7 +37,7 @@ const Pricing = () => {
                     <div className="gap-y-16 gap-x-8 md:my-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
                        
                     {
-                pricings?.map(pricing=><PricingData key={pricing._id} pricing={pricing}></PricingData>)
+                pricings?.map(pricing=><PricingData key={pricing._id} pricing={pricing} refetch={refetch}></PricingData>)
             }
                     </div>
                 </div>

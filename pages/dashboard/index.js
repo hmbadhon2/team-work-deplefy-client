@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { useContext } from "react";
-import Header from "../Components/Header/Header";
-import useAdmin from "../Components/Hooks/useAdmin";
-import Loading from "../Components/Shared/Loading";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
+// import Header from "../Components/Header/Header";
+
+// import Loading from "../Components/Shared/Loading";
+
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
     // const [isSeller] = useSeller(user?.email)
-    const [isAdmin] = useAdmin(user?.email)
+    // const [isAdmin] = useAdmin(user?.email)
     // const [isBuyer] = useBuyer(user?.email)
     return (
         <div className='md:max-w-[1140px] md:mx-auto overflow-hidden'>
@@ -20,13 +21,9 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 text-base-content">
-                        <li className="">
-                        <Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Dashboard</Link>
-                        </li>
-                        <li className="">
-                            <Link rel="noopener noreferrer" href="/AllUsers" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">All Users</Link>
-                        </li>
+                    <ul className="menu p-4 text-base-content dark:text-white">
+                        <li><Link href="/dashboard">Dashboard</Link></li>
+
                         {/* {
                             isBuyer &&
 
@@ -47,10 +44,11 @@ const Dashboard = () => {
                         {
                             // isAdmin &&
 
-                            // <>
-                            //     <li className="font-bold manu-item dark:hover:text-lime-600"><Link href="/AllUsers">All users</Link></li>
-
-                            // </>
+                            <>
+                                <li><Link href="/AllUsers">All users</Link></li>
+                                <li><Link href="/dashboard/cart">Cart</Link></li>
+                               
+                            </>
 
                         }
 

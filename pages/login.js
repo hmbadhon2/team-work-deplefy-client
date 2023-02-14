@@ -49,7 +49,25 @@ const Login = () => {
 
     const date =new Date();
 
+<<<<<<< HEAD
+    const saveUser = (name, email, userType) => {
+        const user = { name, email, userType, date};
+        fetch('https://deplefy-server-mocha.vercel.app/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setLoginUserEmail(email);
+                console.log(data)
+            })
+    }
+=======
 
+>>>>>>> f1fa137d463b8171ada76eb10373d0e21c80acf8
 
     const handleLogin = (data) => {
         setLoginError('')
