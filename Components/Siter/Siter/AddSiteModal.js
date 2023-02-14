@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthContext';
+import { ShareContext } from '../../../ShareProvider/ShareProvider';
 
 
 
 
 const AddSiteModal = () => {
-    const{user}=useContext(AuthContext)
+    const{user}=useContext(AuthContext);
+    const{load}=useContext(ShareContext)
 
 
   const date= new Date();
@@ -30,7 +32,7 @@ const AddSiteModal = () => {
         }
        
 
-        fetch('https://deplefy-server.vercel.appaddNewSite',{
+        fetch('https://deplefy-server.vercel.app/addNewSite',{
            method:"POST",
            headers:{
             "content-type": "application/json"
@@ -40,7 +42,8 @@ const AddSiteModal = () => {
         .then((res)=>res.json())
         .then((data)=>{
             
-            toast.success("Succesful Data")
+            toast.success("Succesful Data");
+            load();
         })
         .catch((err)=>{
             toast.error("Sorry, Filed Post data")

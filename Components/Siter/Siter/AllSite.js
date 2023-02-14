@@ -1,3 +1,4 @@
+import moment from 'moment/moment';
 import React from 'react';
 
 const AllSite = ({ site }) => {
@@ -41,7 +42,7 @@ const AllSite = ({ site }) => {
                             <span className='font-bold text-gray-700 ml-2'>{name}</span>
 
                         </h1>
-                        <h2 className='font-serif'>Last Publish on <span className='font-mono'> {date} </span> </h2>
+                        <h2 className='font-serif'>Last Publish on <span className='font-mono'> {moment(date).format('L')} </span> </h2>
                     </div>
                 </div>
 

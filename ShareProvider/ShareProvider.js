@@ -1,3 +1,4 @@
+import { async } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useContext } from 'react';
@@ -6,18 +7,22 @@ import { useState } from 'react';
 import { createContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
-export const ShareContext=createContext([]);
+export const ShareContext=createContext();
 const ShareProvider = ({children}) => {
-    const [siteData, setSiteData] = useState([]);
     const { user } = useContext(AuthContext);
 
 // ....................Site Data Load........................
-    useEffect(() => {
-        fetch('https://deplefy-server.vercel.app/addNewSite')
-            .then((res) => res.json())
-            .then((data) => setSiteData(data))
-    }, [])
 
+
+    const{data: siteData=[], isLoading, refetch:load}=useQuery({
+        queryKey: ['siteDatabase'],
+        queryFn: async()=>{
+            const res=await fetch('https://deplefy-server.vercel.app/addNewSite');
+            const data= await res.json()
+            return data;
+        }
+
+    })
 
 
 // ....................Profile Data Load........................
@@ -32,10 +37,21 @@ const ShareProvider = ({children}) => {
 		}
 	})
 
+    const {data:contactUser=[]}=useQuery({
+        queryKey: ['contactData'],
+        queryFn: async()=>{
+            const res= await fetch('https://deplefy-server.vercel.app/users')
+            const data=res.json()
+            return data;
+        }
+    })
+
     const shareInfo={
         siteData,
         profileImage,
-         refetch
+        contactUser,
+        refetch,
+        load
     }
     return (
      <ShareContext.Provider value={shareInfo}>
