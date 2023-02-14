@@ -18,9 +18,10 @@ const Pricing = () => {
 
 		queryKey: ['profileDatabase'],
 		queryFn: async () => {
-			const res = await fetch('https://deplefy-server-mocha.vercel.app/pricing')
+			const res = await fetch('https://deplefy-server.vercel.app/pricing')
 			const data = await res.json();
 			return data;
+            console.log(pricings)
 		}
 	})
 

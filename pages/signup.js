@@ -75,7 +75,7 @@ const date =new Date();
     }
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType, date};
-        fetch('https://deplefy-server-mocha.vercel.app/users', {
+        fetch('https://deplefy-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

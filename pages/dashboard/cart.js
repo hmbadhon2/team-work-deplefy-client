@@ -14,8 +14,8 @@ const AddToCart = () => {
     const closeModal = () => {
         setDeletedWish(null)
     }
-    const url = `https://deplefy-server-mocha.vercel.app/bookings?email=${user?.email}`;
-    // const url = `https://deplefy-server-mocha.vercel.app/bookings`;
+    const url = `https://deplefy-server.vercel.app/bookings?email=${user?.email}`;
+    // const url = `https://deplefy-server.vercel.app/bookings`;
 
     const { data: bookings = [], refetch } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -32,7 +32,7 @@ const AddToCart = () => {
     })
     const handleDeleteWishlist = ad => {
         console.log(ad)
-        fetch(`https://deplefy-server-mocha.vercel.app/bookings/${ad._id}`, {
+        fetch(`https://deplefy-server.vercel.app/bookings/${ad._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

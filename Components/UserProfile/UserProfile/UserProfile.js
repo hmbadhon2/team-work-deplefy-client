@@ -22,7 +22,7 @@ const UserProfile = () => {
 
 		queryKey: ['profileDatabase', user?.email],
 		queryFn: async () => {
-			const res = await fetch(`https://deplefy-server-mocha.vercel.app/profile?email=${user?.email}`)
+			const res = await fetch(`https://deplefy-server.vercel.app/profile?email=${user?.email}`)
 			const data = await res.json();
 			return data;
 		}
@@ -55,7 +55,7 @@ const UserProfile = () => {
 						location: data?.location,
 
 					}
-					fetch(`https://deplefy-server-mocha.vercel.app/profile?email=${user?.email}`, {
+					fetch(`https://deplefy-server.vercel.app/profile?email=${user?.email}`, {
 						method: 'PUT',
 						headers: {
 							'content-type': 'application/json'

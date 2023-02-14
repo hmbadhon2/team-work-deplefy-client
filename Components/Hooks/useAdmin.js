@@ -6,7 +6,7 @@ const useAdmin = email => {
     const [isAdminLoading, setIsAdminLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`https://deplefy-server-mocha.vercel.app/users/admin/${email}`)
+            fetch(`https://deplefy-server.vercel.app/users/admin/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

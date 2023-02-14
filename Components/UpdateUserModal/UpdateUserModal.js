@@ -31,7 +31,7 @@ const UpdateUserModal = ({refetch}) => {
 						current: data?.current,
 
 					}
-					fetch(`https://deplefy-server-mocha.vercel.app/team?email=${user?.email}`, {
+					fetch(`https://deplefy-server.vercel.app/team?email=${user?.email}`, {
 						method: 'PUT',
 						headers: {
 							'content-type': 'application/json'

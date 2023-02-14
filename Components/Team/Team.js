@@ -20,7 +20,7 @@ const Team = () => {
 <<<<<<< HEAD
     queryKey: ['TeamDatabase', user?.email],
     queryFn: async () => {
-      const res = await fetch(`https://deplefy-server-mocha.vercel.app/profile?email=${user?.email}`)
+      const res = await fetch(`https://deplefy-server.vercel.app/profile?email=${user?.email}`)
       const data = await res.json();
       return data;
     }
