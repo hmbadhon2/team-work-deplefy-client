@@ -86,8 +86,8 @@ const AllUsers = () => {
 
     return (
         <div className='md:max-w-[1140px] md:mx-auto dark:text-black my-10'>
-            <h2 className="text-3xl dark:text-white">All Users</h2>
-            <div className="">
+            <h2 className="md:text-3xl dark:text-white pl-3 md:pl-0 mb-5">All Users</h2>
+            <div className="overflow-hidden dark:bg-slate-900">
                 <table className="table w-full">
                     <thead>
                         <tr>
@@ -106,11 +106,11 @@ const AllUsers = () => {
                                 <td className='font-bold' data-label="SL.No">{i + 1}</td>
                                 <td data-label="NAME">{user.name}</td>
                                 <td data-label="EMAIL">{user.email}</td>
-                                <td data-label="USER TYPE" className='font-bold text-primary'>{user.userType}</td>
+                                <td data-label="USER TYPE" className='font-bold teamNameColor'>{user.userType}</td>
                                 <td data-label="VERIFICATION">
                                     <label
                                         onClick={() => handleUserStatusUpdate(user._id)}
-                                        className="btn  btn-accent btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
+                                        className="builds-button p-2 rounded-lg font-bold dark:bg-lime-600 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
                                 </td>
                                 <td data-label="ADMIN">{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
                                 <td data-label="ACTION"><button onClick={() => handleUserDelete(user)} className='btn btn-xs btn-danger'>Delete</button></td>

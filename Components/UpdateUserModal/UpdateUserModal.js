@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/AuthContext';
+import { ShareContext } from '../../ShareProvider/ShareProvider';
 
-const UpdateUserModal = ({teamRefetch}) => {
+const UpdateUserModal = ({refetch}) => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const{user, refetch:loader}=useContext(AuthContext)
+    const{user}=useContext(AuthContext);
 
     const handleTeam = (data) => {
 
@@ -40,9 +41,7 @@ const UpdateUserModal = ({teamRefetch}) => {
 						.then(res => res.json())
 						.then(data => {
 							toast.success('Team setting Edit is Successfully');
-							// refetch();
-                            teamRefetch();
-                            loader()
+                            refetch();
 							reset()
 						})
 				}
@@ -82,7 +81,7 @@ const UpdateUserModal = ({teamRefetch}) => {
                                 {errors.current && <p role="alert" className='text-red-500'>{errors.current?.message}</p>}
                             </div>
                             {/* <label htmlFor="my-modal-6"><button type='submit' className="btn w-full btn-info btn-sm">Submit</button></label> */}
-                            <button type='submit' className="btn w-full btn-info btn-sm"><label htmlFor="my-modal-3">Submit</label></button>
+                            <button type='submit' className="builds-button  dark:bg-lime-600 dark:text-black font-bold py-2 w-full"><label htmlFor="my-modal-3">Submit</label></button>
                         </div>
                     </form>
 

@@ -135,15 +135,15 @@ const date =new Date();
                                     })} className="input input-bordered w-full" />
                                     {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                                 </div>
-                                <input className='login-button dark:bg-info dark:text-black py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
+                                <input className='login-button dark:bg-lime-600 dark:text-black py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
-                            <p className='dark:text-white'>Already have an account <Link href="/login" className='teamNameColor font-bold dark:text-info' >Please Login</Link></p>
+                            <p className='dark:text-white'>Already have an account <Link href="/login" className='teamNameColor font-bold dark:text-lime-600' >Please Login</Link></p>
                             <div className="divider dark:text-white">OR</div>
                             <div>
                                 {
-                                    theme == "dark" ? <button onClick={handleGoogleSingIn} className='btn btn-outline btn-info rounded-lg w-full'><div className='flex items-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
+                                    theme == "dark" ? <button onClick={handleGoogleSingIn} className='google-buttonDark rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
                                 }
                             </div>
                         </div>

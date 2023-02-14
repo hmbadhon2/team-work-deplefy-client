@@ -6,7 +6,7 @@ html,
 body {
   /* max-width: 100vw; */
   /* overflow-x: hidden; */
-  @apply bg-gray-100 text-gray-900 dark:text-white;
+  @apply bg-gray-100 text-gray-900 dark:text-white ;
 }
 
 /* body {
@@ -55,11 +55,15 @@ a {
   background-color: none;
   border: 1px solid navy;
   color: navy;
+  font-weight: bold;
 }
 .manu-button:hover{
   background-color: navy;
   color: white;
 }
+
+
+
 .teamNameColor{
   color: navy;
 }
@@ -97,6 +101,7 @@ a {
   font-weight: bold;
 }
 
+
 .new-site{
   background-color: navy;
   color: white;
@@ -113,25 +118,50 @@ a {
 .bg {
   background-image: '/data_center_bg.jpg';
 }
+.manu-two{
+  background-color: navy;
+}
 
-/* .deployAnimation{
-  /* width: 500px; */
+/* ................Dark Mode..................... */
 
+.manu-buttonDark{
+  background-color: none;
+  border: 1px solid #65A30D;
+  color: #65A30D;
+  font-weight: bold;
+}
+.manu-buttonDark:hover{
+  background-color: #65A30D;
+  color: black;
+}
 
+.google-buttonDark{
+  background-color: none;
+  border: 1px solid #65A30D;
+  color: #65A30D;
+  font-weight: bolder;
+  padding: 12px 0;
+}
+.google-buttonDark:hover{
+  background-color: #65A30D;
+  color: black;
+}
 
-/* ....................................... */
+.darkModeTextColor{
+  color: #65A30D;
+}
 
+.table{
+  background-color: #65A30D;
+}
+/* ................Responsive Design.................. */
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
 
 
 @media (max-width: 576px) {
   .table thead {
     display: none;
+    
   }
 
   .table,
@@ -139,13 +169,17 @@ a {
   .table tr,
   .table td {
     display: block;
-    width: 100%;
+    
+    /* width: 100%; */
+    
   }
   .table tr {
     margin-bottom: 15px;
   }
   .table td {
-    padding-left: 50%;
+    padding-left: 40%;
+    padding-bottom: 25px;
+    padding-top: 10px;
     text-align: left;
     position: relative;
   }
@@ -155,8 +189,45 @@ a {
     left: 0;
     width: 50%;
     padding-left: 15px;
-    font-size: 15px;
-    font-weight: bold;
+    /* font-size: 15px; */
+    /* font-weight: bold; */
+    text-align: left;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px){
+  .table thead {
+    display: none;
+    
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    
+    /* width: 100%; */
+    
+  }
+  .table tr {
+    margin-bottom: 15px;
+  }
+  .table td {
+    padding-left: 50%;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    text-align: left;
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    /* font-size: 15px; */
+    /* font-weight: bold; */
     text-align: left;
   }
 }

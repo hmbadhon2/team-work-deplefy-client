@@ -7,10 +7,12 @@ import { AuthContext } from "../../context/AuthContext";
 import { FaUser } from 'react-icons/fa';
 import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
 import { async } from "@firebase/util";
+import { ShareContext } from "../../ShareProvider/ShareProvider";
 
 
 const Header = () => {
-	const { user, logOut, profileImage, isFetching} = useContext(AuthContext)
+	const { user, logOut } = useContext(AuthContext);
+	const {profileImage, isFetching}=useContext(ShareContext);
 	const [isOpen, setIsOpen] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
@@ -24,7 +26,7 @@ const Header = () => {
 
 	if (!mounted) return null;
 
-	if(isFetching){
+	if (isFetching) {
 		return <div>
 			<div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
 		</div>
@@ -32,24 +34,24 @@ const Header = () => {
 
 	const manuItem = <>
 		<li className="">
-			<a rel="noopener noreferrer" href="/Home" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Home</a>
+			<Link rel="noopener noreferrer" href="/Home" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Home</Link>
 		</li>
 
 		<li className="">
-			<a rel="noopener noreferrer" href="/Sites" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Sites</a>
+			<Link rel="noopener noreferrer" href="/Sites" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Sites</Link>
 		</li>
 
 		<li className="">
-			<a rel="noopener noreferrer" href="/Contact" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Contact</a>
+			<Link rel="noopener noreferrer" href="/Contact" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Contact</Link>
 		</li>
 		{/* <li className="">
 			<a rel="noopener noreferrer" href="/Teams" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Team settings</a>
 		</li> */}
 		<li className="">
-			<a rel="noopener noreferrer" href="/Builds" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Builds</a>
+			<Link rel="noopener noreferrer" href="/Builds" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Builds</Link>
 		</li>
 		<li className="">
-			<a rel="noopener noreferrer" href="/dashboard" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Dashboard</a>
+			<Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Dashboard</Link>
 		</li>
 	</>
 
@@ -67,7 +69,7 @@ const Header = () => {
 
 
 
-// console.log(profileImage)
+	// console.log(profileImage)
 
 	const imageManu = <>
 		<Menu
@@ -78,14 +80,14 @@ const Header = () => {
 		>
 			<MenuHandler>
 				{
-					profileImage[0]?.image ? <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={profileImage[0]?.image} alt="" /></Button> : 
-					<div>
-						{
-						user?.photoURL?  <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={user?.photoURL} alt="" /></Button> :  <Button variant="gradient"><img className='w-12 h-12 rounded-full' src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" /></Button> 
-						}
-                     
-					</div>
-					
+					profileImage[0]?.image ? <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={profileImage[0]?.image} alt="" /></Button> :
+						<div>
+							{
+								user?.photoURL ? <Button variant="gradient"><img className='w-12 h-12 rounded-full' src={user?.photoURL} alt="" /></Button> : <Button variant="gradient"><img className='w-12 h-12 rounded-full' src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" /></Button>
+							}
+
+						</div>
+
 				}
 
 
@@ -95,41 +97,41 @@ const Header = () => {
 					<div className="flex items-center p-2 space-x-4">
 						<div className="avatar">
 							<div className="w-12 h-12 rounded-full">
-								
+
 								{
-									profileImage[0]?.image ? <img src={profileImage[0]?.image} /> 
-									: 
-									<div>
-										{user?.photoURL? <img src={user?.photoURL} />: <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' />}
-									</div>
+									profileImage[0]?.image ? <img src={profileImage[0]?.image} />
+										:
+										<div>
+											{user?.photoURL ? <img src={user?.photoURL} /> : <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' />}
+										</div>
 								}
 							</div>
 						</div>
 						{/* <img src={user?.photoURL} alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" /> */}
 						<div>
 							{
-								profileImage[0]?.name? <h2 className="text-lg font-semibold">{profileImage[0]?.name}</h2> : <h2 className="text-lg font-semibold">{user?.displayName}</h2>
+								profileImage[0]?.name ? <h2 className="text-lg font-semibold">{profileImage[0]?.name}</h2> : <h2 className="text-lg font-semibold">{user?.displayName}</h2>
 							}
 							<span className="flex items-center space-x-1">
-								<a rel="noopener noreferrer" href="/Profile" className="text-xs hover:underline dark:text-gray-400">View profile</a>
+								<Link href="/Profile" passHref rel="noopener noreferrer" className="text-xs hover:underline dark:text-gray-400">View profile</Link>
 							</span>
 						</div>
 					</div>
 					<div className="divide-y divide-gray-700">
 						<ul className="pt-2 pb-4 space-y-1 text-sm">
-							<Link href='/Teams'>
+							<Link href='/Teams' passHref>
 								<li className="icon">
 									<a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current text-black dark:text-white">
 											<path d="M68.983,382.642l171.35,98.928a32.082,32.082,0,0,0,32,0l171.352-98.929a32.093,32.093,0,0,0,16-27.713V157.071a32.092,32.092,0,0,0-16-27.713L272.334,30.429a32.086,32.086,0,0,0-32,0L68.983,129.358a32.09,32.09,0,0,0-16,27.713V354.929A32.09,32.09,0,0,0,68.983,382.642ZM272.333,67.38l155.351,89.691V334.449L272.333,246.642ZM256.282,274.327l157.155,88.828-157.1,90.7L99.179,363.125ZM84.983,157.071,240.333,67.38v179.2L84.983,334.39Z"></path>
 										</svg>
 										<span>Team settings</span>
-										
+
 									</a>
 								</li>
 							</Link>
 
-							<Link href='/Analysis'>
+							<Link href='/Analysis' passHref>
 								<li><a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current text-black dark:text-white">
 										<path d="M203.247,386.414,208,381.185V355.4L130.125,191H93.875L16,355.4v27.042l4.234,4.595a124.347,124.347,0,0,0,91.224,39.982h.42A124.343,124.343,0,0,0,203.247,386.414ZM176,368.608a90.924,90.924,0,0,1-64.231,26.413h-.33A90.907,90.907,0,0,1,48,369.667V362.6l64-135.112L176,362.6Z"></path>
@@ -157,10 +159,9 @@ const Header = () => {
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current text-black dark:text-white">
 									<path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
 									<rect width="32" height="64" x="256" y="232"></rect>
-								</svg>															<span>Logout</span>
-								{/* {
-															theme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5">Log Out</button> : <button onClick={handleLogOut} className=" manu-button px-5 py-2 rounded-3xl mr-5">Log Out</button>
-														} */}
+								</svg>
+								<span>Logout</span>
+
 							</a>
 							</li>
 						</ul>
@@ -179,7 +180,7 @@ const Header = () => {
 
 		if (theme === "dark") {
 			return (
-				<div onClick={() => setTheme('light')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-info">
+				<div onClick={() => setTheme('light')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-lime-600">
 					<path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
 				</svg></div>
 
@@ -202,11 +203,13 @@ const Header = () => {
 		<div className="pt-24">
 			<div className="navbar bg-blue-50 dark:bg-black dark:text-white dark:border-b-2 dark:border-slate-900 lg:px-28 shadow">
 				<div className="navbar-start">
-					<div className="w-14 rounded">
+				<Link href='/' p>
+				<div className="w-14 rounded">
 						{
-							theme === "dark" ? <img src="https://i.ibb.co/wWbLTRv/Untitled-design-2021-07-06-T142744-045-1-removebg-preview.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
+							theme === "dark" ? <img src="https://i.ibb.co/cky6b16/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
 						}
 					</div>
+				</Link>
 
 					<div className="ml-4">
 						<ul className="hidden md:flex">
@@ -234,12 +237,12 @@ const Header = () => {
 
 											<div>
 												{
-													theme === "dark" ? <Link href='/login'><button className="btn btn-outline btn-info px-5 py-2 rounded-3xl mr-5">Login</button></Link> : <Link href='/login'><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
+													theme === "dark" ? <Link href='/login' passHref><button className="manu-buttonDark px-5 py-2 rounded-3xl mr-5">Login</button></Link> : <Link href='/login' passHref><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
 												}
 											</div>
 											<div>
 												{
-													theme === "dark" ? <Link href='/signup'><button className=" btn btn-outline btn-info px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
+													theme === "dark" ? <Link href='/signup' passHref><button className="manu-buttonDark px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
 												}
 											</div>
 
@@ -273,13 +276,13 @@ const Header = () => {
 					<div>
 
 						{isOpen ?
-							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-pink-800 dark:text-info font-bold">
+							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-blue-900 dark:text-lime-600 font-bold">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
 									<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 								</svg>
 							</button></label>
 							:
-							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-blue-900 dark:text-info font-bold">
+							<label onClick={() => setIsOpen(!isOpen)} tabIndex={0} className="m-1"><button className="text-blue-900 dark:text-lime-600 font-bold">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 								</svg>
@@ -299,7 +302,7 @@ const Header = () => {
 								{
 									user?.uid ? <div>
 										{
-											theme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
+											theme === "dark" ? <button onClick={handleLogOut} className="manu-buttonDark px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
 										}
 									</div>
 
@@ -307,12 +310,12 @@ const Header = () => {
 										<>
 											<div>
 												{
-													theme === "dark" ? <Link href='/login'><button className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login'><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
+													theme === "dark" ? <Link href='/login' passHref><button className="manu-buttonDark px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login' passHref><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
 												}
 											</div>
 											<div>
 												{
-													theme === "dark" ? <Link href='/signup'><button className="btn btn-outline btn-info px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup'><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
+													theme === "dark" ? <Link href='/signup' passHref><button className="manu-buttonDark px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
 												}
 											</div>
 

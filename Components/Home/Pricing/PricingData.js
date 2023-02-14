@@ -1,69 +1,35 @@
 import React, { useContext } from 'react';
 import { motion, spring } from "framer-motion"
 import Image from 'next/image';
-import { AuthContext } from '../../../context/AuthContext';
-import { toast } from 'react-toastify';
 const buttonVariants = {
-    hover:{
-        scale:1.1
+    hover: {
+        scale: 1.1
     }
 }
 
-const PricingData = ({ pricing, refetch }) => {
-   const {user} = useContext(AuthContext)
+const PricingData = ({pricing}) => {
     const{_id, text, money, month, categorie_one,categorie_two, categorie_three, categorie_four, categorie_five}=pricing;
-    const handleBookingButton = (event) => {
-        const bookings = {
-            package: text,
-            name: user.displayName,
-            money,
-            email: user.email,
-         
-        }
-        fetch('https://deplefy-server-mocha.vercel.appbookings', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(bookings)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.acknowledged) {
-                    toast.success('Added to your Cart')
-                    refetch()
-                }
-                else {
-                    toast.error(data.message)
-                }
-
-            })
-
-    }
-   
-   
     return (
         <div>
- <motion.div
-                        initial={{x:'-100vw'}}
-                        animate={{x:0}}
-                        transition={{type:'spring', stiffness:50}}
-                        whileHover= "hover"
-                        >
-                            <div className="my-4  md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded shadow sm:p-8">
-                                <div className="space-y-2">
-                                    <div className="flex flex-row items-center mb-10">
-                                    <Image src="/Pricing Logo/Pricing_Reguler_logo-removebg-preview.png" width={80} height={80}></Image>
-                                    <h4 className="text-2xl font-bold mb-5 ml-3 text-indigo-900 ">{text}</h4>
-                                    </div>
-                                    <p className="text-6xl font-bold text-indigo-900 ">
-                                    <span>${money}
-                                        <span className="text-sm tracking-wide">/{month}</span>
-                                    </span>
-                                    </p>
-                                   
-                                </div>
+            <motion.div
+                initial={{ x: '-100vw' }}
+                animate={{ x: 0 }}
+                transition={{ type: 'spring', stiffness: 50 }}
+                whileHover="hover"
+            >
+                <div className="my-4  md:my-0 pricing  shadow-2xl flex flex-col p-6 space-y-6 rounded dark:shadow-slate-800 sm:p-8">
+                    <div className="space-y-2">
+                        <div className="flex flex-row items-center mb-10">
+                            <Image src="/Pricing Logo/Pricing_Reguler_logo-removebg-preview.png" width={80} height={80}></Image>
+                            <h4 className="text-2xl font-bold mb-5 ml-3 text-indigo-900 dark:text-black">{text}</h4>
+                        </div>
+                        <p className="text-6xl font-bold text-indigo-900 dark:text-black">
+                            <span>${money}
+                                <span className="text-sm tracking-wide">/{month}</span>
+                            </span>
+                        </p>
+
+                    </div>
 
                                 <ul className="flex-1 space-y-2 leading-12 ">
                                     <li className="flex items-center space-x-2">
@@ -100,7 +66,6 @@ const PricingData = ({ pricing, refetch }) => {
                                 <motion.button
                                   variants={buttonVariants}
                                   whileHover="hover"
-                                    onClick={() => handleBookingButton(_id)}
                                   className="rounded py-3 px-4 text-white bg-gradient-to-tr from-violet-900 to-blue-600 font-semibold text-lg">
                                Add To Cart
                              </motion.button>

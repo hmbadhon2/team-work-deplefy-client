@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../../../context/AuthContext';
 
 
 
 
 const AddSiteModal = () => {
+    const{user}=useContext(AuthContext)
 
 
+  const date= new Date();
 
     const handleAddSite = (event) => {
         event.preventDefault()
         console.log(event)
         const name= event.target.name.value;
         const id=event.target.id.value;
-        const date=event.target.date.value;
         const image=event.target.image.value;
         const website=event.target.website.value;
 
@@ -69,10 +71,10 @@ const AddSiteModal = () => {
                     <form action="" onSubmit={handleAddSite}>
 
 
-                    <div className="form-control w-full mt-10 ">
+                    <div className="form-control w-full mt-6 ">
                             <label className="label"> <span className="label-text font-serif text-sm">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Your Name" className="input input-bordered w-full mb-3 " /> 
+                            <input type="text" name='name' placeholder="Your Name" defaultValue={user?.displayName} readOnly className="input input-bordered w-full mb-3 " /> 
                         </div>
 
 
@@ -82,14 +84,6 @@ const AddSiteModal = () => {
                             </label>
                             <input type="text" name='id' placeholder="Id" className="input input-bordered w-full mb-3 " />
                         </div>
-
-
-                        <div className="form-control w-full ">
-                            <label className="label"> <span className="label-text font-serif text-sm">Date</span>
-                            </label>
-                            <input type="text" name='date' placeholder="Month/date/your" className="input input-bordered w-full  mb-3" />
-                        </div>
-                       
                        
                         <div className="form-control w-full ">
                             <label className="label"> <span className="label-text font-serif text-sm">Image Url</span>
@@ -113,7 +107,7 @@ const AddSiteModal = () => {
 
 
                         <div className='w-full text-center mt-6'>
-                            <button type='submit' className="btn w-full bg-sky-400 border-none hover:bg-purple-400 btn-sm">Submit</button>
+                            <button type='submit' className="builds-button  dark:bg-lime-600 dark:text-black font-bold py-2 w-full hover:bg-purple-600">Submit</button>
                         </div>
                     </form>
 

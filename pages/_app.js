@@ -11,6 +11,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import ShareProvider from '../ShareProvider/ShareProvider';
 const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps }) {
@@ -19,16 +20,18 @@ export default function App({ Component, pageProps }) {
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
     <AuthProvider>
-    <div>
+     <ShareProvider>
+     <div>
       <div className="header lg:px-[108px]">
         <Header></Header>
       </div>
       <Component {...pageProps} />
       <ToastContainer />
-      <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px]  text-white dark:bg-slate-900 lg:px-[108px]">
+      <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px]  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black lg:px-[108px]">
         <Footer></Footer>
       </div>
     </div>
+     </ShareProvider>
   </AuthProvider>
       </Hydrate>
     </QueryClientProvider>

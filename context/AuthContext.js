@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query"
 
 
 
+
 export const AuthContext = createContext({})
 const auth = getAuth(app)
 
@@ -15,6 +16,10 @@ const auth = getAuth(app)
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+   
+
+
+
     const googleProvider = new GoogleAuthProvider()
     const googleSingIn = () => {
         return signInWithPopup(auth, googleProvider)
@@ -50,6 +55,7 @@ const AuthProvider = ({children}) => {
     }, [])
 
 
+
     const { data: profileImage = [], refetch, isFetching } = useQuery({
 
 		queryKey: ['profiledata', user?.email],
@@ -76,7 +82,10 @@ const AuthProvider = ({children}) => {
             })
     }
 
-	console.log(profileImage)
+
+
+
+ 
     const authInfo = {
         createUser,
         signIn,
@@ -85,8 +94,7 @@ const AuthProvider = ({children}) => {
         user,
         loading,
         googleSingIn,
-        profileImage,
-        refetch
+      
     }
     return (
         <AuthContext.Provider value={authInfo}>

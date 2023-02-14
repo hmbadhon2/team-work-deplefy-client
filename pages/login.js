@@ -24,8 +24,32 @@ const Login = () => {
     //     navigate(from, { replace: true });
     // }
 
+    // const navigate = useNavig();
+    // const location= useLocation();
+
+  
+
+    // const from = location.state?.from?.pathname || '/';
+    
+    // useEffect(()=>{
+    //     if(token){
+    //         navigate(from, {replace: true})
+    //     }
+    // }, [from, navigate, token])
+
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null;
+
+
     const date =new Date();
 
+<<<<<<< HEAD
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType, date};
         fetch('https://deplefy-server-mocha.vercel.app/users', {
@@ -41,6 +65,9 @@ const Login = () => {
                 console.log(data)
             })
     }
+=======
+
+>>>>>>> f1fa137d463b8171ada76eb10373d0e21c80acf8
 
     const handleLogin = (data) => {
         setLoginError('')
@@ -51,22 +78,11 @@ const Login = () => {
                 console.log(user)
                 setLoginUserEmail(data.email);
                 toast.success('Please Login Successfully');
-
+                // navigate(from, {replace: true})
 
             })
 
-            const userInfo = {
-                displayName: data.name,
-                email: data.email
-            }
-            console.log(userInfo)
-            updateUser(userInfo)
-                .then(() => {
-                    console.log(data.name, data.email, data.userType);
-                    saveUser(data.name, data.email, data.userType);
 
-                })
-                .catch(error => console.log(error))
             .catch(err => {
                 console.log(err.message)
                 setLoginError(err.message)
@@ -74,14 +90,23 @@ const Login = () => {
     }
 
 
-    const { theme, setTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
+    const saveUser = (name, email, date) => {
+        const user = { name, email, date};
+        fetch('https://deplefy-server.vercel.app/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // setLoginUserEmail(email);
+                console.log(data)
+            })
+    };
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
 
-    if (!mounted) return null;
 
 
     const handleGoogleSingIn = () => {
@@ -93,7 +118,7 @@ const Login = () => {
                 const user = result.user;
                 toast.success('You have login Successfully');
                 console.log(user)
-                saveUser(user?.displayName, user?.email);
+                saveUser(user?.displayName, user?.email, date);
             })
             .catch(error => {
                 console.log(error)
@@ -132,17 +157,17 @@ const Login = () => {
                                     <label className="label"> <span className="label-text dark:text-white">Forget Password?</span></label>
                                     {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                                 </div>
-                                <input className='login-button dark:bg-info dark:text-black py-3 rounded-lg w-full' value="Login" type="submit" />
+                                <input className='login-button dark:bg-lime-600 dark:text-black py-3 rounded-lg w-full' value="Login" type="submit" />
                                 <div>
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>
                             </form>
-                            <p className='dark:text-white'>New to Deplify <Link className='teamNameColor font-bold dark:text-info' href="/signup">Create a New Account</Link></p>
+                            <p className='dark:text-white'>New to Deplify <Link className='teamNameColor font-bold dark:text-lime-600' href="/signup">Create a New Account</Link></p>
                             <div className="divider dark:text-white">OR</div>
 
                             <div>
                                 {
-                                    theme == "dark" ? <button onClick={handleGoogleSingIn} className='btn btn-outline btn-info rounded-lg w-full'><div className='flex items-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
+                                    theme == "dark" ? <button onClick={handleGoogleSingIn} className='google-buttonDark rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button> : <button onClick={handleGoogleSingIn} className='google-button rounded-lg w-full'><div className='flex justify-center'><FaGoogle className='font-bold text-2xl mr-2'></FaGoogle>Login with Google</div></button>
                                 }
                             </div>
 

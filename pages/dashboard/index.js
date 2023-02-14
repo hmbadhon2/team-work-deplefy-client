@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { useContext } from "react";
-import Header from "../../Components/Header/Header";
-import useAdmin from "../../Components/Hooks/useAdmin";
-import Loading from "../../Components/Shared/Loading";
 import { AuthContext } from "../../context/AuthContext";
+// import Header from "../Components/Header/Header";
+
+// import Loading from "../Components/Shared/Loading";
+
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
     // const [isSeller] = useSeller(user?.email)
-    const [isAdmin] = useAdmin(user?.email)
+    // const [isAdmin] = useAdmin(user?.email)
     // const [isBuyer] = useBuyer(user?.email)
     return (
         <div className='md:max-w-[1140px] md:mx-auto overflow-hidden'>
@@ -46,6 +47,7 @@ const Dashboard = () => {
                             <>
                                 <li><Link href="/AllUsers">All users</Link></li>
                                 <li><Link href="/dashboard/cart">Cart</Link></li>
+                               
                             </>
 
                         }

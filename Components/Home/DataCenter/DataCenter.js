@@ -5,7 +5,7 @@ const DataCenter = () => {
     return (
         <div className={css.bg}>
             
-            <div className="md:max-w-[1140px] md:mx-auto">
+            <div className="md:max-w-[1140px] md:mx-auto ">
                 <div className="font-semibold text-center">
                         <h4 className="mb-10">LEARN ABOUT</h4>
                         <h2 className="text-2xl md:text-5xl mb-10"> We Have Capacity For 20 TBPS & Global <br></br> 99+ Data Centers</h2>
