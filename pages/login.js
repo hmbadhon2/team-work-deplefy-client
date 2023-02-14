@@ -75,6 +75,7 @@ const Login = () => {
     const saveUser = (name, email, date) => {
         const user = { name, email, date};
         fetch('https://deplefy-server.vercel.app/users', {
+            // mode: 'no-cors',
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -83,7 +84,7 @@ const Login = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // setLoginUserEmail(email);
+                setLoginUserEmail(email);
                 console.log(data)
             })
     };
