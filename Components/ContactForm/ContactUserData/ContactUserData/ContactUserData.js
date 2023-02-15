@@ -13,13 +13,13 @@ const ContactUserData = ({ contactUser }) => {
                 {
                     contactUser?.image ?
                         <div className="relative flex-shrink-0">
-                            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
+                            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-600 border rounded-full dark:border-gray-900"></span>
                             <img src={contactUser.image} alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />
                         </div>
                         :
                         <>
                             <div className="relative flex-shrink-0">
-                                <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
+                                <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-600 border rounded-full  dark:border-gray-900"></span>
                                 <img src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />
                             </div>
 
@@ -29,7 +29,7 @@ const ContactUserData = ({ contactUser }) => {
                 <div>
                     <h2 className="text-lg font-semibold">{contactUser.name}</h2>
                     <span className="flex items-center space-x-1">
-                        <Link href="/Profile" passHref rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">View profile</Link>
+                        <Link href="/Profile" passHref rel="noopener noreferrer" className="text-xs hover:underline ">View profile</Link>
                     </span>
                 </div>
             </div>
