@@ -17,16 +17,8 @@ const Team = () => {
   const{profileImage, refetch}=useContext(ShareContext);
 
 
-<<<<<<< HEAD
-    queryKey: ['TeamDatabase', user?.email],
-    queryFn: async () => {
-      const res = await fetch(`https://deplefy-server.vercel.app/profile?email=${user?.email}`)
-      const data = await res.json();
-      return data;
-    }
-  })
-=======
->>>>>>> f1fa137d463b8171ada76eb10373d0e21c80acf8
+
+
 
   return (
     <div className='my-4'>

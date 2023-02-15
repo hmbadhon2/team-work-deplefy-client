@@ -21,7 +21,7 @@ const PricingData = ({ pricing, refetch }) => {
             email: user.email,
 
         }
-        fetch('https://deplefy-server.vercel.appbookings', {
+        fetch('https://deplefy-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
