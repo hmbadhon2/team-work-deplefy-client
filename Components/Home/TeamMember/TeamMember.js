@@ -4,8 +4,8 @@ const TeamMember = () => {
     return (
         <div className="py-10">
             <div className='text-center'>
-                <p className='teamNameColor font-bold text-2xl dark:text-lime-600'>Our Team</p>
-                <h1 className="text-2xl font-bold md:text-3xl">Meet With <span className='teamNameColor dark:text-lime-600'>Our Team</span></h1>
+                <p className='teamNameColor font-bold text-2xl dark:text-lime-700'>Our Team</p>
+                <h1 className="text-2xl font-bold md:text-3xl">Meet With <span className='teamNameColor dark:text-lime-700'>Our Team</span></h1>
             </div>
             <section className="py-6 ">
                 <div className="flex flex-col justify-center p-4 mx-auto">

@@ -94,7 +94,7 @@ const UserProfile = () => {
 			{/* ................................................. */}
 			<div className='mb-5 mt-16 mx-3'>
 				<div>
-					<h1 className='teamNameColor dark:text-lime-600 text-3xl font-semibold'>Profile</h1>
+					<h1 className='teamNameColor dark:text-lime-700 text-3xl font-semibold'>Profile</h1>
 					<p className='text-2xl'>Your personal information</p>
 				</div>
 			</div>
@@ -153,7 +153,7 @@ const UserProfile = () => {
 							{/* ....................................... */}
 
 							<div className='mt-5'>
-								<label htmlFor="my-modal-6" className="builds-button dark:bg-lime-600 ml-5 md:ml-0 px-4 py-2 rounded-lg font-semibold dark:bg-lime-600 dark:text-black">Edit Profile</label>
+								<label htmlFor="my-modal-6" className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white 0 ml-5 md:ml-0 px-4 py-2 rounded-lg font-semibold dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black">Edit Profile</label>
 								<div className='dark:text-black dark:bg-black'>
 									{/* The button to open modal */}
 
@@ -192,7 +192,7 @@ const UserProfile = () => {
 														{errors.location && <p role="alert" className='text-red-500'>{errors.location?.message}</p>}
 													</div>
 													{/* <label htmlFor="my-modal-6"><button type='submit' className="btn w-full btn-info btn-sm">Submit</button></label> */}
-													<button type='submit' className="builds-button  dark:bg-lime-600 dark:text-black font-bold py-2 w-full"><label htmlFor="my-modal-6">Submit</label></button>
+													<button type='submit' className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white  dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black font-bold py-2 w-full"><label htmlFor="my-modal-6">Submit</label></button>
 												</div>
 											</form>
 
