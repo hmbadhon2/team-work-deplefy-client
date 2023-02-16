@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../context/AuthContext';
-import { ShareContext } from '../../../ShareProvider/ShareProvider';
 
 
 
 
-const AddSiteModal = () => {
+const AddSiteModal = ({siteLoad}) => {
     const{user}=useContext(AuthContext);
-    const{load}=useContext(ShareContext)
+   
 
 
   const date= new Date();
@@ -16,10 +15,11 @@ const AddSiteModal = () => {
     const handleAddSite = (event) => {
         event.preventDefault()
         console.log(event)
-        const name= event.target.name.value;
-        const id=event.target.id.value;
-        const image=event.target.image.value;
-        const website=event.target.website.value;
+        const form=event.target;
+        const name= form.name.value;
+        const id=form.id.value;
+        const image=form.image.value;
+        const website=form.website.value;
 
         // console.log(name, id, date, image, website)
 
@@ -43,7 +43,9 @@ const AddSiteModal = () => {
         .then((data)=>{
             
             toast.success("Succesful Data");
-            load();
+            siteLoad();
+            form.reset();
+           
         })
         .catch((err)=>{
             toast.error("Sorry, Filed Post data")

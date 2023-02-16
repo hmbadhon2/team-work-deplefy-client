@@ -32,9 +32,11 @@ const date =new Date();
                 const user = result.user
                 console.log(user)
                 saveUser(user?.displayName, user?.email);
+                toast.success('User created Successfully')
             })
             .catch(error => {
                 console.log(error)
+                toast.error('Login is not Successfully')
                 setSignUpError(error.message)
             })
     }
@@ -51,7 +53,7 @@ const date =new Date();
                 const user = result.user;
                 reset();
                 toast.success('User created Successfully', {
-                    position: toast.POSITION.TOP_CENTER
+                 position: toast.POSITION.TOP_CENTER
                 })
                 const userInfo = {
                     displayName: data.name,
@@ -70,6 +72,7 @@ const date =new Date();
                     .catch(error => console.log(error))
             })
             .catch(error => {
+                toast.error('Sign Up is not Successfully')
                 setSignUpError(error.message)
             })
     }

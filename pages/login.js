@@ -103,7 +103,8 @@ const Login = () => {
                 saveUser(user?.displayName, user?.email, date);
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
+                toast.error('Login is not Successfully')
                 setLoginError(error.message)
             })
     }

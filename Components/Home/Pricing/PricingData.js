@@ -16,9 +16,9 @@ const PricingData = ({ pricing, refetch }) => {
     const handleBookingButton = (event) => {
         const bookings = {
             package: text,
-            name: user.displayName,
+            name: user?.displayName,
             money,
-            email: user.email,
+            email: user?.email,
 
         }
         fetch('https://deplefy-server.vercel.app/bookings', {
@@ -52,7 +52,7 @@ const PricingData = ({ pricing, refetch }) => {
                 transition={{ type: 'spring', stiffness: 50 }}
                 whileHover="hover"
             >
-                <div className="my-4  md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded shadow sm:p-8">
+                <div className="my-4  md:my-0 pricing flex flex-col p-6 space-y-6 rounded shadow sm:p-8">
                     <div className="space-y-2">
                         <div className="flex flex-row items-center mb-10">
                             <Image src="/Pricing Logo/Pricing_Reguler_logo-removebg-preview.png" width={80} height={80}></Image>
