@@ -140,7 +140,7 @@ const Team = () => {
 
             {/* <button className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-lime-600 dark:text-black mt-10">Edit Team Information</button> */}
 
-            <label htmlFor="my-modal-3" className="builds-button px-4 py-2 rounded-lg font-semibold dark:bg-lime-700 dark:text-black ">Edit Team Information</label>
+            <label htmlFor="my-modal-3" className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white px-4 py-2 rounded-lg font-semibold dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black ">Edit Team Information</label>
           </div>
 
         </div>
