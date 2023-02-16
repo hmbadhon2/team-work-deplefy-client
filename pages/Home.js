@@ -6,6 +6,8 @@ import TeamMember from '../Components/Home/TeamMember/TeamMember';
 import Domain from '../Components/Home/Domain/Domain';
 import ChoseUs from '../Components/Home/ChooseUs/ChoseUs';
 import DataCenter from '../Components/Home/DataCenter/DataCenter';
+import ReTeamMember from '../Components/Home/ReTeeamMember/ReTeamMember';
+
 
 
 const Home = () => {
@@ -25,6 +27,9 @@ const Home = () => {
         </div>   
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <TeamMember/>
+        </div>
+        <div className='md:max-w-[1140px] md:mx-auto my-12' >
+            <ReTeamMember/>
         </div>
         <div className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-800 dark:to-lime-500 dark:text-black py-12 my-12 rounded" >
             <DataCenter/>
