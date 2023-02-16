@@ -4,7 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { FaUser } from 'react-icons/fa';
 import { Menu, MenuHandler, MenuList, MenuItem, Button } from "@material-tailwind/react";
 import { async } from "@firebase/util";
 import { ShareContext } from "../../ShareProvider/ShareProvider";
