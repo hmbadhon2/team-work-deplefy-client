@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import { useContext } from 'react';
-import { HiOutlineInformationCircle } from "react-icons/Hi";
 import { AuthContext } from '../../../../context/AuthContext';
 
 const ContactUserData = ({ contactUser }) => {
@@ -33,9 +32,7 @@ const ContactUserData = ({ contactUser }) => {
                     </span>
                 </div>
             </div>
-            <div className='text-2xl'>
-                <HiOutlineInformationCircle></HiOutlineInformationCircle>
-            </div>
+    
         </div>
     );
 };

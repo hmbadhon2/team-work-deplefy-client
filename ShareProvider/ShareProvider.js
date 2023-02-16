@@ -14,7 +14,7 @@ const ShareProvider = ({children}) => {
 // ....................Site Data Load........................
 
 
-    const{data: siteData=[], isLoading, refetch:load}=useQuery({
+    const{data: siteData=[], refetch:siteLoad}=useQuery({
         queryKey: ['siteDatabase'],
         queryFn: async()=>{
             const res=await fetch('https://deplefy-server.vercel.app/addNewSite');
@@ -37,7 +37,7 @@ const ShareProvider = ({children}) => {
 		}
 	})
 
-    const {data:contactUser=[]}=useQuery({
+    const {data:contactUser=[], isLoading}=useQuery({
         queryKey: ['contactData'],
         queryFn: async()=>{
             const res= await fetch('https://deplefy-server.vercel.app/users')
@@ -51,7 +51,8 @@ const ShareProvider = ({children}) => {
         profileImage,
         contactUser,
         refetch,
-        load
+        siteLoad,
+        isLoading
     }
     return (
      <ShareContext.Provider value={shareInfo}>

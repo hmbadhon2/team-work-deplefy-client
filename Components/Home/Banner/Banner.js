@@ -19,12 +19,12 @@ const Banner = () => {
     
     return (
         <div className="hero pb-5">
-            <div className="hero-content flex-col md:flex-row-reverse">
-              <div className="md:w-1/2">
+            <div className="md:flex items-center flex-row-reverse">
+              <div className="">
               <Image src="/hero-banner-removebg-preview.png" width={900} height={1000}></Image>
               </div>
-                <div className="md:w-1/2">
-                    <div className="text-4xl leading-8 md:text-5xl lg:text-6xl font-bold teamNameColor dark:text-lime-600">
+                <div className="">
+                    <div className="text-4xl leading-8 md:text-5xl lg:text-6xl font-bold teamNameColor dark:text-lime-700">
                     <Typewriter
                         options={{
                             strings: ["Deploy Solution With Deplify"],
@@ -35,8 +35,7 @@ const Banner = () => {
                     />
                     </div>
                     
-                    <p className="py-6 leading-8 font-semibold text-lg  ">We make it easy to launch your business with the best pricing, hosting service, and 24/7 support.
-
+                    <p className="py-6 font-semibold text-lg  ">We make it easy to launch your business with the best pricing, hosting service, and 24/7 support.
 </p>
                     
 
