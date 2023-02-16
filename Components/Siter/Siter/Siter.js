@@ -6,7 +6,19 @@ import AllSite from './AllSite';
 
 
 const Siter = () => {
-    const{siteData}=useContext(ShareContext);
+    const [siteData, setSiteData] = useState([])
+
+    useEffect(() => {
+        fetch('https://deplefy-server.vercel.app/addNewSite')
+            .then((res) => res.json())
+            .then((data) => setSiteData(data))
+    }, [])
+
+
+
+
+
+
 
     return (
         <div className='my-16 mx-2'>

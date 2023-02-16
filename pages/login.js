@@ -50,7 +50,6 @@ const Login = () => {
     const date =new Date();
 
 
-
     const handleLogin = (data) => {
         setLoginError('')
         signIn(data.email, data.password)
@@ -72,9 +71,10 @@ const Login = () => {
     }
 
 
-    const saveUser = (name, email, userType, date) => {
-        const user = { name, email, userType, date};
+    const saveUser = (name, email, date) => {
+        const user = { name, email, date};
         fetch('https://deplefy-server.vercel.app/users', {
+            // mode: 'no-cors',
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -83,7 +83,7 @@ const Login = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // setLoginUserEmail(email);
+                setLoginUserEmail(email);
                 console.log(data)
             })
     };
@@ -100,7 +100,7 @@ const Login = () => {
                 const user = result.user;
                 toast.success('You have login Successfully');
                 console.log(user)
-                saveUser(user?.displayName, user?.email);
+                saveUser(user?.displayName, user?.email, date);
             })
             .catch(error => {
                 console.log(error)
@@ -112,11 +112,14 @@ const Login = () => {
 
 
     return (
-        <div className=''>
+        <div className='mb-10'>
             <div className="hero dark:text-black ">
                 <div className="hero-content flex-col lg:flex-row-reverse justify-between">
                     {/* <img src={loginImg} className="max-w-sm md:max-w-lg rounded-lg shadow-2xl lg:ml-10" alt='login' /> */}
-                    <div>
+                    <div className='border bg-gradient-to-b from-indigo-300 px-11 pt-8 pb-8 rounded-md' >
+
+                       <h1 className='text-center font-serif '>Sign Into Your Account</h1>
+
                         <div className='w-full md:w-96 p-7'>
                             <form onSubmit={handleSubmit(handleLogin)}>
                                 <div className="form-control w-full">
@@ -139,12 +142,12 @@ const Login = () => {
                                     <label className="label"> <span className="label-text dark:text-white">Forget Password?</span></label>
                                     {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                                 </div>
-                                <input className='login-button dark:bg-lime-600 dark:text-black py-3 rounded-lg w-full' value="Login" type="submit" />
+                                <input className='login-button bg-gradient-to-tr from-violet-900 to-blue-600 py-3 rounded-lg w-full' value="LOGIN" type="submit" />
                                 <div>
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>
                             </form>
-                            <p className='dark:text-white'>New to Deplify <Link className='teamNameColor font-bold dark:text-lime-600' href="/signup">Create a New Account</Link></p>
+                            <p className='dark:text-white font-serif text-sm'>New to Deplify <Link className='teamNameColor font-bold dark:text-lime-600' href="/signup">Create a New Account</Link></p>
                             <div className="divider dark:text-white">OR</div>
 
                             <div>

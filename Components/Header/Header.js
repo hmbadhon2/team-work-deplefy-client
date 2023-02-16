@@ -203,7 +203,7 @@ const Header = () => {
 		<div className="pt-24">
 			<div className="navbar bg-blue-50 dark:bg-black dark:text-white dark:border-b-2 dark:border-slate-900 lg:px-28 shadow">
 				<div className="navbar-start">
-				<Link href='/' p>
+				<Link href='/' passHref>
 				<div className="w-14 rounded">
 						{
 							theme === "dark" ? <img src="https://i.ibb.co/cky6b16/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
@@ -302,7 +302,7 @@ const Header = () => {
 								{
 									user?.uid ? <div>
 										{
-											theme === "dark" ? <button onClick={handleLogOut} className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
+											theme === "dark" ? <button onClick={handleLogOut} className="manu-buttonDark px-8 py-2 rounded-3xl mb-5">Log Out</button> : <button onClick={handleLogOut} className="manu-button px-8 py-2 rounded-3xl mb-5">Log Out</button>
 										}
 									</div>
 
@@ -310,12 +310,12 @@ const Header = () => {
 										<>
 											<div>
 												{
-													theme === "dark" ? <Link href='/login' passHref><button className="btn btn-outline btn-info px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login' passHref><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
+													theme === "dark" ? <Link href='/login' passHref><button className="manu-buttonDark px-8 py-2 rounded-3xl mb-5">Login</button></Link> : <Link href='/login' passHref><button className="manu-button px-8 py-2 rounded-3xl mb-5">Login</button></Link>
 												}
 											</div>
 											<div>
 												{
-													theme === "dark" ? <Link href='/signup' passHref><button className="btn btn-outline btn-info px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
+													theme === "dark" ? <Link href='/signup' passHref><button className="manu-buttonDark px-8 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className="manu-button px-8 py-2  rounded-3xl">Sign up</button></Link>
 												}
 											</div>
 

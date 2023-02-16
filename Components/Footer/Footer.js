@@ -27,9 +27,11 @@ const Footer = () => {
 					<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 
 						<div className="w-24 rounded">
-						{
+						{/* {
                        theme==="dark"? <img src="https://i.ibb.co/Jdz3J1h/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-1-removebg.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> 
-                    }
+                    } */}
+
+<img src="https://i.ibb.co/Jdz3J1h/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-1-removebg.png" />
 						</div>
 					</a>
 				</div>
