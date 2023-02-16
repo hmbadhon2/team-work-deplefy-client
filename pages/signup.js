@@ -124,7 +124,7 @@ const date =new Date();
 
 
 
-                        <div className='w-full md:w-96 p-7'>
+                        <div className='w-full md:w-96 p-7 mx-auto border bg-gradient-to-b from-indigo-300 px-10 pt-8 pb-8 rounded-md'>
                             <h1 className='font-serif text-lg'> Create An Account </h1>
                             <form onSubmit={handleSubmit(handleSignUp)}>
                                 <div className="form-control w-full">
