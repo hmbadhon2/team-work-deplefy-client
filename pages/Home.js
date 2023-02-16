@@ -28,14 +28,11 @@ const Home = () => {
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <TeamMember/>
         </div>
-<<<<<<< HEAD
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <ReTeamMember/>
         </div>
-        <div className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-800 dark:to-lime-500 dark:text-black py-12 my-12 rounded" >
-=======
+       
         <div className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black py-12 my-12 rounded" >
->>>>>>> 5b71ad5bc427d172ad63fdc3766a2ef52f7d2621
             <DataCenter/>
         </div>
         <div className='md:max-w-[1140px] md:mx-auto my-12' >

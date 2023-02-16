@@ -1,5 +1,5 @@
 
-import { BsSearch } from "react-icons/Bs";
+import { BsSearch } from "react-icons/bs";
 import { HiOutlineHome, HiOutlineServer, HiOutlineInformationCircle, HiPhone, HiOutlineMail } from "react-icons/Hi";
 import { BiTimeFive, BiUserPin, BiVideo } from "react-icons/Bi";
 import { ImMobile } from "react-icons/Im";
