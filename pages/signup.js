@@ -7,7 +7,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../context/AuthContext';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-
+import { Player } from '@lottiefiles/react-lottie-player'
 
 const Signup = () => {
 
@@ -105,8 +105,25 @@ const date =new Date();
             <div className="hero dark:text-black">
                 <div className="hero-content flex-col lg:flex-row-reverse justify-between">
                     {/* <img src className="max-w-sm md:max-w-lg rounded-lg shadow-2xl lg:ml-10" alt='login' /> */}
-                    <div>
+                    <div className='grid grid-cols-2 gap-12'>
+
+
+
+                   <div>
+                   <Player className='w-4/5'
+                      autoplay
+                      loop
+                    src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json"></Player>
+
+                   </div>
+
+
+
+
+
+
                         <div className='w-full md:w-96 p-7'>
+                            <h1 className='font-serif text-lg'> Create An Account </h1>
                             <form onSubmit={handleSubmit(handleSignUp)}>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text dark:text-white">Name</span></label>
@@ -139,7 +156,7 @@ const date =new Date();
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
-                            <p className='dark:text-white'>Already have an account <Link href="/login" className='teamNameColor font-bold dark:text-lime-600' >Please Login</Link></p>
+                            <p className='dark:text-white text-sm font-serif mt-1'>Already have an account <Link href="/login" className='teamNameColor font-bold dark:text-lime-600' >Please Login</Link></p>
                             <div className="divider dark:text-white">OR</div>
                             <div>
                                 {
@@ -147,6 +164,11 @@ const date =new Date();
                                 }
                             </div>
                         </div>
+
+
+
+
+
                     </div>
                 </div>
             </div>
