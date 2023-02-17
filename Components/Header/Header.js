@@ -52,6 +52,9 @@ const Header = () => {
 		<li className="">
 			<Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Dashboard</Link>
 		</li>
+		<li className="">
+			<Link rel="noopener noreferrer" href="/Faq" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">FAQ</Link>
+		</li>
 	</>
 
 	// ......................................................
