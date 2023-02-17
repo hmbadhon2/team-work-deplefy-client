@@ -208,7 +208,7 @@ const Header = () => {
 				<Link href='/' passHref>
 				<div className="w-14 rounded">
 						{
-							theme === "dark" ? <img src="https://i.ibb.co/cky6b16/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
+							theme === "dark" ? <img src="https://i.ibb.co/D7cSDrm/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
 						}
 					</div>
 				</Link>

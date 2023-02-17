@@ -124,29 +124,29 @@ a {
 
 .manu-buttonDark{
   background-color: none;
-  border: 1px solid #65A30D;
-  color: #65A30D;
+  border: 1px solid rgb(73,115,18);
+  color: rgb(73,115,18);
   font-weight: bold;
 }
 .manu-buttonDark:hover{
-  background-color: #65A30D;
+  background-color: rgb(73,115,18);
   color: black;
 }
 
 .google-buttonDark{
   background-color: none;
-  border: 1px solid #65A30D;
-  color: #65A30D;
+  border: 1px solid rgb(73,115,18);
+  color: rgb(73,115,18);
   font-weight: bolder;
   padding: 12px 0;
 }
 .google-buttonDark:hover{
-  background-color: #65A30D;
+  background-color: rgb(73,115,18);
   color: black;
 }
 
 .darkModeTextColor{
-  color: #65A30D;
+  color: rgb(73,115,18);
 }
 
 

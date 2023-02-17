@@ -27,9 +27,6 @@ const Login = () => {
     // const location= useLocation();
 
 
-
-    // const from = location.state?.from?.pathname || '/';
-
     // useEffect(()=>{
     //     if(token){
     //         navigate(from, {replace: true})
@@ -58,7 +55,7 @@ const Login = () => {
                 console.log(user)
                 setLoginUserEmail(data.email);
                 toast.success('Please Login Successfully');
-                // navigate(from, {replace: true})
+                Navigate(from, {replace: true})
 
             })
 
@@ -70,22 +67,7 @@ const Login = () => {
     }
 
 
-    const saveUser = (name, email, date) => {
-        const user = { name, email, date };
-        fetch('https://deplefy-server.vercel.app/users', {
-            // mode: 'no-cors',
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then(res => res.json())
-            .then(data => {
-                setLoginUserEmail(email);
-                console.log(data)
-            })
-    };
+
 
 
 
@@ -108,7 +90,22 @@ const Login = () => {
             })
     }
 
-
+    const saveUser = (name, email, date) => {
+        const user = { name, email, date };
+        fetch('https://deplefy-server.vercel.app/users', {
+            // mode: 'no-cors',
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setLoginUserEmail(email);
+                console.log(data)
+            })
+    };
 
 
     return (
@@ -142,7 +139,7 @@ const Login = () => {
                                     <label className="label"> <span className="label-text dark:text-white">Forget Password?</span></label>
                                     {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                                 </div>
-                                <input className='login-button bg-gradient-to-tr from-violet-900 to-blue-600 py-3 rounded-lg w-full' value="LOGIN" type="submit" />
+                                <input className='login-button bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 py-3 rounded-lg w-full' value="LOGIN" type="submit" />
                                 <div>
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>

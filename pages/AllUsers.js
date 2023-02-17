@@ -65,9 +65,9 @@ const AllUsers = () => {
     const handleUserDelete = (user) => {
         fetch(`https://deplefy-server.vercel.app/users/${user._id}`, {
             method: 'DELETE',
-            headers: {
-                authorization: `bearer ${localStorage.getItem('accessToken')}`
-            }
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
         })
             .then(res => res.json())
             .then(data => {
@@ -110,7 +110,7 @@ const AllUsers = () => {
                                 <td data-label="VERIFICATION">
                                     <label
                                         onClick={() => handleUserStatusUpdate(user._id)}
-                                        className="builds-button p-2 rounded-lg font-bold dark:bg-lime-600 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
+                                        className=" p-2 rounded-lg font-bold bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
                                 </td>
                                 <td data-label="ADMIN">{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
                                 <td data-label="ACTION"><button onClick={() => handleUserDelete(user)} className='btn btn-xs btn-danger'>Delete</button></td>
