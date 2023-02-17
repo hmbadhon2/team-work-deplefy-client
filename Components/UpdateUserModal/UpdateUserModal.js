@@ -81,7 +81,7 @@ const UpdateUserModal = ({refetch}) => {
                                 {errors.current && <p role="alert" className='text-red-500'>{errors.current?.message}</p>}
                             </div>
                             {/* <label htmlFor="my-modal-6"><button type='submit' className="btn w-full btn-info btn-sm">Submit</button></label> */}
-                            <button type='submit' className="builds-button  dark:bg-lime-600 dark:text-black font-bold py-2 w-full"><label htmlFor="my-modal-3">Submit</label></button>
+                            <button type='submit' className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white  dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black font-bold py-2 w-full"><label htmlFor="my-modal-3">Submit</label></button>
                         </div>
                     </form>
 

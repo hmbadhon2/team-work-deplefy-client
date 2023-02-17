@@ -100,13 +100,18 @@
 // import React from 'react';
 // import { GiAirplaneDeparture } from "react-icons/Gi";
 
+    {/* ................Part-2..................... */}
+
+    
+ 
+import React from 'react';
 
 const Practice = () => {
-    return (
-        <div>
-       {/* <GiAirplaneDeparture></GiAirplaneDeparture> */}
-        </div>
-    );
+  return (
+    <div>
+      
+    </div>
+  );
 };
 
 export default Practice;

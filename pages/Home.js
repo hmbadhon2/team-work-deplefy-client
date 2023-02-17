@@ -12,7 +12,7 @@ import DataCenter from '../Components/Home/DataCenter/DataCenter';
 
 const Home = () => {
     return (
-        <>
+        <div>
         <div className='md:max-w-[1140px] md:mx-auto my-12'>
             <Banner/>
         </div> 
@@ -22,7 +22,7 @@ const Home = () => {
         <div className='md:max-w-[1140px] md:mx-auto my-12'>
             <Pricing/>
         </div>   
-        <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px] dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 rounded-br-[250px] text-white pt-24 pb-64  lg:py-24 my-12">
+        <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px] dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 rounded-br-[250px] text-white pt-24 pb-64   lg:py-24 my-12">
             <ChoseUs/>
         </div>   
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
@@ -39,7 +39,7 @@ const Home = () => {
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <Practice/>
         </div>
-        </>
+        </div>
     );
 };
 

@@ -26,7 +26,7 @@ const Subscribe = () => {
                 <h1 className="text-black font-semibold dark:text-white">Stay up to date with all Jamstack & Deplify news</h1>
                 <div className=" flex items-center mt-4">
                     <input type="email" name="email" placeholder="Email Address" className="input md:w-80 input-bordered mr-1 dark:text-black" />
-                    <button className="subscribe-button dark:bg-lime-600 dark:text-black py-3 px-6 rounded-lg">Subscribe</button>
+                    <button className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black font-bold py-3 px-6 rounded-lg">Subscribe</button>
                 </div>
             </div>
         </div>

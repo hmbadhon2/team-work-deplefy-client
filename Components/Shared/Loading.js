@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {Player} from '@lottiefiles/react-lottie-player'
 
 const Loading = () => {
     return (
@@ -7,7 +8,10 @@ const Loading = () => {
                 <span className="visually-hidden bg-white">...</span>
             </div> */}
             <div >
-                <Image src="/progressIndicator.gif" width={700} height={700}></Image>
+            <Player className='w-max'
+				autoplay
+				loop
+				src="https://assets7.lottiefiles.com/packages/lf20_rwq6ciql.json"></Player>
             </div>
 
         </div>
