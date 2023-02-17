@@ -6,7 +6,7 @@ import { ImMobile } from "react-icons/Im";
 import { ShareContext } from '../../../ShareProvider/ShareProvider';
 import ContactUserData from '../../ContactForm/ContactUserData/ContactUserData/ContactUserData';
 import { AuthContext } from '../../../context/AuthContext';
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { io } from "socket.io-client"
 
 const Contact = () => {
