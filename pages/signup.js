@@ -154,11 +154,11 @@ const date =new Date();
                                     })} className="input input-bordered w-full" />
                                     {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                                 </div>
-                                <input className='bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black font-bold py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
+                                <input className='bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-black dark:to-black dark:text-white font-bold py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
-                            <p className='dark:text-white text-sm font-serif mt-1'>Already have an account <Link href="/login" className='teamNameColor font-bold dark:text-lime-600' >Please Login</Link></p>
+                            <p className='dark:text-white text-sm font-serif mt-1'>Already have an account <Link href="/login" className='teamNameColor font-bold dark:text-black' >Please Login</Link></p>
                             <div className="divider dark:text-white">OR</div>
                             <div>
                                 {

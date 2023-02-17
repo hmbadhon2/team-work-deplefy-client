@@ -139,12 +139,12 @@ const Login = () => {
                                     <label className="label"> <span className="label-text dark:text-white">Forget Password?</span></label>
                                     {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                                 </div>
-                                <input className='login-button bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 py-3 rounded-lg w-full' value="LOGIN" type="submit" />
+                                <input className='login-button bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-black dark:to-black py-3 rounded-lg w-full' value="LOGIN" type="submit" />
                                 <div>
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>
                             </form>
-                            <p className='dark:text-white font-serif text-sm'>New to Deplify <Link className='teamNameColor font-bold dark:text-lime-600' href="/signup">Create a New Account</Link></p>
+                            <p className='dark:text-white font-serif text-sm'>New to Deplify <Link className='teamNameColor font-bold dark:text-black' href="/signup">Create a New Account</Link></p>
                             <div className="divider dark:text-white">OR</div>
 
                             <div>
