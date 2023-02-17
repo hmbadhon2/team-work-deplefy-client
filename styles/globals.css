@@ -149,6 +149,28 @@ a {
   color: #65A30D;
 }
 
+
+/* FAQ section  */
+
+.faq{
+  color: #2f1c6a;
+  font-family: inherit;
+}
+.borderColor{
+  border: 1px solid #d5dfff;
+}
+.textColor{
+  color: #727586;
+  font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
+
+
+
 .table{
   background-color: #65A30D;
 }
