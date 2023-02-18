@@ -11,7 +11,7 @@ import { ShareContext } from "../../ShareProvider/ShareProvider";
 
 const Header = () => {
 	const { user, logOut } = useContext(AuthContext);
-	const {profileImage, isFetching}=useContext(ShareContext);
+	const { profileImage, isFetching } = useContext(ShareContext);
 	const [isOpen, setIsOpen] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
@@ -62,20 +62,20 @@ const Header = () => {
 
 	const dropDownItems = (
 		<>
-      <li>
-        <Link href="/Profile" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">View Profile</Link>
-      </li>
-      <li>
-        <Link href='/Teams' passHref  className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Team Settings</Link>
-      </li>
-      <li>
-        <Link href="/Analysis" passHref  className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Analysis</Link>
-      </li>
-      <li>
-        <Link onClick={handleLogOut} href="#" passHref  className="manu-item flex items-center -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Log Out</Link>
-      </li>
-			</>
-			);
+			<li>
+				<Link href="/Profile" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">View Profile</Link>
+			</li>
+			<li>
+				<Link href='/Teams' passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Team Settings</Link>
+			</li>
+			<li>
+				<Link href="/Analysis" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Analysis</Link>
+			</li>
+			<li>
+				<Link onClick={handleLogOut} href="#" passHref className="manu-item flex items-center -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Log Out</Link>
+			</li>
+		</>
+	);
 
 
 
@@ -104,111 +104,100 @@ const Header = () => {
 			<Link rel="noopener noreferrer" href="/Faq" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">FAQ</Link>
 		</li>
 		<li>
-		<div>
-	  {
-			user?.uid?
-				<>
-				<div className=" relative ml-4 lg:ml-[500px]">
-					
-				 {
-					profileImage[0]?.image ? 
-					<>
-					 <div className="flex items-center">
-					 <div className="mr-3 hidden lg:flex">
-							{renderThemeChanger()}
-						</div>
-					<img onClick={() => setDropDown(!dropDown)} alt="" className="w-12 h-12 rounded-full" src={profileImage[0]?.image} /> 
-					 </div>
-					</>
-					
-					: 
-					<>
-					{
-						user?.photoURL?  <div className="flex items-center">
-						<div className="mr-3 hidden lg:flex">
-							   {renderThemeChanger()}
-						   </div>
-					   <img onClick={() => setDropDown(!dropDown)} alt="" className="w-12 h-12 rounded-full" src={user?.photoURL} /> 
-						</div>
+			<div>
+				{
+					user?.uid ?
+						<>
+							<div className=" relative ml-4 lg:ml-[500px]">
+
+								{
+									profileImage[0]?.image ?
+										<>
+											<div className="flex items-center">
+												<div className="mr-3 hidden lg:flex">
+													{renderThemeChanger()}
+												</div>
+												<img onClick={() => setDropDown(!dropDown)} alt="" className="w-12 h-12 border-2 border-white rounded-full" src={profileImage[0]?.image} />
+											</div>
+										</>
+
+										:
+										<>
+											{
+												user?.photoURL ? <div className="flex items-center">
+													<div className="mr-3 hidden lg:flex">
+														{renderThemeChanger()}
+													</div>
+													<img onClick={() => setDropDown(!dropDown)} alt="" className="w-12 h-12 border-2 border-white rounded-full" src={user?.photoURL} />
+												</div>
+													:
+													<>
+														<div className="flex items-center">
+															<div className="mr-3 hidden lg:flex">
+																{renderThemeChanger()}
+															</div>
+															<img onClick={() => setDropDown(!dropDown)} alt="" className="w-12 h-12 border-2 border-white rounded-full" src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' />
+														</div>
+
+													</>
+
+											}
+
+										</>
+
+								}
+								{dropDown && (
+									<ul
+										className="lg:absolute w-44  lg:top-14  lg:right-0 menu ul bg-white  dark:bg-black shadow  lg:bg-opacity-30 lg:backdrop-filter lg:backdrop-blur-2xl lg:shadow-md lg:z-50 lg:p-2 "
+										onClick={() => {
+											setDropDown(!dropDown);
+											setNavbar(!navbar);
+										}}>
+										{dropDownItems}
+									</ul>
+								)}
+							</div>
+						</>
 						:
 						<>
-						<div className="flex items-center">
-						<div className="mr-3 hidden lg:flex">
-						{renderThemeChanger()}
-					</div>
-				<img onClick={() => setDropDown(!dropDown)} alt="" className="w-12 h-12 rounded-full" src='https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg' /> 
-				 </div>
-						
-				</>
-						
-					}
-					
-					</>
-					
-				 }
-				 	{dropDown && (
-						<ul
-							className="lg:absolute w-44  lg:top-14  lg:right-0 menu ul bg-white dark:bg-black shadow  lg:bg-opacity-30 lg:backdrop-filter lg:backdrop-blur-2xl lg:shadow-md lg:z-50 lg:p-2 "
-							onClick={() => {
-								setDropDown(!dropDown);
-								setNavbar(!navbar);
-							}}>
-							{dropDownItems}
-						</ul>
-					)}
-					</div>
-				</>
-				:
-				<>
-				<div className="lg:flex lg:ml-[345px]">
+							<div className="lg:flex lg:ml-[345px]">
 
-				<div className="flex md:items-center">
-						<div className="mr-3 hidden lg:flex">
-						{renderThemeChanger()}
-					</div>
-				 </div>
+								<div className="flex md:items-center">
+									<div className="mr-3 hidden lg:flex">
+										{renderThemeChanger()}
+									</div>
+								</div>
 
-					<div className="md:flex mr-[350px] md:mr-0">
-					<div>
-						{
-							theme === "dark" ? <Link href='/login' passHref><button onClick={() => setNavbar(!navbar)} className="manu-buttonDark px-5 py-2 rounded-3xl md:mr-5">Login</button></Link> : <Link href='/login' passHref><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
-						}
-					</div>
-					 <br></br>
-					<div>
-						{
-							theme === "dark" ? <Link href='/signup' passHref><button onClick={() => setNavbar(!navbar)} className="manu-buttonDark px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
-						}
-					</div>
-					</div>
+								<div className="md:flex mr-[350px] md:mr-0">
+									<div>
+										{
+											theme === "dark" ? <Link href='/login' passHref><button onClick={() => setNavbar(!navbar)} className="manu-buttonDark px-5 py-2 rounded-3xl md:mr-5">Login</button></Link> : <Link href='/login' passHref><button className=" manu-button px-5 py-2 rounded-3xl mr-5">Login</button></Link>
+										}
+									</div>
+									<br></br>
+									<div>
+										{
+											theme === "dark" ? <Link href='/signup' passHref><button onClick={() => setNavbar(!navbar)} className="manu-buttonDark px-5 py-2  rounded-3xl">Sign up</button></Link> : <Link href='/signup' passHref><button className=" manu-button px-5 py-2  rounded-3xl">Sign up</button></Link>
+										}
+									</div>
+								</div>
 
 
-				</div>
-				
-			</>
-			
-		}
-	  </div>
+							</div>
+
+						</>
+
+				}
+			</div>
 		</li>
 
-		
+
 	</>
 
-	// ......................................................
-
-
-	// ................Image Manu...........................
 
 
 
 
-
-
-	// console.log(profileImage)
-
-
-
-	// .......................Dark Mode...............................
 
 
 
@@ -216,67 +205,66 @@ const Header = () => {
 	return (
 		<div className="pt-24">
 			<nav className="fixed  bg-white dark:bg-black dark:border-b-2 dark:border-slate-900 shadow-md  z-50 w-full md:px-5 py-1  right-0 top-0">
-			<div className="px-4 md:px-2 lg:px-20 mx-auto lg:items-center lg:flex">
-				<div>
-					<div className="flex items-center justify-between  lg:block">
-					<Link href='/' passHref>
-				<div className="w-14 rounded">
-						{
-							theme === "dark" ? <img src="https://i.ibb.co/D7cSDrm/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
-						}
-					</div>
-				</Link>
-						<div className="lg:hidden flex items-center gap-1 justify-center">
-						<div className="cursor-default">{renderThemeChanger()}</div>
-							<button
-								className="p-2 text-gray-700 rounded-md outline-none "
-								onClick={() => setNavbar(!navbar)}>
-								{navbar ? (
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										className="w-6 h-6 text-blue-900 dark:text-lime-600 font-bold"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										strokeWidth={2}>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M4 6h16M4 12h16M4 18h16"
-										/>
-									</svg>
-								) : (
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										className="w-6 h-6 text-blue-900 dark:text-lime-600 font-bold"
-										viewBox="0 0 20 20"
-										fill="currentColor">
-										<path
-											fillRule="evenodd"
-											d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-											clipRule="evenodd"
-										/>
-									</svg>
-								)}
-							</button>
-							
+				<div className="px-4 md:px-2 lg:px-20 mx-auto lg:items-center lg:flex">
+					<div>
+						<div className="flex items-center justify-between  lg:block">
+							<Link href='/' passHref>
+								<div className="w-14 rounded">
+									{
+										theme === "dark" ? <img src="https://i.ibb.co/D7cSDrm/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" />
+									}
+								</div>
+							</Link>
+							<div className="lg:hidden flex items-center gap-1 justify-center">
+								<div className="cursor-default">{renderThemeChanger()}</div>
+								<button
+									className="p-2 text-gray-700 rounded-md outline-none "
+									onClick={() => setNavbar(!navbar)}>
+									{navbar ? (
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="w-6 h-6 text-blue-900 dark:text-lime-600 font-bold"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+											strokeWidth={2}>
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												d="M4 6h16M4 12h16M4 18h16"
+											/>
+										</svg>
+									) : (
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="w-6 h-6 text-blue-900 dark:text-lime-600 font-bold"
+											viewBox="0 0 20 20"
+											fill="currentColor">
+											<path
+												fillRule="evenodd"
+												d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+												clipRule="evenodd"
+											/>
+										</svg>
+									)}
+								</button>
+
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className="flex  dark:text-white gap-4">
-					<div
-						
-						className={`text-center flex-1 justify-self-center items-center pb-3 mt-8 lg:block md:pb-0 md:mt-0 cursor-pointer ${
-							navbar ? "hidden" : "block"
-						}`}>
-						<ul className="items-center my-6 lg:my-0 justify-center font-semibold ul  space-y-5 lg:flex  lg:space-y-0  dark:text-white">
-							{manuItem}
-						</ul>
+					<div className="flex  dark:text-white gap-4">
+						<div
+
+							className={`text-center flex-1 justify-self-center items-center pb-3 mt-8 lg:block md:pb-0 md:mt-0 cursor-pointer ${navbar ? "hidden" : "block"
+								}`}>
+							<ul className="items-center my-6 lg:my-0 justify-center font-semibold ul  space-y-5 lg:flex  lg:space-y-0  dark:text-white">
+								{manuItem}
+							</ul>
+						</div>
+
 					</div>
-					
 				</div>
-			</div>
-		</nav>
+			</nav>
 		</div>
 	);
 };

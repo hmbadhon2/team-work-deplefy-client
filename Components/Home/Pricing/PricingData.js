@@ -15,9 +15,9 @@ const PricingData = ({ pricing, refetch }) => {
     const handleBookingButton = (event) => {
         const bookings = {
             package: text,
-            name: user.displayName,
+            name: user?.displayName,
             money,
-            email: user.email,
+            email: user?.email,
 
         }
         fetch('https://deplefy-server-mocha.vercel.app/bookings', {
