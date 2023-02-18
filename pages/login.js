@@ -55,7 +55,7 @@ const Login = () => {
                 console.log(user)
                 setLoginUserEmail(data.email);
                 toast.success('Please Login Successfully');
-                Navigate(from, {replace: true})
+                Navigate(from, { replace: true })
 
             })
 
@@ -139,7 +139,7 @@ const Login = () => {
                                     <label className="label"> <span className="label-text dark:text-white">Forget Password?</span></label>
                                     {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                                 </div>
-                                <input className='login-button bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-black dark:to-black py-3 rounded-lg w-full' value="LOGIN" type="submit" />
+                                <input className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold  py-3 rounded-lg w-full' value="LOGIN" type="submit" />
                                 <div>
                                     {loginError && <p className='text-red-600'>{loginError}</p>}
                                 </div>
@@ -163,6 +163,8 @@ const Login = () => {
                                             </svg>
                                             <p>Login with Google</p>
                                         </button>
+
+                                    
                                 }
                             </div>
 

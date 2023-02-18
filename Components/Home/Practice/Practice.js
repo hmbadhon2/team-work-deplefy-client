@@ -126,15 +126,10 @@ export default Practice;
 // const Nav = () => {
 // 	const { user, signOutUser }: any = useAuth();
 // 	const { dbUser, }: any = useUser();
-// 	const { theme, setTheme } = useTheme();
-// 	const [mounted, setMounted] = useState<Boolean>(false);
 // 	const [navbar, setNavbar] = useState<Boolean>(true);
 // 	const [dropDown, setDropDown] = useState<Boolean>(false);
 
-// 	useEffect(() => {
-// 		setMounted(true);
-// 	}, []);
-// 	if (!mounted) return null;
+
 
 // 	const handleLogout = () => {
 // 		signOutUser()

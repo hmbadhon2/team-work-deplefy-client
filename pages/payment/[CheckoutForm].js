@@ -104,7 +104,8 @@ const CheckoutForm = ({ booking }) => {
     }
 
     return (
-        <>
+     <div className='md:max-w-[1140px] md:mx-auto my-12'>
+             <>
             <form onSubmit={handleSubmit}>
                 <CardElement
                     options={{
@@ -137,6 +138,7 @@ const CheckoutForm = ({ booking }) => {
                 </div>
             }
         </>
+     </div>
     );
 };
 

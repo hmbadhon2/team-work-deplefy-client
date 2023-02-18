@@ -77,7 +77,7 @@ const date =new Date();
     }
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType, date};
-        fetch('https://deplefy-server.vercel.app/users', {
+        fetch('http://localhost:9000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -154,7 +154,7 @@ const date =new Date();
                                     })} className="input input-bordered w-full" />
                                     {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                                 </div>
-                                <input className='bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-black dark:to-black dark:text-white font-bold py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
+                                <input className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800  font-bold py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
                                 {signUpError && <p className='text-red-600'>{signUpError}</p>}
 
                             </form>
