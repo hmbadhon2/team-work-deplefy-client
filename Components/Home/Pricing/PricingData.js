@@ -45,7 +45,7 @@ const PricingData = ({ pricing, refetch }) => {
 
 
     return (
-        <div>
+        <div className=''>
             <motion.div
                 initial={{ x: '-100vw' }}
                 animate={{ x: 0 }}

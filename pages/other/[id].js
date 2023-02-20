@@ -1,6 +1,7 @@
 import { motion, spring } from "framer-motion"
 import Image from 'next/image';
 import { useContext } from "react";
+import PaymentModal from "../../Components/modal/PaymentModal";
 import { ShareContext } from "../../ShareProvider/ShareProvider";
 
 const buttonVariants = {
@@ -14,7 +15,7 @@ const pricingDetails = ({pricingData}) => {
     const{profileImage}=useContext(ShareContext);
     console.log(pricingData)
     return (
-        <div className='md:max-w-[1140px] md:mx-auto my-12 md:border md:dark:border-white border-black bg-white dark:text-black p-4'>
+        <div className='md:max-w-[1140px] md:mx-auto my-12 md:border md:dark:border-white border-black bg-white dark:text-black  p-4'>
         <div className='grid grid-cols-1 md:grid-cols-3'>
          <div>
          <div>
@@ -24,7 +25,7 @@ const pricingDetails = ({pricingData}) => {
                 transition={{ type: 'spring', stiffness: 50 }}
                 whileHover="hover"
             >
-                <div className="my-4  md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded sm:p-8 dark:text-black">
+                <div className="my-4 border border-blue-700  md:my-0 pricing shadow-2xl flex flex-col p-6 space-y-6 rounded sm:p-8 dark:text-black">
                     <div className="space-y-2">
                         <div className="flex flex-row items-center mb-10">
                             <Image src="/Pricing Logo/Pricing_Reguler_logo-removebg-preview.png" width={80} height={80}></Image>
@@ -77,9 +78,12 @@ const pricingDetails = ({pricingData}) => {
           </div>
          </div>
          <div className='col-span-2 bg-white'>
-         
-  <div className="relative overflow-x-auto px-4 pt-32">
-      <table className="w-full text-sm text-left ">
+     
+  <div className="relative overflow-x-auto px-4 pt-24">
+  <div className="mb-20 pl-4">
+     <h1 className="text-3xl">Pay to Money</h1>
+     </div>
+      <table className="w-full text-left">
           <thead className="text-xs  uppercase bg-gray-100  ">
           </thead>
           <tbody>
@@ -121,8 +125,10 @@ const pricingDetails = ({pricingData}) => {
               </tr>
           </tbody>
       </table>
-  
-      <button type="button" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800  rounded-lg px-5 py-2.5 text-center mr-2 mb-2">Add to Card</button>
+
+      <label htmlFor="my-modal-4" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800  rounded-lg px-5 py-2.5 text-center mr-2 mb-2">Add to Card</label>
+      <PaymentModal></PaymentModal>
+      
   </div>
   
          </div>
@@ -141,29 +147,5 @@ export async function getServerSideProps({params:{id}}) {
     }, 
   }
 }
-// export const getStaticProps=async(context)=>{
-//     const{params}=context;
-//     const res=await fetch(`https://deplefy-server.vercel.app/pricing/${params?.postId}`);
-//     const data=await res.json();
-//     return {
-//         props: {
-//             post: data
-//         }
-//     }
-// }
-// export const getStaticPaths=async(_id)=>{
-//     const res=await fetch(`https://deplefy-server.vercel.app/pricing`);
-//     const posts=await res.json();
-//     const paths=posts?.map(post=>{
-//         return {
-//             params: {
-//                 postId: `${post._id}`
-//             }
-//         }
-//     })
-//     return {
-//         paths,
-//         fallback:false
-//     }
-// }
+
 export default pricingDetails;
