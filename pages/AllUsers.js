@@ -88,7 +88,7 @@ const AllUsers = () => {
         <div className='md:max-w-[1140px] md:mx-auto dark:text-black my-10'>
             <h2 className="md:text-3xl dark:text-white pl-3 md:pl-0 mb-5">All Users</h2>
             <div className="overflow-hidden dark:bg-slate-900">
-                <table className="table w-full">
+                <table className="table w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead>
                         <tr>
                             <th></th>

@@ -31,8 +31,8 @@ const Domain = () => {
                 </form>
                 <div className="mx-24 flex flex-row text-center justify-around text-white"> 
                         <h3><span className="text-black text-3xl mr-2">.net</span> $14.99</h3>
-                        <h3><span className="text-cyan-400 dark:text-red-800 text-3xl mr-2">.com</span> $14.99</h3>
-                        <h3><span className="text-orange-600 text-3xl mr-2">.store</span> $14.99</h3>
+                        <h3><span className="text-cyan-400 text-3xl mr-2">.com</span> $14.99</h3>
+                        <h3><span className="text-orange-600 dark:text-black text-3xl mr-2">.store</span> $14.99</h3>
                         <h3><span className="text-sky-500 dark:text-red-800 text-3xl mr-2">.info</span> $14.99</h3>
                         <h3><span className="text-black text-3xl mr-2">.co</span> $14.99</h3>
                 </div>

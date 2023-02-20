@@ -79,7 +79,7 @@ const AddSiteModal = ({siteLoad}) => {
                     <div className="form-control w-full mt-6 ">
                             <label className="label"> <span className="label-text font-serif text-sm">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Your Name" defaultValue={user?.displayName} readOnly className="input input-bordered w-full mb-3 " /> 
+                            <input type="text" name='name' placeholder="Your Name" defaultValue={user?.displayName} readOnly className="input input-bordered w-full mb-3" required /> 
                         </div>
 
 
@@ -87,20 +87,20 @@ const AddSiteModal = ({siteLoad}) => {
                         <div className="form-control w-full ">
                             <label className="label"> <span className="label-text font-serif text-sm">Id Number</span>
                             </label>
-                            <input type="text" name='id' placeholder="Id" className="input input-bordered w-full mb-3 " />
+                            <input type="text" name='id' placeholder="Id" className="input input-bordered w-full mb-3 " required />
                         </div>
                        
                         <div className="form-control w-full ">
                             <label className="label"> <span className="label-text font-serif text-sm">Image Url</span>
                             </label>
-                            <input type="text" name='image' placeholder="Image url" className="input input-bordered w-full mb-3 " />
+                            <input type="text" name='image' placeholder="Image url" className="input input-bordered w-full mb-3 " required />
                         </div>
 
 
                         <div className="form-control w-full ">
                             <label className="label"> <span className="label-text font-serif text-sm">Website link</span>
                             </label>
-                            <input type="text" name='website' placeholder="Website Link " className="input input-bordered w-full mb-3 " />
+                            <input type="text" name='website' placeholder="Website Link " className="input input-bordered w-full mb-3 " required/>
                         </div>
                         
 

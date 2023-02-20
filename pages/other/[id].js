@@ -1,52 +1,24 @@
-import React, { useContext } from 'react';
 import { motion, spring } from "framer-motion"
 import Image from 'next/image';
-import { toast } from 'react-toastify';
-import Link from 'next/link';
-import { AuthContext } from '../../../context/AuthContext';
+import { useContext } from "react";
+import { ShareContext } from "../../ShareProvider/ShareProvider";
+
 const buttonVariants = {
-    hover: {
-        scale: 1.1
-    }
+  hover: {
+      scale: 1.1
+  }
 }
 
-const PricingData = ({ pricing, refetch }) => {
-    const { user } = useContext(AuthContext)
-    const { _id, text, money, month, categorie_one, categorie_two, categorie_three, categorie_four, categorie_five } = pricing;
-    const handleBookingButton = (event) => {
-        const bookings = {
-            package: text,
-            name: user?.displayName,
-            money,
-            email: user?.email,
-
-        }
-        fetch('https://deplefy-server-mocha.vercel.app/bookings', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(bookings)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.acknowledged) {
-                    toast.success('Added to your Cart')
-                    refetch()
-                }
-                else {
-                    toast.error(data.message)
-                }
-
-            })
-
-    }
-
-
+const pricingDetails = ({pricingData}) => {
+    const { _id, text, money, month, categorie_one, categorie_two, categorie_three, categorie_four, categorie_five } = pricingData;
+    const{profileImage}=useContext(ShareContext);
+    console.log(pricingData)
     return (
-        <div>
-            <motion.div
+        <div className='md:max-w-[1140px] md:mx-auto my-12 md:border md:dark:border-white border-black bg-white dark:text-black p-4'>
+        <div className='grid grid-cols-1 md:grid-cols-3'>
+         <div>
+         <div>
+         <motion.div
                 initial={{ x: '-100vw' }}
                 animate={{ x: 0 }}
                 transition={{ type: 'spring', stiffness: 50 }}
@@ -98,28 +70,100 @@ const PricingData = ({ pricing, refetch }) => {
                             <span className="text-indigo-900 dark:text-black text-lg font-semibold">{categorie_five}</span>
                         </li>
                     </ul>
-                    {/* <motion.button
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        onClick={() => handleBookingButton(_id)}
-                        className="rounded py-3 px-4 text-white bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-black dark:to-black dark:text-white font-semibold text-lg">
-                        Buy Now
-                    </motion.button> */}
 
-                <Link href={`/other/[id]`} as={`/other/${_id}`}>
-                <motion.button
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        // onClick={() => handleBookingButton(_id)}
-                        className="rounded w-full py-3 px-4 text-white bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-black dark:to-black dark:text-white font-semibold text-lg">
-                        Buy Now
-                    </motion.button>
-                </Link>
                 </div>
             </motion.div>
-
+  
+          </div>
+         </div>
+         <div className='col-span-2 bg-white'>
+         
+  <div className="relative overflow-x-auto px-4 pt-32">
+      <table className="w-full text-sm text-left ">
+          <thead className="text-xs  uppercase bg-gray-100  ">
+          </thead>
+          <tbody>
+              <tr className="">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    Name
+                  </th>
+    
+                  <td className="px-6 py-4">
+                      {profileImage[0]?.name}
+                  </td>
+              </tr>
+              <tr>
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                  Package
+                  </th>
+            
+                  <td className="px-6 py-4">
+                 {text}
+                  </td>
+              </tr>
+              <tr>
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                      Email
+                  </th>
+                
+                  <td className="px-6 py-4">
+                     {profileImage[0]?.email}
+                  </td>
+              </tr>
+              <tr>
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                  Monthly total
+                  </th>
+                
+                  <td className="px-6 py-4">
+                      ${pricingData?.money}
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  
+      <button type="button" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800  rounded-lg px-5 py-2.5 text-center mr-2 mb-2">Add to Card</button>
+  </div>
+  
+         </div>
         </div>
+      </div>
     );
 };
 
-export default PricingData;
+
+export async function getServerSideProps({params:{id}}) {
+    const res=await fetch(`https://deplefy-server.vercel.app/pricing/${id}`)
+    const data=await res.json()
+  return {
+    props: {
+        pricingData: data
+    }, 
+  }
+}
+// export const getStaticProps=async(context)=>{
+//     const{params}=context;
+//     const res=await fetch(`https://deplefy-server.vercel.app/pricing/${params?.postId}`);
+//     const data=await res.json();
+//     return {
+//         props: {
+//             post: data
+//         }
+//     }
+// }
+// export const getStaticPaths=async(_id)=>{
+//     const res=await fetch(`https://deplefy-server.vercel.app/pricing`);
+//     const posts=await res.json();
+//     const paths=posts?.map(post=>{
+//         return {
+//             params: {
+//                 postId: `${post._id}`
+//             }
+//         }
+//     })
+//     return {
+//         paths,
+//         fallback:false
+//     }
+// }
+export default pricingDetails;

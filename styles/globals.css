@@ -48,8 +48,14 @@ a {
   transition: 0.2s;
   /* transform: translateY(-30px); */
 }
+
+.pricingCard{
+  background-color:#FFFFFF;
+  color:#4F80FF;
+  height: 550px;
+}
 .manu-item:hover{
-  color: navy;
+  color: #1E40AF;
 }
 .manu-button{
   background-color: none;
@@ -65,7 +71,7 @@ a {
 
 
 .teamNameColor{
-  color: navy;
+  color: #1E40AF;
 }
 
 .subscribe-button{
@@ -120,6 +126,24 @@ a {
   background-color: navy;
 }
 
+/* FAQ section  */
+
+.faq{
+  color: #2f1c6a;
+  font-family: inherit;
+}
+.borderColor{
+  border: 1px solid #d5dfff;
+}
+.textColor{
+  color: #727586;
+  font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
 /* ................Dark Mode..................... */
 
 .manu-buttonDark{
@@ -144,28 +168,17 @@ a {
   background-color: black;
   color: white;
 }
-
+.darkModeBackgroundColor{
+  background: linear-gradient(180deg, rgba(54,83,20,1) 0%, rgba(101,163,13,1) 0%)
+}
 .darkModeTextColor{
   color: rgb(73,115,18);
 }
 
 
-/* FAQ section  */
 
-.faq{
-  color: #2f1c6a;
-  font-family: inherit;
-}
-.borderColor{
-  border: 1px solid #d5dfff;
-}
-.textColor{
-  color: #727586;
-  font-family: inherit;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-}
+
+
 
 
 

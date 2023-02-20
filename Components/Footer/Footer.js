@@ -10,7 +10,7 @@ import { ShareContext } from "../../ShareProvider/ShareProvider";
 const Footer = () => {
 	const { user } = useContext(AuthContext);
 	const{profileImage}=useContext(ShareContext);
-	const{theme, setTheme}=useTheme();
+	const{theme}=useTheme();
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {

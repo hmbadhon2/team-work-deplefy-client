@@ -105,228 +105,177 @@
     
  
 import React from 'react';
+import { motion, spring } from "framer-motion"
+import Image from 'next/image';
+
+const buttonVariants = {
+  hover: {
+      scale: 1.1
+  }
+}
 
 const Practice = () => {
   return (
-    <div>
-      
+    <div className='md:border md:dark:border-white border-black bg-white dark:text-black p-4'>
+      <div className='grid grid-cols-1 md:grid-cols-3'>
+       <div>
+       <div>
+            <motion.div
+                initial={{ x: '-100vw' }}
+                animate={{ x: 0 }}
+                transition={{ type: 'spring', stiffness: 50 }}
+                whileHover="hover"
+            >
+                <div className="my-4 pricingCard bg-white border border-blue-600 md:my-0 shadow-2xl flex flex-col p-6 space-y-6 sm:p-8 dark:text-black">
+                    <div className="space-y-2">
+                        <div className="flex flex-row items-center mb-10">
+                            <Image src="/Pricing Logo/Pricing_Reguler_logo-removebg-preview.png" width={80} height={80}></Image>
+                            <h4 className="text-2xl font-bold mb-5 ml-3 text-indigo-900 dark:text-black">text</h4>
+                        </div>
+                        <p className="text-6xl font-bold text-indigo-900 dark:text-black">
+                            <span>$ 19
+                                <span className="text-sm tracking-wide">/month</span>
+                            </span>
+                        </p>
+
+                    </div>
+
+                    <ul className="flex-1 space-y-2 leading-12 dark:text-black">
+                        <li className="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                            </svg>
+                            <span className="text-indigo-900 dark:text-black  text-lg font-semibold">categorie_one</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                            </svg>
+                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">categorie_two</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                            </svg>
+                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">categorie_three</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                            </svg>
+                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">categorie_four</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                            </svg>
+                            <span className="text-indigo-900 dark:text-black text-lg font-semibold">categorie_five</span>
+                        </li>
+                    </ul>
+
+              
+                </div>
+            </motion.div>
+
+        </div>
+       </div>
+       <div className='col-span-2 bg-white'>
+       
+<div className="relative overflow-x-auto px-4 pt-32">
+    <table className="w-full text-sm text-left ">
+        <thead className="text-xs  uppercase bg-gray-100  ">
+        </thead>
+        <tbody>
+            <tr className="">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                  Name
+                </th>
+  
+                <td className="px-6 py-4">
+                    Lipton Barua
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                Package
+                </th>
+          
+                <td className="px-6 py-4">
+                ADVANCED
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    Email
+                </th>
+              
+                <td className="px-6 py-4">
+                    liptonbarua274@gmail.com
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                Monthly total
+                </th>
+              
+                <td className="px-6 py-4">
+                    $29
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800  rounded-lg px-5 py-2.5 text-center mr-2 mb-2">Add to Card</button>
+</div>
+
+       </div>
+      </div>
     </div>
   );
 };
 
 export default Practice;
-// import logo from "../assets/Logo/icons8-productivity-64.png";
-// import { Link } from "react-router-dom";
-// import { useAuth } from "../contexts/AuthProvider";
-// import { useState, useEffect } from "react";
-// import { useTheme } from "next-themes";
-// import { FaUserAlt } from "react-icons/fa";
-// import { useUser } from "../contexts/UserProvider";
 
-// const Nav = () => {
-// 	const { user, signOutUser }: any = useAuth();
-// 	const { dbUser, }: any = useUser();
-// 	const [navbar, setNavbar] = useState<Boolean>(true);
-// 	const [dropDown, setDropDown] = useState<Boolean>(false);
+// import { async } from '@firebase/util';
+// import React from 'react';
 
-
-
-// 	const handleLogout = () => {
-// 		signOutUser()
-// 			.then(() => {})
-// 			.catch((err) => {
-// 				console.log(err);
-// 			});
-// 	};
-
-// 	const renderThemeChanger = () => {
-// 		if (theme === "dark") {
-// 			return (
-// 				<div onClick={() => setTheme("light")}>
-// 					<svg
-// 						xmlns="http://www.w3.org/200F0/svg"
-// 						fill="#0000"
-// 						viewBox="0 0 22 22"
-// 						strokeWidth={1.5}
-// 						stroke="currentColor"
-// 						className="w-6 h-6 text-info dark:stroke-white font-semibold text-2xl cursor-pointer">
-// 						<path
-// 							strokeLinecap="round"
-// 							strokeLinejoin="round"
-// 							d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-// 						/> 
-// 					</svg>
-// 				</div>
-// 			);
-// 		} else {
-// 			return (
-// 				<div onClick={() => setTheme("dark")}>
-// 					<svg
-// 						xmlns="http://www.w3.org/2000/svg"
-// 						fill="#0000"
-// 						viewBox="0 0 24 24"
-// 						strokeWidth={1.5}
-// 						stroke="currentColor"
-// 						className="w-6 h-6 text-pink-800 cursor-pointer">
-// 						<path
-// 							strokeLinecap="round"
-// 							strokeLinejoin="round"
-// 							d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-// 						/>
-// 					</svg>
-// 				</div>
-// 			);
-// 		}
-// 	};
-// 	const dropDownItems = (
-// 		<>
-// 			<li className="hover:text-orange-400">
-// 				<Link to="my-profile">My Profile</Link>
-// 			</li>
-// 			<li className="hover:text-orange-400">
-// 				<Link to="/dashboard">DashBoard</Link>
-// 			</li>
-// 			<li className="hover:text-orange-400">
-// 				<Link to={"/about-us"}>About</Link>
-// 			</li>
-// 			<li className="hover:text-orange-400">
-// 				<Link onClick={handleLogout} to="">
-// 					Logout
-// 				</Link>
-// 			</li>
-// 		</>
-// 	);
-
-// 	const navItems = (
-// 		<>
-// 			<li onClick={() => setNavbar(!navbar)} className="hover:text-orange-400">
-// 				<Link to={"/"}>Home</Link>
-// 			</li>
-// 			<li onClick={() => setNavbar(!navbar)} className="hover:text-orange-400">
-// 				<Link to={"/blog"}>Blog</Link>
-// 			</li>
-// 			<li onClick={() => setNavbar(!navbar)} className="hover:text-orange-400">
-// 				<Link to={"/qna"}>QnA</Link>
-// 			</li>
-// 			<li onClick={() => setNavbar(!navbar)} className="hover:text-orange-400">
-// 				<Link to={"/basic"}>Problems</Link>
-// 			</li>
-// 			<li onClick={() => setNavbar(!navbar)} className="hover:text-orange-400">
-// 				<Link to={"/quiz"}>Quiz</Link>
-// 			</li>
-
-// 			{user?.uid ? (
-// 				<>
-// 					<div className="grid items-center justify-center justify-items-center relative">
-// 						{dbUser?.photo ? (
-// 							<>
-// 								<img
-// 									onClick={() => setDropDown(!dropDown)}
-// 									className="w-10 rounded-full items-center justify-center"
-// 									src={dbUser?.photo}
-// 									alt="user"
-// 								/>
-// 							</>
-// 						) : (
-// 							<>
-// 								{user?.photoURL ? (
-// 									<img
-// 										onClick={() => setDropDown(!dropDown)}
-// 										className="w-10 rounded-full items-center justify-center"
-// 										src={user?.photoURL}
-// 										alt="user"
-// 									/>
-// 								) : (
-// 									<FaUserAlt
-// 										onClick={() => setDropDown(!dropDown)}
-// 										className="w-10 rounded-full"
-// 									/>
-// 								)}
-// 							</>
-// 						)}
-// 						{dropDown && (
-// 							<ul
-// 								className="lg:absolute  lg:top-14  lg:-right-12 menu ul lg:bg-white lg:dark:bg-dark lg:bg-opacity-30 lg:backdrop-filter lg:backdrop-blur-2xl lg:shadow-md items-center justify-center lg:z-50 lg:p-2 "
-// 								onClick={() => {
-// 									setDropDown(!dropDown);
-// 									setNavbar(!navbar);
-// 								}}>
-// 								{dropDownItems}
-// 							</ul>
-// 						)}
-// 					</div>
-// 				</>
-// 			) : (
-// 				<li
-// 					onClick={() => setNavbar(!navbar)}
-// 					className="hover:text-orange-400">
-// 					<Link to={"/login"}>Login</Link>
-// 				</li>
-// 			)}
-// 		</>
-// 	);
-
-// 	return (
-// 		<nav className="fixed bg-white dark:bg-dark bg-opacity-30 backdrop-filter backdrop-blur-xl shadow-md  z-50 w-full md:px-5 py-1  right-0 top-0">
-// 			<div className="justify-between px-4 mx-auto lg:items-center lg:flex">
-// 				<div>
-// 					<div className="flex items-center justify-between  lg:block">
-// 						<Link to="/">
-// 							<h2 className="text-2xl dark:text-white text-gray-600 font-bold">
-// 								<img src={logo} className="w-16 " alt="" />
-// 							</h2>
-// 						</Link>
-// 						<div className="lg:hidden flex items-center gap-1 justify-center">
-// 							<button
-// 								className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-// 								onClick={() => setNavbar(!navbar)}>
-// 								{navbar ? (
-// 									<svg
-// 										xmlns="http://www.w3.org/2000/svg"
-// 										className="w-6 h-6 dark:text-white"
-// 										fill="none"
-// 										viewBox="0 0 24 24"
-// 										stroke="currentColor"
-// 										strokeWidth={2}>
-// 										<path
-// 											strokeLinecap="round"
-// 											strokeLinejoin="round"
-// 											d="M4 6h16M4 12h16M4 18h16"
-// 										/>
-// 									</svg>
-// 								) : (
-// 									<svg
-// 										xmlns="http://www.w3.org/2000/svg"
-// 										className="w-6 h-6 dark:text-white"
-// 										viewBox="0 0 20 20"
-// 										fill="currentColor">
-// 										<path
-// 											fillRule="evenodd"
-// 											d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-// 											clipRule="evenodd"
-// 										/>
-// 									</svg>
-// 								)}
-// 							</button>
-// 							<div className="cursor-default">{renderThemeChanger()}</div>
-// 						</div>
-// 					</div>
-// 				</div>
-// 				<div className="flex items-center dark:text-white gap-4">
-// 					<div
-						
-// 						className={`text-center flex-1 justify-self-center items-center pb-3 mt-8 lg:block md:pb-0 md:mt-0 cursor-pointer ${
-// 							navbar ? "hidden" : "block"
-// 						}`}>
-// 						<ul className="items-center justify-center font-semibold ul  space-y-5 lg:flex lg:space-x-6 lg:space-y-0  dark:text-white">
-// 							{navItems}
-// 						</ul>
-// 					</div>
-// 					<div className="hidden lg:block">{renderThemeChanger()}</div>
-// 				</div>
-// 			</div>
-// 		</nav>
-// 	);
+// const PricingDetails = ({post}) => {
+//     return (
+//         <div>
+//             <h1>Pricing{post.month}</h1>
+//         </div>
+//     );
 // };
 
-// export default Nav;
+// export const getStaticProps=async(context)=>{
+//     const params=context;
+//     const res= await fetch(`https://deplefy-server.vercel.app/pricing/${params?.postId}`);
+//     const data= await res.json();
+//     return {
+//         props: {
+//          post: data
+//         }
+//     }
+// }
+
+// export const getStaticPaths=async()=>{
+// const res= await fetch(`https://deplefy-server.vercel.app/pricing`);
+// const posts= await res.json();
+
+// const paths=posts.map(post=>{
+//     return {
+//         params: {
+//             postId: `${post._id}`
+//         }
+//     }
+// })
+// return {
+//     paths,
+//     fallback: false
+// }
+// }
+
+
+// export default PricingDetails;
+
+

@@ -42,7 +42,7 @@ const Header = () => {
 
 		if (theme === "dark") {
 			return (
-				<div onClick={() => setTheme('light')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-lime-600">
+				<div onClick={() => setTheme('light')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-lime-700">
 					<path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
 				</svg></div>
 
@@ -51,7 +51,7 @@ const Header = () => {
 		else {
 			return (
 				<div onClick={() => setTheme('dark')}>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-900">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 teamNameColor">
 						<path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
 					</svg>
 
@@ -63,16 +63,16 @@ const Header = () => {
 	const dropDownItems = (
 		<>
 			<li>
-				<Link href="/Profile" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">View Profile</Link>
+				<Link href="/Profile" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">View Profile</Link>
 			</li>
 			<li>
-				<Link href='/Teams' passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Team Settings</Link>
+				<Link href='/Teams' passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Team Settings</Link>
 			</li>
 			<li>
-				<Link href="/Analysis" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Analysis</Link>
+				<Link href="/Analysis" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Analysis</Link>
 			</li>
 			<li>
-				<Link onClick={handleLogOut} href="#" passHref className="manu-item flex items-center -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Log Out</Link>
+				<Link onClick={handleLogOut} href="#" passHref className="manu-item flex items-center -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Log Out</Link>
 			</li>
 		</>
 	);
@@ -81,27 +81,27 @@ const Header = () => {
 
 	const manuItem = <>
 		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/Home" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Home</Link>
+			<Link rel="noopener noreferrer" href="/Home" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Home</Link>
 		</li>
 
 		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/Sites" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Sites</Link>
+			<Link rel="noopener noreferrer" href="/Sites" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Sites</Link>
 		</li>
 
 		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/Contact" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Contact</Link>
+			<Link rel="noopener noreferrer" href="/Contact" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Contact</Link>
 		</li>
 		{/* <li className="">
 			<a rel="noopener noreferrer" href="/Teams" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Team settings</a>
 		</li> */}
 		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/Builds" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Builds</Link>
+			<Link rel="noopener noreferrer" href="/Builds" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Builds</Link>
 		</li>
 		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">Dashboard</Link>
+			<Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Dashboard</Link>
 		</li>
 		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/Faq" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-600">FAQ</Link>
+			<Link rel="noopener noreferrer" href="/Faq" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">FAQ</Link>
 		</li>
 		<li>
 			<div>
@@ -204,7 +204,7 @@ const Header = () => {
 
 	return (
 		<div className="pt-24">
-			<nav className="fixed  bg-white dark:bg-black dark:border-b-2 dark:border-slate-900 shadow-md  z-50 w-full md:px-5 py-1  right-0 top-0">
+			<nav className="fixed  bg-white dark:bg-black dark:border-b-2 dark:border-slate-900 shadow-md  z-50 w-full md:px-5 py-1  right-0 top-0 left-0">
 				<div className="px-4 md:px-2 lg:px-20 mx-auto lg:items-center lg:flex">
 					<div>
 						<div className="flex items-center justify-between  lg:block">
@@ -223,7 +223,7 @@ const Header = () => {
 									{navbar ? (
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
-											className="w-6 h-6 text-blue-900 dark:text-lime-600 font-bold"
+											className="w-6 h-6 text-blue-900 dark:text-lime-700 font-bold"
 											fill="none"
 											viewBox="0 0 24 24"
 											stroke="currentColor"
@@ -237,7 +237,7 @@ const Header = () => {
 									) : (
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
-											className="w-6 h-6 text-blue-900 dark:text-lime-600 font-bold"
+											className="w-6 h-6 text-blue-900 dark:text-lime-700 font-bold"
 											viewBox="0 0 20 20"
 											fill="currentColor">
 											<path
