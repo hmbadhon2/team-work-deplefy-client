@@ -98,21 +98,15 @@ const PricingData = ({ pricing, refetch }) => {
                             <span className="text-indigo-900 dark:text-black text-lg font-semibold">{categorie_five}</span>
                         </li>
                     </ul>
-                    {/* <motion.button
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        onClick={() => handleBookingButton(_id)}
-                        className="rounded py-3 px-4 text-white bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-black dark:to-black dark:text-white font-semibold text-lg">
-                        Buy Now
-                    </motion.button> */}
 
-                <Link href={`/other/[id]`} as={`/other/${_id}`}>
+
+                <Link href={`/pricingDetails/[id]`} as={`/pricingDetails/${_id}`}>
                 <motion.button
                         variants={buttonVariants}
                         whileHover="hover"
                         // onClick={() => handleBookingButton(_id)}
                         className="rounded w-full py-3 px-4 text-white bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-black dark:to-black dark:text-white font-semibold text-lg">
-                        Buy Now
+                        Add To Cart
                     </motion.button>
                 </Link>
                 </div>

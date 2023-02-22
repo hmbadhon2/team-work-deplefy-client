@@ -1,8 +1,17 @@
 import { motion, spring } from "framer-motion"
 import Image from 'next/image';
-import { useContext } from "react";
-import PaymentModal from "../../Components/modal/PaymentModal";
+import { useContext, useEffect } from "react";
+import PaymentModal from "./PaymentModal";
 import { ShareContext } from "../../ShareProvider/ShareProvider";
+import { checkout } from "../../checkout";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutFrom from "./CheckoutFrom";
+
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
+console.log(stripePromise)
+
 
 const buttonVariants = {
   hover: {
@@ -14,6 +23,8 @@ const pricingDetails = ({pricingData}) => {
     const { _id, text, money, month, categorie_one, categorie_two, categorie_three, categorie_four, categorie_five } = pricingData;
     const{profileImage}=useContext(ShareContext);
     console.log(pricingData)
+
+
     return (
         <div className='md:max-w-[1140px] md:mx-auto my-12 md:border md:dark:border-white border-black bg-white dark:text-black  p-4'>
         <div className='grid grid-cols-1 md:grid-cols-3'>
@@ -81,7 +92,7 @@ const pricingDetails = ({pricingData}) => {
      
   <div className="relative overflow-x-auto px-4 pt-24">
   <div className="mb-20 pl-4">
-     <h1 className="text-3xl">Pay to Money</h1>
+     <h1 className="text-3xl font-bold">Pay to money</h1>
      </div>
       <table className="w-full text-left">
           <thead className="text-xs  uppercase bg-gray-100  ">
@@ -125,10 +136,14 @@ const pricingDetails = ({pricingData}) => {
               </tr>
           </tbody>
       </table>
-
-      <label htmlFor="my-modal-4" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800  rounded-lg px-5 py-2.5 text-center mr-2 mb-2">Add to Card</label>
+     
       <PaymentModal></PaymentModal>
-      
+
+      <Elements stripe={stripePromise}>
+    <CheckoutFrom  pricingData={pricingData}/>
+  </Elements>
+
+      {/* <button type="button" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 dark:text-gray-900 dark:bg-gradient-to-r dark:from-lime-400 dark:via-lime-400 dark:to-lime-500 dark:hover:bg-gradient-to-br dark:focus:ring-4 dark:focus:outline-none   rounded-lg px-5 py-2.5 text-center mr-2 mb-2"> <label htmlFor="my-modal-4" className="">Add to Card</label></button> */}
   </div>
   
          </div>
