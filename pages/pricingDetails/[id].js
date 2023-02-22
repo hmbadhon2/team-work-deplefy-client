@@ -4,7 +4,8 @@ import { useContext, useEffect } from "react";
 import { ShareContext } from "../../ShareProvider/ShareProvider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutFrom from "./CheckoutFrom";
+import CheckoutFrom from '../../Components/Checkout/CheckoutFrom'
+
 
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
@@ -135,8 +136,9 @@ const pricingDetails = ({pricingData}) => {
           </tbody>
       </table>
      
-
+        
       <Elements stripe={stripePromise}>
+      
     <CheckoutFrom  pricingData={pricingData}/>
   </Elements>
 

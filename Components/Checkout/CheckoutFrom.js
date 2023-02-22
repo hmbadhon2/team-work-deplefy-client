@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { useEffect } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
+
 const CheckoutFrom = ({pricingData}) => {
     const[cardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState("");
@@ -112,16 +113,16 @@ const CheckoutFrom = ({pricingData}) => {
                 fontSize: '16px',
                 color: '#424770',
                 '::placeholder': {
-                  color: '#aab7c4',
+                  color: 'black',
                 },
               },
               invalid: {
-                color: '#9e2146',
+                color: 'red',
               },
             },
           }}
         />
-      <button type="submit" disabled={!stripe || !elements || processing}>
+      <button className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 dark:text-gray-900 dark:bg-gradient-to-r dark:from-lime-400 dark:via-lime-400 dark:to-lime-500 dark:hover:bg-gradient-to-br dark:focus:ring-4 dark:focus:outline-none   rounded-lg px-5 py-2.5 text-center mr-2 mb-2" type="submit" disabled={!stripe || !elements || processing}>
         Pay
       </button>
     </form> 
