@@ -104,58 +104,14 @@
 
     
  
-import React from 'react';
-
-const Practice = () => {
+ import React from 'react';
+ 
+ const Practice = () => {
     return (
         <div>
             
         </div>
     );
-};
-
-export default Practice;
-
-// import { async } from '@firebase/util';
-// import React from 'react';
-
-// const PricingDetails = ({post}) => {
-//     return (
-//         <div>
-//             <h1>Pricing{post.month}</h1>
-//         </div>
-//     );
-// };
-
-// export const getStaticProps=async(context)=>{
-//     const params=context;
-//     const res= await fetch(`https://deplefy-server.vercel.app/pricing/${params?.postId}`);
-//     const data= await res.json();
-//     return {
-//         props: {
-//          post: data
-//         }
-//     }
-// }
-
-// export const getStaticPaths=async()=>{
-// const res= await fetch(`https://deplefy-server.vercel.app/pricing`);
-// const posts= await res.json();
-
-// const paths=posts.map(post=>{
-//     return {
-//         params: {
-//             postId: `${post._id}`
-//         }
-//     }
-// })
-// return {
-//     paths,
-//     fallback: false
-// }
-// }
-
-
-// export default PricingDetails;
-
-
+ };
+ 
+ export default Practice;

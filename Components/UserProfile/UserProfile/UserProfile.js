@@ -38,6 +38,7 @@ const UserProfile = () => {
 						sellerName: user?.displayName,
 						email: user?.email,
 						name: data?.name,
+						positionData: data?.position,
 						image: imageData.data.url,
 						phone: data?.phone,
 						country: data?.country,
@@ -133,6 +134,7 @@ const UserProfile = () => {
 								<div>
 									<h1 className='pl-5 md:pl-0 mb-3 '>Name:</h1>
 									<h1 className='pl-5 md:pl-0 mb-3'>Email:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3'>Position:</h1>
 									<h1 className='pl-5 md:pl-0 mb-3'>Phone:</h1>
 									<h1 className='pl-5 md:pl-0 mb-3'>Country:</h1>
 									<h1 className='pl-5 md:pl-0 mb-3'>Location:</h1>
@@ -144,6 +146,7 @@ const UserProfile = () => {
 
 									{profileImage[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.name}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.displayName}</h1>}
 									{profileImage[0]?.email ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.email}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.email}</h1>}
+									{profileImage[0]?.positionData ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.positionData}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
 									{profileImage[0]?.phone ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
 									{profileImage[0]?.country ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.country}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
 									{profileImage[0]?.location ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.location}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
@@ -175,9 +178,13 @@ const UserProfile = () => {
 														<input placeholder='Image' type="file" required {...register("image", { required: 'Image is Required' })} className="input input-bordered w-full " />
 														{errors.image && <p role="alert" className='text-red-500'>{errors.image?.message}</p>}
 													</div>
-													<div className="form-control w-full ">
+													<div className="form-control w-full mb-5">
 														<input placeholder='Email Id' type="email" defaultValue={user?.email} readOnly required {...register("email")} className="input input-bordered w-full " />
 														{errors.email && <p role="alert" className='text-red-500'>{errors.email?.message}</p>}
+													</div>
+													<div className="form-control w-full ">
+														<input placeholder='Your Position' type="text" required {...register("position", { required: 'position is Required' })} className="input input-bordered w-full " />
+														{errors.name && <p role="alert" className='text-red-500'>{errors.name?.message}</p>}
 													</div>
 													<div className="form-control w-full my-5">
 														<input placeholder='Phone Number' type="number" required {...register("phone", { required: 'Phone Number is Required' })} className="input input-bordered w-full " />

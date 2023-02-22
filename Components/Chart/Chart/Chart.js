@@ -1,7 +1,21 @@
+import { useQuery } from "@tanstack/react-query";
+import { useContext } from "react";
 import { Area, AreaChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
+import { AuthContext } from "../../../context/AuthContext";
 
 
 const Chart = () => {
+    const{user}=useContext(AuthContext)
+
+    const { data: chart = [] } = useQuery({
+
+		queryKey: ['Chartdata', user?.email],
+		queryFn: async () => {
+			const res = await fetch(`https://deplefy-server.vercel.app/payments?email==${user?.email}`)
+			const data = await res.json();
+			return data;
+		}
+	})
     const data = [
         {
             name: 'Page A',

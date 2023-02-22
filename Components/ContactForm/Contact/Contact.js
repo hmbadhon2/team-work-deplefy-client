@@ -172,7 +172,7 @@ const Contact = () => {
                                     <>
                                         {
                                             user?.uid ?
-                                                <img src={user?.displayName} alt="" className="w-32 h-32 mx-auto rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" /> : <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg" alt="" className="w-32 h-32 mx-auto rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" />
+                                                <img src={user?.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" /> : <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg" alt="" className="w-32 h-32 mx-auto rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" />
                                         }
                                     </>
                                 }
@@ -180,12 +180,12 @@ const Contact = () => {
                                 <div className=" text-center divide-y divide-gray-700">
                                     <div className="my-2 space-y-1">
                                         {profileImage[0]?.name ? <h2 className="text-xl font-bold  sm:text-2xl">{profileImage[0]?.name}</h2> : <h2 className="text-xl font-semibold sm:text-2xl">{user?.displayName}</h2>}
-                                        <p className="px-5 text-xs sm:text-base">Full-stack developer</p>
+                                        {profileImage[0]?.positionData? <p className="px-5 text-xs sm:text-base">{profileImage[0]?.positionData}</p> : <p className="px-5 text-xs sm:text-base"></p>}
                                     </div>
 
                                 </div>
                                 <ul>
-                                    <li className="rounded-sm">
+                                    {profileImage[0]?.phone ? <li className="rounded-sm">
                                         <a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
@@ -193,7 +193,8 @@ const Contact = () => {
 
                                             <span>{profileImage[0]?.phone}</span>
                                         </a>
-                                    </li>
+                                    </li> : null}
+                                 
                                     <li className="rounded-sm">
                                         <a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

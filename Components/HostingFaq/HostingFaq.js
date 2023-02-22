@@ -4,24 +4,24 @@ const HostingFaq = () => {
     return (
         <div className='md:max-w-[1140px] md:mx-auto my-12'>
 
-            <h1 className='text-center faq text-4xl font-bold'>Web Hosting FAQs</h1>
-            <p className='text-center textColor mt-4'>Find answers to frequently asked questions about website hosting services.</p>
+            <h1 className='text-center faq text-4xl font-bold dark:text-lime-700'>Web Hosting FAQs</h1>
+            <p className='text-center textColor mt-4 '>Find answers to frequently asked questions about website hosting services.</p>
 
 
 
-            <div className=' mx-auto my-20 p-8  '>
+            <div className=' mx-auto my-20 p-8 '>
 
 
 
 
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6 ">
-                    <div className="collapse-title text-2xl font-medium faq ">
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
                         What Is Web Hosting?
                     </div>
 
 
 
-                    <div className="collapse-content font-serif textColor">
+                    <div className="collapse-content font-serif textColor ">
                         <p>Web hosting is a service that makes your website available on the internet. When you get a hosting plan, you rent an online space from a web host like hostinger.com to store all of your website files. This will allow people to access your site using a web browser.</p>
 
                         <p className='mt-6'>There are many types of hosting services available, such as shared hosting, WordPress hosting, and cloud hosting. The more popular a website is, the more resources it will need to function effectively.</p>
@@ -55,7 +55,7 @@ const HostingFaq = () => {
 
 
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6  ">
-                    <div className="collapse-title text-2xl font-medium faq ">
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
                         How Do Website Hosting Services Work?
                     </div>
 
@@ -78,7 +78,7 @@ const HostingFaq = () => {
 
 
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6  ">
-                    <div className="collapse-title text-2xl font-medium faq ">
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
                         Why Do I Need Web Hosting?
                     </div>
 
@@ -99,7 +99,7 @@ const HostingFaq = () => {
 
 
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6 ">
-                    <div className="collapse-title text-2xl font-medium faq ">
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
                         What Kind of Support Will I Get?
                     </div>
 
@@ -115,8 +115,8 @@ const HostingFaq = () => {
 
 
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6 ">
-                    <div className="collapse-title text-2xl font-medium faq ">
-                    What Are the Differences Between Website Hosting and Domain?
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
+                        What Are the Differences Between Website Hosting and Domain?
                     </div>
 
                     <div className="collapse-content font-serif textColor">
@@ -127,33 +127,33 @@ const HostingFaq = () => {
                 </div>
 
 
-                
+
 
 
 
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6 ">
-                    <div className="collapse-title text-2xl font-medium faq ">
-                    Can I Buy Hosting Without a Domain Name?
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
+                        Can I Buy Hosting Without a Domain Name?
                     </div>
 
                     <div className="collapse-content font-serif textColor">
                         <p>Yes, you can. If you want to, you can purchase domain names from other domain or hosting companies and point them to your web host. If you want to keep both your domain and hosting under a single provider – which we recommend for convenience and easier troubleshooting – you can transfer your domain name over to Hostinger.</p>
 
-                        
+
                     </div>
                 </div>
 
 
 
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6 ">
-                    <div className="collapse-title text-2xl font-medium faq ">
-                    How Can I Upgrade My Account if I Need To?
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
+                        How Can I Upgrade My Account if I Need To?
                     </div>
 
                     <div className="collapse-content font-serif textColor">
                         <p>Upgrading your web hosting service is easy with Hostinger. We pride ourselves on having no downtime during the upgrade, so your website will be up and running the whole time. You won’t have to worry about a bad browsing experience or losing revenue.</p>
 
-                        
+
                     </div>
                 </div>
 
@@ -163,14 +163,14 @@ const HostingFaq = () => {
 
 
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6 ">
-                    <div className="collapse-title text-2xl font-medium faq ">
-                    How to Connect My Domain Name and Web Hosting?
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
+                        How to Connect My Domain Name and Web Hosting?
                     </div>
 
                     <div className="collapse-content font-serif textColor">
                         <p>The most common way of connecting your domain name to your <span className='font-bold'>hosting is pointing</span> it to Hostinger's nameservers. You’ll need to replace your domain’s name server info. Like most tasks, it is easy to do through your domain management area.</p>
 
-                        
+
                     </div>
                 </div>
 
@@ -178,9 +178,10 @@ const HostingFaq = () => {
 
 
 
+
                 <div tabIndex={0} className="collapse mb-5 collapse-arrow borderColor py-6 ">
-                    <div className="collapse-title text-2xl font-medium faq ">
-                    Do I Need Technical Knowledge to Use Hostinger?
+                    <div className="collapse-title text-2xl font-medium faq dark:text-lime-700">
+                        Do I Need Technical Knowledge to Use Hostinger?
                     </div>
 
                     <div className="collapse-content font-serif textColor">
@@ -192,16 +193,7 @@ const HostingFaq = () => {
                     </div>
                 </div>
 
-
-
-
-
-
-
-
-
-
-        </div>
+            </div>
         </div >
     );
 };

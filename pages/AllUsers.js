@@ -100,10 +100,10 @@ const AllUsers = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='dark:text-black'>
                         {
                             users.map((user, i) => <tr key={user._id}>
-                                <td className='font-bold' data-label="SL.No">{i + 1}</td>
+                                <td className='font-bold ' data-label="SL.No">{i + 1}</td>
                                 <td data-label="NAME">{user.name}</td>
                                 <td data-label="EMAIL">{user.email}</td>
                                 <td data-label="USER TYPE" className='font-bold teamNameColor'>{user.userType}</td>

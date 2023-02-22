@@ -168,9 +168,7 @@ body {
 
 
 
-.table{
-  background-color: #65A30D;
-}
+
 /* ................Responsive Design.................. */
 
 
@@ -178,7 +176,7 @@ body {
 @media (max-width: 576px) {
   .table thead {
     display: none;
-    
+    position: absolute;
   }
 
   .table,

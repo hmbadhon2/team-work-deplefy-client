@@ -12,7 +12,7 @@ const Domain = () => {
                          name="" 
                          id=""
                          placeholder="Type your domain address"
-                         className="w-80 rounded-full p-2 md:w-64 bg-slate-100 my-4 md:my-0" 
+                         className="w-full rounded-full p-2 md:w-64 bg-slate-100 my-4 md:my-0" 
                          />
                          
                         <input 
@@ -20,7 +20,7 @@ const Domain = () => {
                          name="" 
                          id=""
                          placeholder="Type your domain address"
-                         className="w-80 rounded-full p-2 md:w-64 bg-slate-100" 
+                         className="w-full rounded-full p-2 md:w-64 bg-slate-100" 
                          />
                          <button className="rounded-full my-4 md:my-0 py-3 px-8 md:px-4 text-white bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-lime-800 dark:to-lime-500 font-semibold text-lg">
                                 Search Domain

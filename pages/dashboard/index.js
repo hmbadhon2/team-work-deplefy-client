@@ -23,7 +23,7 @@ const Dashboard = () => {
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 text-base-content dark:text-white">
-                        <li><Link href="/dashboard">Dashboard</Link></li>
+                        {/* <li><Link href="/dashboard">Dashboard</Link></li> */}
 
                         {/* {
                             isBuyer &&
@@ -47,7 +47,7 @@ const Dashboard = () => {
 
                             <>
                                 <li><Link href="/AllUsers">All users</Link></li>
-                                <li><Link href="/dashboard/cart">Cart</Link></li>
+                               
                                
                             </>
 
