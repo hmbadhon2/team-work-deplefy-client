@@ -1,5 +1,6 @@
 import React from 'react';
 import Builder from '../Components/Builder/Builder/Builder';
+import { Protect } from '../Components/PrivateRoute/PrivateRoute';
 
 const Builds = () => {
     return (
@@ -9,4 +10,4 @@ const Builds = () => {
     );
 };
 
-export default Builds;
+export default Protect(Builds);

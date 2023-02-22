@@ -1,5 +1,6 @@
 import React from 'react';
 import HostingFaq from '../Components/HostingFaq/HostingFaq';
+import { Protect } from '../Components/PrivateRoute/PrivateRoute';
 
 const Faq = () => {
     return (
@@ -9,4 +10,4 @@ const Faq = () => {
     );
 };
 
-export default Faq;
+export default Protect(Faq);

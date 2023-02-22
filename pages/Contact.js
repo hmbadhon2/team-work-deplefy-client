@@ -1,4 +1,5 @@
 import Contact from "../Components/ContactForm/Contact/Contact";
+import {Protect} from "../Components/PrivateRoute/PrivateRoute";
 
 
 const ContactForm = () => {
@@ -9,4 +10,4 @@ const ContactForm = () => {
     );
 };
 
-export default ContactForm;
+export default Protect(ContactForm);

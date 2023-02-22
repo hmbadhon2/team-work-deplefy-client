@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useContext } from "react";
+import { Protect } from "../../Components/PrivateRoute/PrivateRoute";
 import { AuthContext } from "../../context/AuthContext";
 // import Header from "../Components/Header/Header";
 
@@ -62,5 +63,5 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default Protect(Dashboard);
 

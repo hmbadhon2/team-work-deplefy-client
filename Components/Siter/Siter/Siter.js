@@ -2,6 +2,8 @@
 
 import React, { useContext } from 'react';
 import { ShareContext } from '../../../ShareProvider/ShareProvider';
+import { Protect } from '../../PrivateRoute/PrivateRoute';
+// import { ShareContext } from '../../../ShareProvider/ShareProvider';
 import AddSiteModal from './AddSiteModal';
 import AllSite from './AllSite';
 
@@ -80,7 +82,7 @@ const Siter = () => {
     );
 };
 
-export default Siter;
+export default Protect(Siter);
 
 
 
