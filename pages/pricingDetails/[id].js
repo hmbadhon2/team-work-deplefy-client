@@ -18,7 +18,7 @@ const buttonVariants = {
 }
 
 const pricingDetails = ({pricingData}) => {
-    const { _id, text, money, month, categorie_one, categorie_two, categorie_three, categorie_four, categorie_five } = pricingData;
+    const {text, money, month, categorie_one, categorie_two, categorie_three, categorie_four, categorie_five } = pricingData;
     const{profileImage}=useContext(ShareContext);
     console.log(pricingData)
 
