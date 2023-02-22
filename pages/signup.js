@@ -14,11 +14,7 @@ const Signup = () => {
     const { user, createUser, updateUser, googleSingIn } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
     const [createdUserEmail, setCreatedUserEmail] = useState('')
-    // const [token] = useToken(createdUserEmail);
-    // const navigate = useNavigate();
 
-    // if (token) {
-    //     navigate('/');
     // }
     const date = new Date();
 
