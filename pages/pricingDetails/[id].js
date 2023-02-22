@@ -1,9 +1,7 @@
 import { motion, spring } from "framer-motion"
 import Image from 'next/image';
 import { useContext, useEffect } from "react";
-import PaymentModal from "./PaymentModal";
 import { ShareContext } from "../../ShareProvider/ShareProvider";
-import { checkout } from "../../checkout";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutFrom from "./CheckoutFrom";
@@ -137,7 +135,6 @@ const pricingDetails = ({pricingData}) => {
           </tbody>
       </table>
      
-      <PaymentModal></PaymentModal>
 
       <Elements stripe={stripePromise}>
     <CheckoutFrom  pricingData={pricingData}/>

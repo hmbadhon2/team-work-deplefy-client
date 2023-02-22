@@ -9,12 +9,12 @@ const CheckoutFrom = ({pricingData}) => {
     const [success, setSuccess] = useState('');
     const[processing, setProcessing] = useState(false)
     const [transactionId, setTransactionId] = useState();
-    const{money, month, text}=pricingData;
+    const{_id, money, month, text}=pricingData;
     const {user}=useContext(AuthContext)
 
     useEffect(() => {
   
-        fetch("http://localhost:9000/create-payment-intent", {
+        fetch("https://deplefy-server.vercel.app/create-payment-intent", {
           method: "POST",
           headers: {
              "Content-Type": "application/json", 
@@ -52,7 +52,8 @@ const CheckoutFrom = ({pricingData}) => {
           else{
             setCardError('')
           }
-
+          setSuccess('')
+          setProcessing(true)
           const {paymentIntent, error: confirmError} = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -70,6 +71,36 @@ const CheckoutFrom = ({pricingData}) => {
             return;
           }
           console.log('paymentIntent', paymentIntent);
+          console.log('paymentIntent', paymentIntent);
+          if(paymentIntent.status==='succeeded'){
+            setSuccess('Congrates ! Your payment successfully');
+            setTransactionId(paymentIntent.id);
+            
+            const payments={
+              money,
+              transactionId: paymentIntent.id,
+              email: user?.email,
+              name: user?.displayName,
+              pricingPlanData: _id
+       }
+            fetch('https://deplefy-server.vercel.app/payments', {
+              method: 'POST',
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payments)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+              console.log(data)
+              if(data.insertedId){
+                setSuccess('Congrates ! Your payment successfully');
+                setTransactionId(paymentIntent.id);
+              }
+            })
+          
+          }
+          setProcessing(false)
     }
     return (
         <div>
@@ -90,11 +121,18 @@ const CheckoutFrom = ({pricingData}) => {
             },
           }}
         />
-      <button type="submit" disabled={!stripe || !elements}>
+      <button type="submit" disabled={!stripe || !elements || processing}>
         Pay
       </button>
     </form> 
     <p className='text-red-500'>{cardError}</p>
+    {
+        success && <div>
+          <p className='text-green-500'>{success}</p>
+          <p>Your TransactionId:  <span className='text-bold'>{transactionId}</span></p>
+        </div>
+       
+      }
         </div>
     );
 };
