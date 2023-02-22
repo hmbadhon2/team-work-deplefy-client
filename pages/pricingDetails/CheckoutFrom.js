@@ -109,7 +109,7 @@ const CheckoutFrom = ({pricingData}) => {
           options={{
             style: {
               base: {
-                fontSize: '16px',
+                fontSize: '17px',
                 color: '#424770',
                 '::placeholder': {
                   color: '#aab7c4',
