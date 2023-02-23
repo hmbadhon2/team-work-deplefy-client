@@ -1,7 +1,11 @@
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { useContext } from "react";
+import useAdmin from "../../Components/Hooks/useAdmin";
 import { Protect } from "../../Components/PrivateRoute/PrivateRoute";
 import { AuthContext } from "../../context/AuthContext";
+import { ShareContext } from "../../ShareProvider/ShareProvider";
 // import Header from "../Components/Header/Header";
 
 // import Loading from "../Components/Shared/Loading";
@@ -9,7 +13,30 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
-    // const [isSeller] = useSeller(user?.email)
+    const [isAdmin] = useAdmin(user?.email)
+    const { userAdmin, setUserAdmin } = useState([]);
+
+
+    // const {profiledata}=useContext(ShareContext);
+    // console.log(profiledata)
+    // const [isSeller] = useSeller(user?.email);
+    //  useEffect(()=>{
+    //     fetch(`http://localhost:9000/users/${user?.email}`)
+    //     .then(res=>res.json())
+    //     .then(data=>setUserAdmin(data))
+    //  },[user?.email])
+
+    const { data: siteData = [], refetch: siteLoad } = useQuery({
+        queryKey: ['siteDatabase', user?.email],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:9000/users/${user?.email}`);
+            const data = await res.json()
+            return data;
+        }
+
+    })
+
+
     // const [isAdmin] = useAdmin(user?.email)
     // const [isBuyer] = useBuyer(user?.email)
     return (
@@ -42,13 +69,26 @@ const Dashboard = () => {
                             </>
 
                         } */}
+                        <div>
+                            {
+                                siteData.map(userData => {
+                                    console.log(userData)
+                                    if (userData.role == 'admin') {
+                                        <li><Link href="/AllUsers">All users</Link></li>
+                                    }
+                                })
+                            }
+                        </div>
                         {
                             // isAdmin &&
 
                             <>
-                                <li><Link href="/AllUsers">All users</Link></li>
-                               
-                               
+                                {/* {
+                                    isAdmin && <li><Link href="/AllUsers">All users</Link></li>
+                                    
+                                } */}
+
+
                             </>
 
                         }

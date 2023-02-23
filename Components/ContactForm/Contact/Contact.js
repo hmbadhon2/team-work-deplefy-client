@@ -151,7 +151,7 @@ const Contact = () => {
                             {/* ...............Part-3.......... */}
                             <div className="">
                                 <div className="flex absolute inset-x-0 bottom-0">
-                                    <input onChange={(e) => setMessage(e.target.value)} type="text" className="w-full bg-white py-2 pl-3" />
+                                    <input onChange={(e) => setMessage(e.target.value)} type="text" className="w-full bg-white dark:text-black py-2 pl-3" />
                                     <button onClick={handleSubmit} className="bg-gradient-to-tr from-violet-900  to-blue-600 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-500 dark:text-black px-5 text-white font-bold">Send</button>
 
                                 </div>

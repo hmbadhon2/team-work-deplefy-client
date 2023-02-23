@@ -26,7 +26,7 @@ const pricingDetails = ({pricingData}) => {
 
 
     return (
-        <div className='md:max-w-[1140px] md:mx-auto my-12 md:border md:dark:border-white border-black bg-white dark:text-black  p-4'>
+        <div className='md:max-w-[1140px] md:mx-auto my-12 md:border md:dark:border-white border-black bg-white  dark:bg-black dark:text-white  p-4'>
         <div className='grid grid-cols-1 md:grid-cols-3'>
          <div>
          <div>
@@ -88,14 +88,14 @@ const pricingDetails = ({pricingData}) => {
   
           </div>
          </div>
-         <div className='col-span-2 bg-white'>
+         <div className='col-span-2 bg-white dark:bg-black'>
      
-  <div className="relative px-4 ">
+  <div className="relative overflow-x-auto px-4 ">
   <div className="mb-10 pl-4">
-     <h1 className="text-3xl font-bold">Pay to money</h1>
+     <h1 className="text-3xl font-bold">Pay to Money</h1>
 
      </div>
-     <div>
+     <div className="flex justify-items-start ml-4">
      <Player className='w-72'
 				autoplay
 				loop
@@ -106,7 +106,7 @@ const pricingDetails = ({pricingData}) => {
           </thead>
           <tbody>
               <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
                     Cardholder Name:
                   </th>
     
@@ -115,7 +115,7 @@ const pricingDetails = ({pricingData}) => {
                   </td>
               </tr>
               <tr>
-                  <th scope="row" className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-2 font-medium whitespace-nowrap">
                   Package:
                   </th>
             
@@ -124,7 +124,7 @@ const pricingDetails = ({pricingData}) => {
                   </td>
               </tr>
               <tr>
-                  <th scope="row" className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-2 font-medium whitespace-nowrap">
                       Email:
                   </th>
                 
@@ -133,7 +133,7 @@ const pricingDetails = ({pricingData}) => {
                   </td>
               </tr>
               <tr>
-                  <th scope="row" className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-2 font-medium whitespace-nowrap">
                   Monthly total:
                   </th>
                 
@@ -152,7 +152,7 @@ const pricingDetails = ({pricingData}) => {
     </Elements>
   </div>
 
-      {/* <button type="button" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 dark:text-gray-900 dark:bg-gradient-to-r dark:from-lime-400 dark:via-lime-400 dark:to-lime-500 dark:hover:bg-gradient-to-br dark:focus:ring-4 dark:focus:outline-none   rounded-lg px-5 py-2.5 text-center mr-2 mb-2"> <label htmlFor="my-modal-4" className="">Add to Card</label></button> */}
+      {/* <button type="button" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 dark dark:bg-gradient-to-r dark:from-lime-400 dark:via-lime-400 dark:to-lime-500 dark:hover:bg-gradient-to-br dark:focus:ring-4 dark:focus:outline-none   rounded-lg px-5 py-2.5 text-center mr-2 mb-2"> <label htmlFor="my-modal-4" className="">Add to Card</label></button> */}
   </div>
   
          </div>

@@ -1,21 +1,34 @@
+import { async } from "@firebase/util";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { Area, AreaChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 import { AuthContext } from "../../../context/AuthContext";
 
 
 const Chart = () => {
-    const{user}=useContext(AuthContext)
+    const{user}=useContext(AuthContext);
+    const{socialName, setSocialName}=useState([]);
+    const {socialValue, setSocialValue}=useState([]);
 
-    const { data: chart = [] } = useQuery({
+    useEffect(()=>{
+       const socialMediaName=[];
+       const socialMediaValue=[];
 
-		queryKey: ['Chartdata', user?.email],
-		queryFn: async () => {
-			const res = await fetch(`https://deplefy-server.vercel.app/payments?email==${user?.email}`)
-			const data = await res.json();
-			return data;
-		}
-	})
+       const getSocialRecord= async()=>{
+        const dataReq= await fetch(`https://deplefy-server.vercel.app/payments?email=${user?.email}`)
+        const dataRes= await dataReq.json();
+
+        for(let i=0; i<dataRes.length; i++)
+        {
+            socialMediaName.push(dataRes[i].money)
+        }
+        console.log(socialMediaName)
+       }
+    },[])
+
+  
     const data = [
         {
             name: 'Page A',

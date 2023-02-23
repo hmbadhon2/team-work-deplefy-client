@@ -11,7 +11,9 @@ const CheckoutFrom = ({pricingData}) => {
     const[processing, setProcessing] = useState(false)
     const [transactionId, setTransactionId] = useState();
     const{_id, money, month, text}=pricingData;
-    const {user}=useContext(AuthContext)
+    const {user}=useContext(AuthContext);
+
+    const date=new Date()
 
     useEffect(() => {
   
@@ -83,7 +85,8 @@ const CheckoutFrom = ({pricingData}) => {
               transactionId: paymentIntent.id,
               email: user?.email,
               name: user?.displayName,
-              pricingPlanData: _id
+              pricingPlanData: _id,
+              date
        }
             fetch('https://deplefy-server.vercel.app/payments', {
               method: 'POST',
@@ -107,14 +110,15 @@ const CheckoutFrom = ({pricingData}) => {
     return (
         <div>
            <form onSubmit={handleSubmit}>
-           <CardElement name="number" className='ml-4 md:ml-5 md:mr-32'
+           <CardElement name="number" className='md:ml-4 md:ml-5 md:mr-64 overflow-hidden dark:text-white'
           options={{
             style: {
               base: {
                 fontSize: '16px',
                 color: '#424770',
+               
                 '::placeholder': {
-                  color: 'black',
+                  color: 'green',
                 },
               },
               invalid: {

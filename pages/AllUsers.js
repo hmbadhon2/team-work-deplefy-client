@@ -6,7 +6,7 @@ import Loading from '../Components/Shared/Loading';
 
 
 const AllUsers = () => {
-    const [myAd, setMyAd] = useState([])
+    const [myAd, setMyAd] = useState([]);
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {

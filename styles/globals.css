@@ -70,17 +70,7 @@ body {
   
 }
 
-.google-button{
-  background-color: none;
-  border: 1px solid navy;
-  color: navy;
-  font-weight: bolder;
-  padding: 12px 0;
-}
-.google-button:hover{
-  background-color: navy;
-  color: white;
-}
+
 .dragAndDrop{
   border: 1px dotted grey;
 }
