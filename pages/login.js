@@ -98,10 +98,10 @@ const Login = () => {
 
     return (
         <div className='mb-10'>
-            <div className="hero dark:text-black ">
-                <div className="hero-content flex-col lg:flex-row-reverse justify-between">
+            <div className="md:hero dark:text-black ">
+                <div className="md:hero-content flex-col lg:flex-row-reverse justify-between">
                     {/* <img src={loginImg} className="max-w-sm md:max-w-lg rounded-lg shadow-2xl lg:ml-10" alt='login' /> */}
-                    <div className='border bg-gradient-to-b from-indigo-300 px-11 pt-8 pb-8 rounded-md' >
+                    <div className='border bg-gradient-to-b from-indigo-300 mx-4 md:mx-0 px-0 md:px-11 pt-8 pb-8 rounded-md' >
 
                         <h1 className='text-center font-serif '>Sign Into Your Account</h1>
 
@@ -109,7 +109,7 @@ const Login = () => {
                             <form onSubmit={handleSubmit(handleLogin)}>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text dark:text-white">Email</span></label>
-                                    <input type="text"
+                                    <input type="email"
                                         {...register("email", {
                                             required: "Email Address is required"
                                         })}

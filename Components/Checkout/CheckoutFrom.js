@@ -37,6 +37,7 @@ const CheckoutFrom = ({pricingData}) => {
             return;
         }
         const card = elements.getElement(CardElement);
+        console.log(card)
         
         if (card == null) {
             return;
@@ -106,7 +107,7 @@ const CheckoutFrom = ({pricingData}) => {
     return (
         <div>
            <form onSubmit={handleSubmit}>
-           <CardElement
+           <CardElement name="number" className='ml-4 md:ml-5 md:mr-32'
           options={{
             style: {
               base: {
@@ -122,14 +123,14 @@ const CheckoutFrom = ({pricingData}) => {
             },
           }}
         />
-      <button className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 dark:text-gray-900 dark:bg-gradient-to-r dark:from-lime-400 dark:via-lime-400 dark:to-lime-500 dark:hover:bg-gradient-to-br dark:focus:ring-4 dark:focus:outline-none   rounded-lg px-5 py-2.5 text-center mr-2 mb-2" type="submit" disabled={!stripe || !elements || processing}>
-        Pay
+      <button className="text-white ml-4  font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 dark:text-gray-900 dark:bg-gradient-to-r dark:from-lime-400 dark:via-lime-400 dark:to-lime-500 dark:hover:bg-gradient-to-br dark:focus:ring-4 dark:focus:outline-none   rounded-lg px-8 py-2.5 text-center mr-2 mb-2" type="submit" disabled={!stripe || !elements || processing}>
+        Payment
       </button>
     </form> 
     <p className='text-red-500'>{cardError}</p>
     {
-        success && <div>
-          <p className='text-green-500'>{success}</p>
+        success && <div className='ml-4'>
+          <p className='text-blue-700 dark:text-lime-500'>{success}</p>
           <p>Your TransactionId:  <span className='text-bold'>{transactionId}</span></p>
         </div>
        

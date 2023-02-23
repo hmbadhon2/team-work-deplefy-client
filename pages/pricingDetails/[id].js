@@ -4,7 +4,8 @@ import { useContext, useEffect } from "react";
 import { ShareContext } from "../../ShareProvider/ShareProvider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutFrom from '../../Components/Checkout/CheckoutFrom'
+import CheckoutFrom from '../../Components/Checkout/CheckoutFrom';
+import {Player} from '@lottiefiles/react-lottie-player'
 
 
 
@@ -89,9 +90,16 @@ const pricingDetails = ({pricingData}) => {
          </div>
          <div className='col-span-2 bg-white'>
      
-  <div className="relative overflow-x-auto px-4 pt-24">
-  <div className="mb-20 pl-4">
+  <div className="relative px-4 ">
+  <div className="mb-10 pl-4">
      <h1 className="text-3xl font-bold">Pay to money</h1>
+
+     </div>
+     <div>
+     <Player className='w-72'
+				autoplay
+				loop
+				src="https://assets3.lottiefiles.com/temporary_files/kDwQlh.json"></Player>
      </div>
       <table className="w-full text-left">
           <thead className="text-xs  uppercase bg-gray-100  ">
@@ -99,7 +107,7 @@ const pricingDetails = ({pricingData}) => {
           <tbody>
               <tr className="">
                   <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    Name
+                    Cardholder Name:
                   </th>
     
                   <td className="px-6 py-4">
@@ -107,29 +115,29 @@ const pricingDetails = ({pricingData}) => {
                   </td>
               </tr>
               <tr>
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                  Package
+                  <th scope="row" className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+                  Package:
                   </th>
             
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-2">
                  {text}
                   </td>
               </tr>
               <tr>
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                      Email
+                  <th scope="row" className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+                      Email:
                   </th>
                 
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-2">
                      {profileImage[0]?.email}
                   </td>
               </tr>
               <tr>
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                  Monthly total
+                  <th scope="row" className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap">
+                  Monthly total:
                   </th>
                 
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-2">
                       ${pricingData?.money}
                   </td>
               </tr>
@@ -137,10 +145,12 @@ const pricingDetails = ({pricingData}) => {
       </table>
      
         
-      <Elements stripe={stripePromise}>
+  <div className="mt-5">
+  <Elements stripe={stripePromise}>
       
-    <CheckoutFrom  pricingData={pricingData}/>
-  </Elements>
+      <CheckoutFrom  pricingData={pricingData}/>
+    </Elements>
+  </div>
 
       {/* <button type="button" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 dark:text-gray-900 dark:bg-gradient-to-r dark:from-lime-400 dark:via-lime-400 dark:to-lime-500 dark:hover:bg-gradient-to-br dark:focus:ring-4 dark:focus:outline-none   rounded-lg px-5 py-2.5 text-center mr-2 mb-2"> <label htmlFor="my-modal-4" className="">Add to Card</label></button> */}
   </div>

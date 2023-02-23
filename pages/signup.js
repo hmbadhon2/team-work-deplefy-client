@@ -99,98 +99,83 @@ const Signup = () => {
 
 
     return (
-        <div className=''>
-            <div className="hero dark:text-black">
-                <div className="hero-content flex-col lg:flex-row-reverse justify-between">
-                    {/* <img src className="max-w-sm md:max-w-lg rounded-lg shadow-2xl lg:ml-10" alt='login' /> */}
-                    <div className='grid grid-cols-2 gap-12'>
+        <div className='mb-10'>
+        <div className="md:hero dark:text-black ">
+            <div className="md:hero-content flex-col lg:flex-row-reverse justify-between">
+                {/* <img src={loginImg} className="max-w-sm md:max-w-lg rounded-lg shadow-2xl lg:ml-10" alt='login' /> */}
+                <div className='border bg-gradient-to-b from-indigo-300 mx-4 md:mx-0 px-0 md:px-11 pt-8 pb-8 rounded-md' >
 
+                    <h1 className='text-center font-serif '>Create An Account</h1>
 
+                    <div className='w-full md:w-96 p-7'>
+                        <form onSubmit={handleSubmit(handleSignUp)}>
+                            <div className="form-control w-full">
+                                <label className="label"> <span className="label-text dark:text-white">Name</span></label>
+                                <input type="text"
+                                    {...register("name", {
+                                        required: "Name is required"
+                                    })}
+                                    className="input input-bordered w-full" />
+                                {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+                            </div>
+                            <div className="form-control w-full">
+                                <label className="label"> <span className="label-text dark:text-white">Email</span></label>
+                                <input type="email"
+                                    {...register("email", {
+                                        required: "Email Address is required"
+                                    })}
+                                    className="input input-bordered w-full" />
+                                {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+                            </div>
+                            <div className="form-control w-full">
+                                <label className="label"> <span className="label-text dark:text-white">Password</span></label>
+                                <input type="password"
+                                    {...register("password", {
+                                        required: "Password is required",
+                                        minLength: { value: 6, message: 'Password must be 6 characters or longer' }
+                                    })}
+                                    className="input input-bordered w-full" />
+                                <label className="label"> <span className="label-text dark:text-white">Forget Password?</span></label>
+                                {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
+                            </div>
+                            <input className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold  py-3 rounded-lg w-full' value="Sign Up" type="submit" />
+                            <div>
+                                {signUpError && <p className='text-red-600'>{signUpError}</p>}
+                            </div>
+                        </form>
+                        <p className='dark:text-white font-serif text-sm'>Already have an account  <Link className='text-purple-900 font-bold dark:text-purple-500' href="/login">Please Login</Link></p>
+                        <div className="divider dark:text-white">OR</div>
 
                         <div>
-                            <Player className='w-4/5'
-                                autoplay
-                                loop
-                                src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json"></Player>
-
-                        </div>
-
-
-
-
-
-
-                        <div className='w-full md:w-96 p-7 mx-auto border bg-gradient-to-b from-indigo-300 px-10 pt-8 pb-8 rounded-md'>
-                            <h1 className='font-serif text-lg'> Create An Account </h1>
-                            <form onSubmit={handleSubmit(handleSignUp)}>
-                                <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text dark:text-white">Name</span></label>
-                                    <input type="text" {...register("name", {
-                                        required: "Name is Required"
-                                    })} className="input input-bordered w-full" />
-                                    {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
+                            {
+                                theme == "dark" ?
+                                <button onClick={handleGoogleSingUp} type="button" className="text-purple-900 w-full hover:text-white border border-purple-700 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg px-5 py-3 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
+                                <div className='flex justify-center items-center'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 mr-2 fill-current">
+                                        <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
+                                    </svg>
+                                    <p className='font-bold'>Login with Google</p>
                                 </div>
-
-                                <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text dark:text-white">Email</span></label>
-                                    <input type="text"
-                                        {...register("email", {
-                                            required: "Email Address is required"
-                                        })}
-                                        className="input input-bordered w-full" />
-                                    {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
-                                </div>
-
-                                <div className="form-control w-full">
-                                    <label className="label"> <span className="label-text dark:text-white">Password</span></label>
-                                    <input type="password" {...register("password", {
-                                        required: "Password is required",
-                                        minLength: { value: 6, message: "Password must be 6 characters long" },
-                                        pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must have uppercase, number and special characters' }
-                                    })} className="input input-bordered w-full" />
-                                    {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
-                                </div>
-                                <input className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800  font-bold py-3 rounded-lg w-full mt-4' value="Sign Up" type="submit" />
-                                {signUpError && <p className='text-red-600'>{signUpError}</p>}
-
-                            </form>
-                            <p className='dark:text-white text-sm font-serif mt-1'>Already have an account <Link href="/login" className='font-bold text-purple-500' >Please Login</Link></p>
-                            <div className="divider dark:text-white">OR</div>
-                            <div>
-                                {
-                                    theme == "dark" ?
+                            </button>
+                                    :
                                     <button onClick={handleGoogleSingUp} type="button" className="text-purple-900 w-full hover:text-white border border-purple-700 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg px-5 py-3 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
                                     <div className='flex justify-center items-center'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 mr-2 fill-current">
                                             <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
                                         </svg>
-                                        <p>Login with Google</p>
+                                        <p className='font-bold'>Login with Google</p>
                                     </div>
                                 </button>
-                                        :
-                                        <button onClick={handleGoogleSingUp} type="button" className="text-purple-900 w-full hover:text-white border border-purple-700 hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-500 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg px-5 py-3 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
-                                        <div className='flex justify-center items-center'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 mr-2 fill-current">
-                                                <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
-                                            </svg>
-                                            <p>Login with Google</p>
-                                        </div>
-                                    </button>
-                                }
 
-                            
-                            </div>
+                                
+                            }
                         </div>
-
-
-
-
 
                     </div>
                 </div>
             </div>
-
         </div>
+    </div>
     );
 };
 
