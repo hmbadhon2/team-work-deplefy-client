@@ -171,7 +171,7 @@ const Contact = () => {
                                     :
                                     <>
                                         {
-                                            user?.uid ?
+                                            user?.uid?
                                                 <img src={user?.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" /> : <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-business-male-icon-vector-png-image_4187852.jpg" alt="" className="w-32 h-32 mx-auto rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" />
                                         }
                                     </>

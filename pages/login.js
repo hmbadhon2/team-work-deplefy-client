@@ -45,8 +45,7 @@ const Login = () => {
                 console.log(user)
                 setLoginUserEmail(data.email);
                 toast.success('Please Login Successfully');
-               
-
+                router.replace('/Home')
             })
 
 

@@ -71,19 +71,20 @@ const Dashboard = () => {
 
                         } */}
 
-                        {
-                            // isAdmin &&
-
-                            <>
-                                {
-                                    adminAccess.role=='admin' && <li><Link href="/AllUsers">All users</Link></li>
-                                    
-                                }
 
                             
-                            </>
 
-                        }
+                        <div>
+                            {
+                                adminAccess.role == 'admin' && <li><Link href="/AllUsers">All users</Link></li>
+
+                            }
+                            {
+                                adminAccess.role !== 'admin' && <li><Link href="/PayInformation">Pay Information</Link></li>
+                            }
+
+                        </div>
+
 
 
 

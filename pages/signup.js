@@ -19,13 +19,18 @@ const Signup = () => {
     const[token]=useToken(createdUserEmail);
     const router=useRouter()
 
-    
+    // if(token){
+    //     router.replace('/Home')
+    //  }
+     
+     
+
    
     const date = new Date();
 
- if(token){
-    router.replace('/Home')
- }
+
+
+ console.log(token)
     const handleGoogleSingUp = () => {
         googleSingIn()
             .then(result => {
@@ -37,7 +42,8 @@ const Signup = () => {
                 console.log(user)
                 saveUser(user?.displayName, user?.email);
                 toast.success('User created Successfully')
-                setCreatedUserEmail(user?.email)
+                setCreatedUserEmail(user?.email);
+                router.replace('/Home')
             })
             .catch(error => {
                 console.log(error)
@@ -60,6 +66,7 @@ const Signup = () => {
                 toast.success('User created Successfully', {
                     position: toast.POSITION.TOP_CENTER
                 })
+                router.replace('/Home')
                 const userInfo = {
                     displayName: data.name,
                     email: data.email
@@ -83,7 +90,7 @@ const Signup = () => {
     }
     const saveUser = (name, email, userType) => {
         const user = { name, email, userType, date };
-        fetch('http://localhost:9000/users', {
+        fetch('https://deplefy-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

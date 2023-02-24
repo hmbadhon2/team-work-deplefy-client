@@ -99,7 +99,7 @@ const CheckoutFrom = ({pricingData}) => {
             .then(data=>{
               console.log(data)
               if(data.insertedId){
-                setSuccess('Congrates ! Your payment successfully');
+                setSuccess('Congrates ! Your Payment successfully');
                 setTransactionId(paymentIntent.id);
               }
             })
@@ -110,7 +110,7 @@ const CheckoutFrom = ({pricingData}) => {
     return (
         <div>
            <form onSubmit={handleSubmit}>
-           <CardElement name="number" className='md:ml-4 md:ml-5 md:mr-64 overflow-hidden dark:text-white'
+           <CardElement name="number" className='md:ml-5 md:mr-36 overflow-hidden dark:text-white'
           options={{
             style: {
               base: {
@@ -135,7 +135,6 @@ const CheckoutFrom = ({pricingData}) => {
     {
         success && <div className='ml-4'>
           <p className='text-blue-700 dark:text-lime-500'>{success}</p>
-          <p>Your TransactionId:  <span className='text-bold'>{transactionId}</span></p>
         </div>
        
       }

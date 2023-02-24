@@ -100,7 +100,7 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div className=" text-sm font-bold text-center">© {moment(profileImage[0]?.date).set('year')} Team-Tech-army All rights reserved.</div>
+			<div className=" text-sm font-bold text-center">© {moment(profileImage[0]?.date).set('year')} Team-Tech-Armie All rights reserved.</div>
 		</footer>
 	);
 };
