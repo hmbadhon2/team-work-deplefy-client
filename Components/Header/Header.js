@@ -99,6 +99,12 @@ const Header = () => {
 		<li onClick={() => setNavbar(!navbar)} className="">
 			<Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Dashboard</Link>
 		</li>
+
+		<li onClick={() => setNavbar(!navbar)} className="">
+			<Link rel="noopener noreferrer" href="/Domain" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Domain</Link>
+		</li>
+
+
 		<li onClick={() => setNavbar(!navbar)} className="">
 			<Link rel="noopener noreferrer" href="/Faq" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">FAQ</Link>
 		</li>

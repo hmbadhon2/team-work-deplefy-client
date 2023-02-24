@@ -194,6 +194,22 @@ const HostingFaq = () => {
                 </div>
 
             </div>
+
+
+
+
+
+
+               <div className='w-full mb-28'>
+                  <h1 className='text-center text-4xl font-bold faq dark:text-lime-700 '>30-Day Money-Back Guarantee</h1>
+                  <h2 className='text-center faq mt-4 dark:text-lime-700 '>If you're not 100% satisfied with Hostinger, we'll refund your payment. No hassle, no risk.</h2>
+                  <p  className=' mx-auto text-center text-white backgroundColor py-2 mt-5 font-bold w-2/12'>Get Started</p>
+               </div>
+
+
+
+
+
         </div >
     );
 };
