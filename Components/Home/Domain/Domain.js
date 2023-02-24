@@ -1,13 +1,35 @@
+import { useContext } from "react";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../../context/AuthContext";
 
 
 const Domain = () => {
-
+    const { user } = useContext(AuthContext);
+    console.log(user?.email)
 
     const handleDomain = (event)=>{
         event.preventDefault()
-        console.log(event)
         const domain = event.target.domain.value;
         console.log(domain)
+
+        const domainData={
+            myDomain:domain,
+            email: user?.email
+        }
+
+        fetch('http://localhost:9000/userDomainName',{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body: JSON.stringify(domainData)
+        })
+        .then((res) => res.json() )
+        .then((data) => {
+            console.log(data)
+            toast.success("Domain name succesful")
+        } )
+        .catch((err) => console.log(err) )
     }
 
 
