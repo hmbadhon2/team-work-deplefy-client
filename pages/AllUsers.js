@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import Loading from '../Components/Shared/Loading';
+// import Loading from '../Components/Shared/Loading';
 
 
 
@@ -77,9 +77,9 @@ const AllUsers = () => {
                 }
             })
     }
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+    // if (isLoading) {
+    //     return <Loading></Loading>
+    // }
 
 
 

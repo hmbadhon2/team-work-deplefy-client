@@ -5,6 +5,7 @@ import { useContext } from "react";
 import useAdmin from "../../Components/Hooks/useAdmin";
 import { Protect } from "../../Components/PrivateRoute/PrivateRoute";
 import { AuthContext } from "../../context/AuthContext";
+import AdminRoute from "../../routes/AdminRoute";
 import { ShareContext } from "../../ShareProvider/ShareProvider";
 // import Header from "../Components/Header/Header";
 
@@ -26,7 +27,7 @@ const Dashboard = () => {
     //     .then(data=>setUserAdmin(data))
     //  },[user?.email])
 
-    const { data: siteData = [], refetch: siteLoad } = useQuery({
+    const { data: adminAccess = {}, refetch: siteLoad } = useQuery({
         queryKey: ['siteDatabase', user?.email],
         queryFn: async () => {
             const res = await fetch(`http://localhost:9000/users/${user?.email}`);
@@ -44,11 +45,11 @@ const Dashboard = () => {
 
             <div className="drawer">
                 {/* <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" /> */}
-                <div className="drawer-content">
+                <div className="">
 
                 </div>
                 <div className="drawer-side">
-                    <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
+                    <label htmlFor="dashboard-drawer" className=""></label>
                     <ul className="menu p-4 text-base-content dark:text-white">
                         {/* <li><Link href="/dashboard">Dashboard</Link></li> */}
 
@@ -69,26 +70,17 @@ const Dashboard = () => {
                             </>
 
                         } */}
-                        <div>
-                            {
-                                siteData.map(userData => {
-                                    console.log(userData)
-                                    if (userData.role == 'admin') {
-                                        <li><Link href="/AllUsers">All users</Link></li>
-                                    }
-                                })
-                            }
-                        </div>
+
                         {
                             // isAdmin &&
 
                             <>
-                                {/* {
-                                    isAdmin && <li><Link href="/AllUsers">All users</Link></li>
+                                {
+                                    adminAccess.role=='admin' && <li><Link href="/AllUsers">All users</Link></li>
                                     
-                                } */}
+                                }
 
-
+                            
                             </>
 
                         }

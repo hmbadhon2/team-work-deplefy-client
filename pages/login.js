@@ -6,6 +6,7 @@ import { AuthContext } from '../context/AuthContext';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router'
 
 const Login = () => {
 
@@ -16,6 +17,7 @@ const Login = () => {
     const { signIn, googleSingIn } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('')
     const [loginUserEmail, setLoginUserEmail] = useState('');
+    const router=useRouter()
 
 
 
@@ -70,6 +72,7 @@ const Login = () => {
                 toast.success('You have login Successfully');
                 console.log(user)
                 saveUser(user?.displayName, user?.email, date);
+                router.replace('/Home')
             })
             .catch(error => {
                 console.log(error);
@@ -84,7 +87,8 @@ const Login = () => {
             // mode: 'no-cors',
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                "Content-Type": "application/json", 
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(user)
         })

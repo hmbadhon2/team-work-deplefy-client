@@ -1,30 +1,23 @@
-import { AuthContext } from "../context/AuthContext";
+import { useContext } from "react";
 import useAdmin from "../Components/Hooks/useAdmin";
 import Loading from "../Components/Shared/Loading";
-import { useContext } from "react";
-import { ShareContext } from "../ShareProvider/ShareProvider";
+import { AuthContext } from "../context/AuthContext";
 
 
 
+const AdminRoute = ({ children }) => {
+    const { user, loading } = useContext(AuthContext);
+    const [isAdmin, isAdminLoading] = useAdmin(user?.email);
 
-import { useEffect, useState } from "react"
+    if (loading || isAdminLoading) {
+        return <Loading></Loading>
+    }
 
-const useAdmin = email => {
-    const [isAdmin, setIsAdmin] = useState(false);
-    const [isAdminLoading, setIsAdminLoading] = useState(true);
-   
-    useEffect(() => {
-        if (email) {
-            fetch(`https://deplefy-server.vercel.app/users/admin/${email}`)
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    setIsAdmin(data.isAdmin);
-                    setIsAdminLoading(false);
-})
-        }
-    }, [email])
-    return [isAdmin, isAdminLoading]
-}
+    if (user && isAdmin) {
+        return children;
+    }
 
-export default useAdmin;
+    
+};
+
+export default AdminRoute;

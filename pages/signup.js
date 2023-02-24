@@ -7,27 +7,37 @@ import { AuthContext } from '../context/AuthContext';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Player } from '@lottiefiles/react-lottie-player'
+import useToken from '../Components/Hooks/useToken';
+import { useRouter } from 'next/router'
 
 const Signup = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { user, createUser, updateUser, googleSingIn } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
-    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [createdUserEmail, setCreatedUserEmail] = useState('');
+    const[token]=useToken(createdUserEmail);
+    const router=useRouter()
 
-    // }
+    
+   
     const date = new Date();
 
-
+ if(token){
+    router.replace('/Home')
+ }
     const handleGoogleSingUp = () => {
         googleSingIn()
             .then(result => {
                 const credential = GoogleAuthProvider.credentialFromResult(result)
                 const token = credential.accessToken;
-                const user = result.user
+                
+                const user = result.user;
+            
                 console.log(user)
                 saveUser(user?.displayName, user?.email);
                 toast.success('User created Successfully')
+                setCreatedUserEmail(user?.email)
             })
             .catch(error => {
                 console.log(error)
@@ -76,7 +86,8 @@ const Signup = () => {
         fetch('http://localhost:9000/users', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+
             },
             body: JSON.stringify(user)
         })
