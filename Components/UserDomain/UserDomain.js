@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../context/AuthContext';
 
 const UserDomain = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user?.email)
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const transferInput = event.target.transferInput.value;
+        console.log(transferInput)
+        fetch(`http://localhost:9000/transferDomain/${user?.email}`, {
+            method:"PATCH",
+            headers:{
+                "content-type":"application/json"
+            },
+            body: JSON.stringify({transferInput})
+        })
+        .then((res)=> res.json())
+        .then((data)=>{
+            console.log(data)
+            toast.success("Succesfully Transfer Domain")
+        })
+        .catch((err)=>console.log(err))
+    }
     return (
         <div className='my-20'>
             <h1 className='text-5xl text-center font-bold faq'>Transfer Your Domain</h1>
             <h1 className='faq font-semibold text-center mt-5'>Enter the domain that you would like to transfer to Hostinger</h1>
 
-            <div className='mx-auto flex justify-center items-center mt-7 '>
-            <input type="text" placeholder="Enter the domain you want to transfer" className="input input-bordered w-5/12 " />
-            <button className="btn border-none w-2/12 text-white myBtn text-md">Transfer</button>
-            </div>
+            <form action="" onSubmit={handleSubmit}>
+                <div className='mx-auto flex justify-center items-center mt-7 '>
+                    <input type="text" name='transferInput' placeholder="Enter the domain you want to transfer" className="input input-bordered w-5/12 " />
+                    <button className="btn border-none w-2/12 text-white myBtn text-md">Transfer</button>
+                </div>
+            </form>
 
 
 
