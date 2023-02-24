@@ -30,7 +30,7 @@ const Dashboard = () => {
     const { data: adminAccess = {}, refetch: siteLoad } = useQuery({
         queryKey: ['siteDatabase', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:9000/users/${user?.email}`);
+            const res = await fetch(`https://deplefy-server.vercel.app/users/${user?.email}`);
             const data = await res.json()
             return data;
         }
