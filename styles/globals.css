@@ -120,7 +120,9 @@ body {
 .backgroundColor{
   background-color: #673de6;
 }
-
+.myBtn{
+  background-color: #727586;
+}
 /* ................Dark Mode..................... */
 
 .manu-buttonDark{
