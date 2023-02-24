@@ -43,7 +43,7 @@ const Signup = () => {
                 saveUser(user?.displayName, user?.email);
                 toast.success('User created Successfully')
                 setCreatedUserEmail(user?.email);
-                router.replace('/Home')
+                router.replace('/')
             })
             .catch(error => {
                 console.log(error)
@@ -66,7 +66,7 @@ const Signup = () => {
                 toast.success('User created Successfully', {
                     position: toast.POSITION.TOP_CENTER
                 })
-                router.replace('/Home')
+                router.replace('/')
                 const userInfo = {
                     displayName: data.name,
                     email: data.email

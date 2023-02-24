@@ -45,7 +45,7 @@ const Login = () => {
                 console.log(user)
                 setLoginUserEmail(data.email);
                 toast.success('Please Login Successfully');
-                router.replace('/Home')
+                router.replace('/')
             })
 
 
@@ -71,7 +71,7 @@ const Login = () => {
                 toast.success('You have login Successfully');
                 console.log(user)
                 saveUser(user?.displayName, user?.email, date);
-                router.replace('/Home')
+                router.replace('/')
             })
             .catch(error => {
                 console.log(error);

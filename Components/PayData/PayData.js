@@ -7,20 +7,19 @@ import { AuthContext } from '../../context/AuthContext';
 const PayData = () => {
     const{user}= useContext(AuthContext)
     const{data: PayInformation=[]}=useQuery({
-      queryKey: ['payData'],
+      queryKey: ['payData', user?.email],
       queryFn: async()=>{
-        const res=await fetch(`http://localhost:9000/payments?email=${user?.email}`)
+        const res=await fetch(`https://deplefy-server.vercel.app/payments?email=${user?.email}`)
         const data= await res.json()
         return data;
       }
     })
-    console.log(PayInformation)
     return (
-        <div className='md:max-w-[1140px] md:mx-auto my-12'>
-            
-<div class="relative overflow-x-auto">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-900 uppercase dark:text-gray-400">
+        <div>
+      <div>     
+<div className="relative overflow-x-auto hidden lg:flex">
+    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
             <tr>
                 <th scope="col" className="px-6 py-3">
                    SL.No
@@ -32,7 +31,7 @@ const PayData = () => {
                    Date
                 </th>
                 <th scope="col" className="px-6 py-3">
-                transactionId
+                TransactionId
                 </th>
                 <th scope="col" className="px-6 py-3">
                     Price
@@ -41,7 +40,7 @@ const PayData = () => {
         </thead>
         <tbody>
         {
-                   PayInformation.map((pay, i)=><tr key={pay._id} className="text-black dark:text-white">
+                   PayInformation?.map((pay, i)=><tr key={pay._id} className="text-black dark:text-white">
                    <td className="px-6 py-4">
                        {i+1}
                    </td>
@@ -67,7 +66,63 @@ const PayData = () => {
         </tbody>
     </table>
 </div>
+</div> 
 
+<div className='lg:hidden'>
+{
+    PayInformation?.map((pay, i)=>
+        <div key={pay._id} className="">
+            <table className="w-full shadow-md text-sm text-left my-5">
+              
+                <tbody >
+                    <tr className="">
+                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        SL.No:
+                        </th>
+                        <td className="px-6 py-4">
+                          {i+1}
+                        </td>
+                     
+                    </tr>
+                    <tr className="">
+                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                           Name:
+                        </th>
+                        <td className="px-6 py-4">
+                        {pay.name}
+                        </td>
+
+                    </tr>
+                    <tr className="">
+                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Date:
+                        </th>
+                        <td className="px-6 py-4">
+                        {moment(pay.date).format('LLL')}
+                        </td>
+                    </tr>
+                    <tr className="">
+                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        TransactionId:
+                        </th>
+                        <td className="px-6 py-4">
+                        {pay.transactionId}
+                        </td>
+                    </tr>
+                    <tr className="">
+                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Price:
+                        </th>
+                        <td className="px-6 py-4">
+                        {pay.money}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        )
+}
+</div>
         </div>
     );
 };

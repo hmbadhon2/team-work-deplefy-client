@@ -1,4 +1,5 @@
 import React from 'react';
+import { Protect } from '../Components/PrivateRoute/PrivateRoute';
 import UserDomain from '../Components/UserDomain/UserDomain';
 
 
@@ -10,4 +11,4 @@ const Domain = () => {
     );
 };
 
-export default Domain;
+export default Protect(Domain);

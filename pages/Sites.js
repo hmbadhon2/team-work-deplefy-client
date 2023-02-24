@@ -1,4 +1,5 @@
 import React from 'react';
+import { Protect } from '../Components/PrivateRoute/PrivateRoute';
 import AddSiteModal from '../Components/Siter/Siter/AddSiteModal';
 import Siter from '../Components/Siter/Siter/Siter';
 
@@ -11,4 +12,4 @@ const Sites = () => {
     );
 };
 
-export default Sites;
+export default Protect(Sites);

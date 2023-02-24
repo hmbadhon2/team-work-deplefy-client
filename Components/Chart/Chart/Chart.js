@@ -75,7 +75,7 @@ const Chart = () => {
     ];
 
     return (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden my-12">
             <AreaChart width={700} height={400} data={data} margin={{
                 top: 5,
                 right: 30,

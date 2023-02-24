@@ -14,23 +14,23 @@ const UserProfile = () => {
 	const { siteData, profileImage, refetch } = useContext(ShareContext)
 	const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-    
+
 	// const imgHost = d0ee0f160648d3906c64599f51fb220b
-     
-	
+
+
 	const { data: userDomain = {}, refetch: siteLoad } = useQuery({
-        queryKey: ['userDomain', user?.email],
-        queryFn: async () => {
-            const res = await fetch(`http://localhost:9000/myDomain/${user?.email}`);
-            const data = await res.json()
-            return data;
-        }
+		queryKey: ['userDomain', user?.email],
+		queryFn: async () => {
+			const res = await fetch(`http://localhost:9000/myDomain/${user?.email}`);
+			const data = await res.json()
+			return data;
+		}
 
-    })
+	})
 
-	const { myDomain }= userDomain;
+	const { myDomain } = userDomain;
 
-    
+
 
 
 
@@ -120,7 +120,7 @@ const UserProfile = () => {
 					<p className='text-2xl'>Your personal information</p>
 				</div>
 			</div>
-			<div className="px-2 py-6 mx-3 md:px-6 border shadow-lg dark:text-gray-100 mb-10">
+			<div className="px-2 py-6 mx-3 md:pl-5  pr-10 border shadow-lg dark:text-gray-100 mb-10">
 				<div className=" md:flex md:justify-between md:items-center">
 
 					<div className="flex flex-col">
@@ -150,31 +150,71 @@ const UserProfile = () => {
 									</div>
 								}
 
+								<div class="overflow-hidden shadow-md sm:rounded-lg">
+									<table class="w-full text-left ">
 
+										<tbody>
+											<tr>
+												<th scope="row" class="pl-5 md:pl-0 pr-10 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+													Name:
+												</th>
+												{
+													profileImage[0]?.name ? <td class="pl-5 md:pl-0 pr-10">{profileImage[0]?.name}</td> : <td class="pl-5 md:pl-0 pr-10">{user?.displayName}</td>
+												}
 
-								<div>
-									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif '>Name:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Email:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Domain:</h1>
-
-									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Position:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Phone:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Country:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Location:</h1>
-
+											</tr>
+											<tr>
+												<th scope="row" class="pl-5 md:pl-0 pr-10 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+													Email:
+												</th>
+												{
+													profileImage[0]?.email ? <td class="pl-5 md:pl-0 pr-10 my-4">{profileImage[0]?.email}</td> : <td class="pl-5 md:pl-0 pr-10 my-4">{user?.email}</td>
+												}
+											</tr>
+											<tr >
+												<th scope="row" class="pl-5 md:pl-0 pr-10 my-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+													Domain
+												</th>
+												{
+													myDomain ? <td class="pl-5 md:pl-0 pr-10">{myDomain}</td> : <td class="pl-5 md:pl-0 pr-10"></td>
+												}
+											</tr>
+											<tr >
+												<th scope="row" class="pl-5 md:pl-0 pr-10 my-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+													Position:
+												</th>
+												{
+													profileImage[0]?.positionData ? <td class="pl-5 md:pl-0 pr-10 my-4">{profileImage[0]?.positionData}</td> : <td class="pl-5 md:pl-0 pr-10 my-4"></td>
+												}
+											</tr>
+											<tr >
+												<th scope="row" class="pl-5 md:pl-0 pr-10 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+													Phone:
+												</th>
+												{
+													profileImage[0]?.phone ? <td class="pl-5 md:pl-0 pr-10">{profileImage[0]?.phone}</td> : <td class="pl-5 md:pl-0 pr-10"></td>
+												}
+											</tr>
+											<tr>
+												<th scope="row" class="pl-5 md:pl-0 pr-10 my-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+													Country:
+												</th>
+												{
+													profileImage[0]?.country ? <td class="pl-5 md:pl-0 pr-10 my-4">{profileImage[0]?.country}</td> : <td class="pl-5 md:pl-0 pr-10 my-4"></td>
+												}
+											</tr>
+											<tr>
+												<th scope="row" class="pl-5 md:pl-0 pr-10 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+													Location:
+												</th>
+												{
+													profileImage[0]?.location ? <td class="pl-5 md:pl-0 pr-10">{profileImage[0]?.location}</td> : <td class="pl-5 md:pl-0 pr-10"></td>
+												}
+											</tr>
+										</tbody>
+									</table>
 								</div>
 
-
-								<div className=''>
-
-									{profileImage[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '>{profileImage[0]?.name}</h1> : <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '>{user?.displayName}</h1>}
-									{profileImage[0]?.email ? <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif'>{profileImage[0]?.email}</h1> : <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '>{user?.email}</h1>}
-                                       <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '>{myDomain}</h1>  
-									{profileImage[0]?.positionData ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.positionData}</h1> : <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '></h1>}
-									{profileImage[0]?.phone ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3  textColor font-serif'></h1>}
-									{profileImage[0]?.country ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.country}</h1> : <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '></h1>}
-									{profileImage[0]?.location ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.location}</h1> : <h1 className='ml-5 md:ml-12 mb-3  textColor font-serif'></h1>}
-								</div>
 							</div>
 
 							{/* ....................................... */}

@@ -69,8 +69,9 @@ const Header = () => {
 				<Link href='/Teams' passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Team Settings</Link>
 			</li>
 			<li>
-				<Link href="/Analysis" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Analysis</Link>
-			</li>
+			<Link rel="noopener noreferrer" href="/Domain" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Domain</Link>
+		    </li>
+
 			<li>
 				<Link onClick={handleLogOut} href="#" passHref className="manu-item flex items-center -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Log Out</Link>
 			</li>
@@ -99,11 +100,6 @@ const Header = () => {
 		<li onClick={() => setNavbar(!navbar)} className="">
 			<Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Dashboard</Link>
 		</li>
-
-		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/Domain" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Domain</Link>
-		</li>
-
 
 		<li onClick={() => setNavbar(!navbar)} className="">
 			<Link rel="noopener noreferrer" href="/Faq" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">FAQ</Link>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Protect } from '../Components/PrivateRoute/PrivateRoute';
 import Team from '../Components/Team/Team';
 import UpdateUserModal from '../Components/UpdateUserModal/UpdateUserModal';
 
@@ -12,4 +13,4 @@ const Teams = () => {
     );
 };
 
-export default Teams;
+export default Protect(Teams);

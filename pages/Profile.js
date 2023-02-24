@@ -1,4 +1,5 @@
 import React from 'react';
+import { Protect } from '../Components/PrivateRoute/PrivateRoute';
 import UserProfile from '../Components/UserProfile/UserProfile/UserProfile';
 
 const Profile = () => {
@@ -9,4 +10,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default Protect(Profile);

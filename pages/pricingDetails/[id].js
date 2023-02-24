@@ -90,7 +90,7 @@ const pricingDetails = ({pricingData}) => {
          </div>
          <div className='col-span-2 bg-white dark:bg-black'>
      
-  <div className="relative overflow-x-auto px-4 ">
+  <div className="overflow-hidden px-4 ">
   <div className="mb-10 pl-4">
      <h1 className="text-3xl font-bold">Pay to Money</h1>
 

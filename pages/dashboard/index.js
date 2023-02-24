@@ -72,17 +72,17 @@ const Dashboard = () => {
                         } */}
 
 
-                            
+
 
                         <div>
                             {
-                                adminAccess.role == 'admin' && <li><Link href="/AllUsers">All users</Link></li>
+                                adminAccess.role == 'admin' && <div>
+                                    <li className="manu-item -mb-1 font-bold text-gray-500 dark:hover:text-lime-700"><Link href="/AllUsers">All users</Link></li>
+
+                                </div>
 
                             }
-                            {
-                                adminAccess.role !== 'admin' && <li><Link href="/PayInformation">Pay Information</Link></li>
-                            }
-
+                            <li className="manu-item -mb-1 font-bold text-gray-500 dark:hover:text-lime-700"><Link href="/PayInformation">Pay Information</Link></li>
                         </div>
 
 

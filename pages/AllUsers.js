@@ -87,39 +87,145 @@ const AllUsers = () => {
     return (
         <div className='md:max-w-[1140px] md:mx-auto dark:text-black my-10'>
             <h2 className="md:text-3xl dark:text-white pl-3 md:pl-0 mb-5">All Users</h2>
-            <div className="overflow-hidden dark:bg-slate-900">
-                <table className="table w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead>
+
+            <div className="overflow-hidden hidden lg:flex shadow-md sm:rounded-lg">
+                <table className="w-full text-left text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-slate-900 dark:text-gray-400">
                         <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>User Type</th>
-                            <th>Verification</th>
-                            <th>Admin</th>
-                            <th>Action</th>
+                            <th scope="col" className="px-6 py-3">
+                                SL.No
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Name
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Email
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                User Type
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Verification
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Admin
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Action
+                            </th>
                         </tr>
                     </thead>
-                    <tbody className='dark:text-black'>
+                    <tbody>
                         {
-                            users.map((user, i) => <tr key={user._id}>
-                                <td className='font-bold ' data-label="SL.No">{i + 1}</td>
-                                <td data-label="NAME">{user.name}</td>
-                                <td data-label="EMAIL">{user.email}</td>
-                                <td data-label="USER TYPE" className='font-bold teamNameColor'>{user.userType}</td>
-                                <td data-label="VERIFICATION">
+                            users.map((user, i) => <tr>
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {i + 1}
+                                </th>
+                                <td className="px-6 py-4">
+                                    {user.name}
+                                </td>
+                                <td className="px-6 py-4">
+                                    {user.email}
+                                </td>
+                                <td className="px-6 py-4">
+                                    {user.userType}
+                                </td>
+                                <td className="px-6 py-4">
                                     <label
                                         onClick={() => handleUserStatusUpdate(user._id)}
                                         className=" p-2 rounded-lg font-bold bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
                                 </td>
-                                <td data-label="ADMIN">{user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}</td>
-                                <td data-label="ACTION"><button onClick={() => handleUserDelete(user)} className='btn btn-xs btn-danger'>Delete</button></td>
+                                <td className="px-6 py-4">
+                                    {user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}
+                                </td>
+                                <td className="px-6 py-4">
+                                    <button onClick={() => handleUserDelete(user)} className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Delete</button>
+                                </td>
                             </tr>)
                         }
+
                     </tbody>
                 </table>
             </div>
+
+            <div className='lg:hidden'>
+                {
+                    users?.map((user, i) =>
+                        <div key={user._id} className="relative overflow-x-auto dark:text-white">
+                            <table className="w-full shadow-md text-sm text-left my-5">
+
+                                <tbody >
+                                    <tr className="">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            SL.No:
+                                        </th>
+                                        <td className="px-6 py-4">
+                                            {i + 1}
+                                        </td>
+
+                                    </tr>
+                                    <tr className="">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            Name:
+                                        </th>
+                                        <td className="px-6 py-4">
+                                            {user.name}
+                                        </td>
+
+                                    </tr>
+                                    <tr className="">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            Email:
+                                        </th>
+                                        <td className="px-6 py-4">
+                                            {user.email}
+                                        </td>
+                                    </tr>
+                                    <tr className="">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            User Type:
+                                        </th>
+                                        <td className="px-6 py-4">
+                                            {user.userType}
+                                        </td>
+                                    </tr>
+                                    <tr className="">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Verification:
+                                        </th>
+                                        <td className="px-6 py-4">
+                                            <label
+                                                onClick={() => handleUserStatusUpdate(user._id)}
+                                                className=" p-2 rounded-lg font-bold bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
+                                        </td>
+                                    </tr>
+                                    <tr className="">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            Admin:
+                                        </th>
+                                        <td className="px-6 py-4">
+                                        {user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}
+                                        </td>
+                                    </tr>
+                                    <tr className="">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            Action:
+                                        </th>
+                                        <td className="px-6 py-4">
+                                        <button onClick={() => handleUserDelete(user)} className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Delete</button>
+                                        </td>
+                                    </tr>
+                        
+                                </tbody>
+                            </table>
+                        </div>
+                    )
+                }
+            </div>
+
+
         </div>
+
     );
 };
 
