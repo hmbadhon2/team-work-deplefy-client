@@ -14,8 +14,29 @@ const UserProfile = () => {
 	const { siteData, profileImage, refetch } = useContext(ShareContext)
 	const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-
+    
 	// const imgHost = d0ee0f160648d3906c64599f51fb220b
+     
+	
+	const { data: userDomain = {}, refetch: siteLoad } = useQuery({
+        queryKey: ['userDomain', user?.email],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:9000/myDomain/${user?.email}`);
+            const data = await res.json()
+            return data;
+        }
+
+    })
+
+	const { myDomain }= userDomain;
+
+    
+
+
+
+
+
+
 
 
 
@@ -132,24 +153,27 @@ const UserProfile = () => {
 
 
 								<div>
-									<h1 className='pl-5 md:pl-0 mb-3 '>Name:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3'>Email:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3'>Position:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3'>Phone:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3'>Country:</h1>
-									<h1 className='pl-5 md:pl-0 mb-3'>Location:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif '>Name:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Email:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Domain:</h1>
+
+									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Position:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Phone:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Country:</h1>
+									<h1 className='pl-5 md:pl-0 mb-3 textColor font-serif'>Location:</h1>
 
 								</div>
 
 
 								<div className=''>
 
-									{profileImage[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.name}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.displayName}</h1>}
-									{profileImage[0]?.email ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.email}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '>{user?.email}</h1>}
-									{profileImage[0]?.positionData ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.positionData}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
-									{profileImage[0]?.phone ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
-									{profileImage[0]?.country ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.country}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
-									{profileImage[0]?.location ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.location}</h1> : <h1 className='ml-5 md:ml-12 mb-3 '></h1>}
+									{profileImage[0]?.name ? <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '>{profileImage[0]?.name}</h1> : <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '>{user?.displayName}</h1>}
+									{profileImage[0]?.email ? <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif'>{profileImage[0]?.email}</h1> : <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '>{user?.email}</h1>}
+                                       <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '>{myDomain}</h1>  
+									{profileImage[0]?.positionData ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.positionData}</h1> : <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '></h1>}
+									{profileImage[0]?.phone ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.phone}</h1> : <h1 className='ml-5 md:ml-12 mb-3  textColor font-serif'></h1>}
+									{profileImage[0]?.country ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.country}</h1> : <h1 className='ml-5 md:ml-12 mb-3 textColor font-serif '></h1>}
+									{profileImage[0]?.location ? <h1 className='ml-5 md:ml-12 mb-3 '>{profileImage[0]?.location}</h1> : <h1 className='ml-5 md:ml-12 mb-3  textColor font-serif'></h1>}
 								</div>
 							</div>
 
