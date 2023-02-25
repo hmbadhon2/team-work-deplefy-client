@@ -137,15 +137,14 @@
  
 //  export default Practice;
 
-
 import React from 'react';
 
 const Practice = () => {
-    return (
-        <div className='flex justify-end'>
-            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.573488961311!2d91.84201101426981!3d22.369727896025505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ad27770979b85d%3A0xdd88575682a1c7b8!2sBahaddarhat%20Police%20Box!5e0!3m2!1sen!2sbd!4v1677315661540!5m2!1sen!2sbd" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
-        </div>
-    );
+  return (
+    <div>
+      
+    </div>
+  );
 };
 
 export default Practice;

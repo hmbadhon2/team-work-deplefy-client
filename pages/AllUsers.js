@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
+import moment from 'moment/moment';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-// import Loading from '../Components/Shared/Loading';
+
 
 
 
@@ -102,7 +103,7 @@ const AllUsers = () => {
                                 Email
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                User Type
+                                Date
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Verification
@@ -115,7 +116,7 @@ const AllUsers = () => {
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='text-black dark:text-white'>
                         {
                             users.map((user, i) => <tr>
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -128,12 +129,12 @@ const AllUsers = () => {
                                     {user.email}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {user.userType}
+                                    {moment(user.date).format('lll')}
                                 </td>
                                 <td className="px-6 py-4">
                                     <label
                                         onClick={() => handleUserStatusUpdate(user._id)}
-                                        className=" p-2 rounded-lg font-bold bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
+                                        className=" p-2 rounded-lg font-bold bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
                                 </td>
                                 <td className="px-6 py-4">
                                     {user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}
@@ -186,7 +187,7 @@ const AllUsers = () => {
                                             User Type:
                                         </th>
                                         <td className="px-6 py-4">
-                                            {user.userType}
+                                        {moment(user.date).format('lll')}
                                         </td>
                                     </tr>
                                     <tr className="">
@@ -196,7 +197,7 @@ const AllUsers = () => {
                                         <td className="px-6 py-4">
                                             <label
                                                 onClick={() => handleUserStatusUpdate(user._id)}
-                                                className=" p-2 rounded-lg font-bold bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
+                                                className=" p-2 rounded-lg font-bold bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black btn-xs" htmlFor="confirmation-modal" >{user.status ? user.status : 'Not Verified'}</label>
                                         </td>
                                     </tr>
                                     <tr className="">

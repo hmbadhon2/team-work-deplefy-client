@@ -51,7 +51,7 @@ const AllSite = ({ site }) => {
 
 
                 <div className=' ml-4 mt-4 md:mt-0 md:ml-auto flex md:justify-center lg:justify-end md:items-center'>
-                    <button className="site-button  bg-gradient-to-tr from-violet-900  to-blue-600  text-white rounded-lg dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black">
+                    <button className="site-button  bg-gradient-to-tr from-violet-900  to-blue-600  text-white rounded-lg dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black">
                         <a> </a>
                         <a href={website} target="_blank" rel="noopener noreferrer">View site</a>
                     </button>

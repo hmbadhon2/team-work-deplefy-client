@@ -34,7 +34,7 @@ const Domain = () => {
 
 
     return (
-        <div className="rounded-3xl mt-12  bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 py-10">
+        <div className="rounded-3xl mt-12  bg-gradient-to-tr from-violet-900 to-blue-600 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 py-10">
             <div className="p-12 text-center">
                 <h3 className="text-3xl text-white font-semibold dark:text-black mb-10"> Do You Want Your Premium Domain?</h3>
                 <form onSubmit={handleDomain} className="p-5 rounded-3xl md:p-2  md:mx-24 bg-white md:rounded-full mb-10">

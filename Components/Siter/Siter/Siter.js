@@ -27,7 +27,7 @@ const Siter = () => {
 
                 <div className="dropdown">
 
-                    <label tabIndex={0} className="new-site bg-gradient-to-tr from-violet-900  to-blue-600  text-white rounded-lg dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black m-1 py-16 px-5">Add New Site</label>
+                    <label tabIndex={0} className="new-site bg-gradient-to-tr from-violet-900  to-blue-600  text-white rounded-lg dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black m-1 py-16 px-5">Add New Site</label>
                     <ul tabIndex={0} className="dropdown-content menu mt-4 p-2 shadow  rounded-box md:w-52">
                         <label htmlFor="my-modal-3" className='font-serif ml-3'>Deploy Manually</label>
                         <li><a className='font-serif'>Tamplate</a></li>

@@ -112,7 +112,7 @@ const AddSiteModal = ({siteLoad}) => {
 
 
                         <div className='w-full text-center mt-6'>
-                            <button type='submit' className="builds-button  dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black font-bold py-2 w-full hover:bg-purple-600">Submit</button>
+                            <button type='submit' className="builds-button  dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black font-bold py-2 w-full hover:bg-purple-600">Submit</button>
                         </div>
                     </form>
 

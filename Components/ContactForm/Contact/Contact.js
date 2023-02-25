@@ -36,7 +36,7 @@ const Contact = () => {
 
                 {/* ..............Session-1...................... */}
                 <div className="col-span-1">
-                    <div className='bg-gradient-to-tr from-violet-900  to-blue-600 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 h-full p-5'>
+                    <div className='bg-gradient-to-tr from-violet-900  to-blue-600 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 h-full p-5'>
 
                         {/* ..........Part 1............... */}
                         <div className='flex justify-between text-white'>
@@ -122,7 +122,7 @@ const Contact = () => {
                             </div>
                             <div className='flex text-white'>
                                 <a href="https://meet.google.com/ykx-iukf-mru" target='_blank'>
-                                    <div className='bg-gradient-to-tr from-violet-900  to-blue-600 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black rounded-full p-2 mr-2'>
+                                    <div className='bg-gradient-to-tr from-violet-900  to-blue-600 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black rounded-full p-2 mr-2'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                                         </svg>
@@ -130,7 +130,7 @@ const Contact = () => {
                                 </a>
 
                                 <a href="https://meet.google.com/ykx-iukf-mru" target='_blank'>
-                                    <div className='bg-gradient-to-tr from-violet-900  to-blue-600 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black rounded-full p-2'>
+                                    <div className='bg-gradient-to-tr from-violet-900  to-blue-600 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black rounded-full p-2'>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                                             <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
                                         </svg>

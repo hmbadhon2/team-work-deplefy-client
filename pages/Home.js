@@ -7,6 +7,7 @@ import Domain from '../Components/Home/Domain/Domain';
 import ChoseUs from '../Components/Home/ChooseUs/ChoseUs';
 import DataCenter from '../Components/Home/DataCenter/DataCenter';
 import Pricing from '../Components/Home/Pricing/Pricing';
+import GoogleMap from '../Components/Home/GoogleMap/GoogleMap';
 
 
 
@@ -25,17 +26,20 @@ const Home = () => {
             <Pricing/>
         </div>
        
-        <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px] dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black rounded-br-[250px] text-white pt-24 pb-64  md:py-24 my-12">
+        <div className="bg-gradient-to-tr from-violet-900  to-blue-600 rounded-tl-[250px] dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black rounded-br-[250px] text-white pt-24 pb-64  md:py-24 my-12">
             <ChoseUs/>
         </div>   
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <TeamMember/>
         </div>
-        <div className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black py-12 my-12 rounded" >
+        <div className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black py-12 my-12 rounded" >
             <DataCenter/>
         </div>
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <Subscribe/>
+        </div>
+        <div className='md:max-w-[1140px] md:mx-auto my-12' >
+            <GoogleMap/>
         </div>
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <Practice/>

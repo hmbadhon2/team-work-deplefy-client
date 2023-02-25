@@ -29,7 +29,7 @@ const Builder = () => {
                         <p className="py-6 text-justify">Deplify can automate builds of your site each time you push a change to your Git repo. Once your team starts deploying, you will see a summary of your team activity, a list of deployed builds and their status here. Use the power of deploy previews, staging sites for each branch, and custom webhook integrations—all included with your account.</p>
                         <h3 className='font-bold text-green-700 text-lg dark:text-orange-500'>Learn more about builds</h3>
                          </div>
-                        <button className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 dark:text-black px-4 py-2 rounded-lg font-semibold my-5">New site from Git</button>
+                        <button className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black px-4 py-2 rounded-lg font-semibold my-5">New site from Git</button>
                     </div>
                 </div>
             </div>

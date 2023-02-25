@@ -10,7 +10,7 @@ const TeamMember = () => {
             <section className="py-6 ">
                 <div className="flex flex-col justify-center p-4 mx-auto">
                     <div className="grid  md:grid-rows-2  md:grid-flow-col gap-4">
-                        <div className="row-span-1 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 rounded-tl-[150px] rounded-br-[130px]">
+                        <div className="row-span-1 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 rounded-tl-[150px] rounded-br-[130px]">
                             <div className='bg-gray-300 dark:bg-slate-900 rounded-tl-[250px] rounded-br-[250px] shadow-lg'>
                                 <img className="object-cover  dark:bg-gray-500 aspect-square rounded-tl-[250px] rounded-br-[250px]" src="https://i.ibb.co/6Y5cR0B/95138857-10220568390431649-1696556186939162624-n.jpg" />
                                 <div className='pt-5 pl-2'>
@@ -34,7 +34,7 @@ const TeamMember = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="row-span-1 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 rounded-tl-[150px] rounded-br-[130px]">
+                        <div className="row-span-1 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 rounded-tl-[150px] rounded-br-[130px]">
                             <div className='bg-gray-300 dark:bg-slate-900 rounded-tl-[250px] rounded-br-[250px] shadow-lg'>
                                 <img className="object-cover w-full dark:bg-gray-500 aspect-square rounded-tl-[250px] rounded-br-[250px]" src="https://i.ibb.co/K09hkBh/Lipton.jpg" />
                                 <div className='pt-5 pl-2'>
@@ -59,7 +59,7 @@ const TeamMember = () => {
                             </div>
                         </div>
 
-                        <div className="row-span-1 row-cols-1 md:row-span-2 md:col-span-2 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 rounded-tl-[230px] rounded-br-[250px] my-32">
+                        <div className="row-span-1 row-cols-1 md:row-span-2 md:col-span-2 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 rounded-tl-[230px] rounded-br-[250px] my-32">
                             <div className='bg-gray-300 dark:bg-slate-900 rounded-br-[248px] rounded-tl-[248px] shadow-lg'>
                                 <img className="object-cover w-full  aspect-square rounded-tl-[250px] rounded-br-[248px]" src="https://i.ibb.co/CKWqfck/276134923-464282752108411-7308729828953499704-n.jpg" />
                                 <div className='pt-5 pl-2'>
@@ -83,7 +83,7 @@ const TeamMember = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="row-span-1 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 rounded-tl-[150px] rounded-br-[130px]">
+                        <div className="row-span-1 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 rounded-tl-[150px] rounded-br-[130px]">
                             <div className='bg-gray-300 dark:bg-slate-900 rounded-tl-[250px] rounded-br-[250px] shadow-lg'>
                                 <img className="object-cover w-full dark:bg-gray-500 aspect-square rounded-tl-[250px] rounded-br-[250px]" src="https://thumbs.dreamstime.com/b/passport-document-id-photo-business-man-portrait-concept-young-handsome-stylish-guy-formal-wear-white-background-119717703.jpg" />
                                 <div className='pt-5 pl-2'>
@@ -107,7 +107,7 @@ const TeamMember = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="row-span-1 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-tr dark:from-lime-900 dark:to-lime-600 rounded-tl-[150px] rounded-br-[130px]">
+                        <div className="row-span-1 bg-gradient-to-t to-blue-500 from-indigo-800 dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 rounded-tl-[150px] rounded-br-[130px]">
                             <div className='bg-gray-300 dark:bg-slate-900 rounded-tl-[250px] rounded-br-[250px] shadow-lg'>
                                 <img className="object-cover w-full dark:bg-gray-500 aspect-square rounded-tl-[250px] rounded-br-[250px]" src="https://i.ibb.co/h2WD8YP/Untitled-1-copy.jpg" />
                                 <div className='pt-5 pl-2'>

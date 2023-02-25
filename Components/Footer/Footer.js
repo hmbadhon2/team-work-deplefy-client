@@ -23,19 +23,17 @@ const Footer = () => {
 	return (
 		<footer className="px-4   py-10">
 			<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-				<div className="sm:text-centerlg:w-1/3">
+				<div className="sm:text-centerlg:w-32">
 					<a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
 
 						<div className="w-24 rounded">
-							{/* {
-                       theme==="dark"? <img src="https://i.ibb.co/Jdz3J1h/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-1-removebg.png" /> : <img src="https://i.ibb.co/QXx4dzT/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-removebg-p.png" /> 
-                    } */}
+
 
 							<img src="https://i.ibb.co/Jdz3J1h/Perfect-unique-attractive-stylish-geometric-tech-PD-DP-P-D-initial-based-letter-icon-logo-1-removebg.png" />
 						</div>
 					</a>
 				</div>
-				<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+				<div className="grid grid-cols-2 text-sm gap-y-8 lg:w-2/3 sm:grid-cols-4">
 					<div className="space-y-3">
 						<h3 className="tracking-wide font-semibold uppercase">Product</h3>
 						<ul className="space-y-1">
