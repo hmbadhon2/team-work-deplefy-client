@@ -120,7 +120,7 @@ const UserProfile = () => {
 					<p className='text-2xl'>Your personal information</p>
 				</div>
 			</div>
-			<div className="px-2 py-6 mx-3 md:pl-5  pr-10 border shadow-lg dark:text-gray-100 mb-10">
+			<div className="px-2 py-6 md:pl-5  pr-10 border shadow-lg dark:text-gray-100 mb-10">
 				<div className=" md:flex md:justify-between md:items-center">
 
 					<div className="flex flex-col">
@@ -150,7 +150,7 @@ const UserProfile = () => {
 									</div>
 								}
 
-								<div class="overflow-hidden shadow-md sm:rounded-lg">
+								<div class="overflow-x-hidden shadow-md sm:rounded-lg">
 									<table class="w-full text-left ">
 
 										<tbody>

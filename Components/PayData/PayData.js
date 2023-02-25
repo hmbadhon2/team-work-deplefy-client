@@ -59,9 +59,6 @@ const PayData = () => {
                </tr>)
                     
                    } 
-                
-   
-       
           
         </tbody>
     </table>
