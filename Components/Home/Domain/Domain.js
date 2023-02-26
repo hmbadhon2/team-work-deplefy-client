@@ -1,15 +1,19 @@
 import { useContext } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../context/AuthContext";
+import { ShareContext } from "../../../ShareProvider/ShareProvider";
 
 
 const Domain = () => {
     const { user } = useContext(AuthContext);
+    const{refetch}=useContext(ShareContext)
     console.log(user?.email)
 
     const handleDomain = (event)=>{
-        event.preventDefault()
-        const domain = event.target.domain.value;
+       
+        event.preventDefault();
+        const form=event.target;
+        const domain = form.domain.value;
         console.log(domain)
 
         const domainData={
@@ -17,8 +21,8 @@ const Domain = () => {
             email: user?.email
         }
 
-        fetch('http://localhost:9000/userDomainName',{
-            method:"POST",
+        fetch(`https://deplefy-server.vercel.app/userDomainName?email=${user?.email}`,{
+            method:"PUT",
             headers:{
                 "content-type":"application/json"
             },
@@ -27,7 +31,9 @@ const Domain = () => {
         .then((res) => res.json() )
         .then((data) => {
             console.log(data)
-            toast.success("Domain name succesful")
+            toast.success("Domain name succesful");
+            refetch();
+            form.reset()
         } )
         .catch((err) => console.log(err) )
     }

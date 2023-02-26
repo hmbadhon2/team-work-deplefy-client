@@ -18,25 +18,6 @@ const UserProfile = () => {
 	// const imgHost = d0ee0f160648d3906c64599f51fb220b
 
 
-	const { data: userDomain = {}, refetch: siteLoad } = useQuery({
-		queryKey: ['userDomain', user?.email],
-		queryFn: async () => {
-			const res = await fetch(`http://localhost:9000/myDomain/${user?.email}`);
-			const data = await res.json()
-			return data;
-		}
-
-	})
-
-	const { myDomain } = userDomain;
-
-
-
-
-
-
-
-
 
 
 
@@ -77,7 +58,7 @@ const UserProfile = () => {
 						.then(data => {
 							toast.success('Profile Edit is Successfully');
 							refetch();
-							reset()
+							reset();
 						})
 				}
 			})
@@ -150,7 +131,7 @@ const UserProfile = () => {
 									</div>
 								}
 
-								<div class="overflow-x-hidden shadow-md sm:rounded-lg">
+								<div class="overflow-x-hidden sm:rounded-lg">
 									<table class="w-full text-left ">
 
 										<tbody>
@@ -173,10 +154,10 @@ const UserProfile = () => {
 											</tr>
 											<tr >
 												<th scope="row" class="pl-5 md:pl-0 pr-10 my-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-													Domain
+													Domain:
 												</th>
 												{
-													myDomain ? <td class="pl-5 md:pl-0 pr-10">{myDomain}</td> : <td class="pl-5 md:pl-0 pr-10"></td>
+													profileImage[0]?.myDomain ? <td class="pl-5 md:pl-0 pr-10">{profileImage[0]?.myDomain}</td> : <td class="pl-5 md:pl-0 pr-10"></td>
 												}
 											</tr>
 											<tr >

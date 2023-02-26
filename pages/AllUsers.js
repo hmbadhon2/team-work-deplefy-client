@@ -74,13 +74,11 @@ const AllUsers = () => {
             .then(data => {
                 if (data.deletedCount > 0) {
                     refetch()
-                    toast.success(` ${user.name} deleted Successfully`)
+                    toast.success(` ${user?.name} deleted Successfully`)
                 }
             })
     }
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
+
 
 
 
@@ -91,7 +89,7 @@ const AllUsers = () => {
 
             <div className="overflow-hidden hidden lg:flex shadow-md sm:rounded-lg">
                 <table className="w-full text-left text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-slate-900 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-indigo-200 dark:bg-slate-900 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
                                 SL.No

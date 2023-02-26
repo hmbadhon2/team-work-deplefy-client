@@ -19,7 +19,7 @@ const PayData = () => {
       <div>     
 <div className="relative overflow-x-auto hidden lg:flex">
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
+        <thead className="text-xs text-gray-900 bg-indigo-200 dark:bg-slate-900 uppercase dark:text-gray-400">
             <tr>
                 <th scope="col" className="px-6 py-3">
                    SL.No

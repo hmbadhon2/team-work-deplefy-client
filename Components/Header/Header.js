@@ -149,7 +149,7 @@ const Header = () => {
 								}
 								{dropDown && (
 									<ul
-										className="lg:absolute w-44  lg:top-14  lg:right-0 menu ul bg-white  dark:bg-black shadow  lg:bg-opacity-30 lg:backdrop-filter lg:backdrop-blur-2xl lg:shadow-md lg:z-50 lg:p-2 "
+										className="lg:absolute w-44  lg:top-14  lg:right-0 menu ul bg-indigo-100  dark:bg-black shadow  lg:bg-opacity-30 lg:backdrop-filter lg:backdrop-blur-2xl lg:shadow-md lg:z-50 lg:p-2 "
 										onClick={() => {
 											setDropDown(!dropDown);
 											setNavbar(!navbar);
@@ -205,7 +205,7 @@ const Header = () => {
 
 	return (
 		<div className="pt-24">
-			<nav className="fixed  bg-white dark:bg-black dark:border-b-2 dark:border-slate-900 shadow-md  z-50 w-full md:px-5 py-1  right-0 top-0 left-0">
+			<nav className="fixed  bg-indigo-100 dark:bg-black dark:border-b-2 dark:border-slate-900 shadow-md  z-50 w-full md:px-5 py-1  right-0 top-0 left-0">
 				<div className="px-4 md:px-2 lg:px-20 mx-auto lg:items-center lg:flex">
 					<div>
 						<div className="flex items-center justify-between  lg:block">

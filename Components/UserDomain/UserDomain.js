@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../context/AuthContext';
+import { ShareContext } from '../../ShareProvider/ShareProvider';
 
 const UserDomain = () => {
     const { user } = useContext(AuthContext);
-    console.log(user?.email)
+    const{refetch}=useContext(ShareContext)
 
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        const transferInput = event.target.transferInput.value;
+        event.preventDefault();
+        const form=event.target;
+        const transferInput = form.transferInput.value;
         console.log(transferInput)
-        fetch(`http://localhost:9000/transferDomain/${user?.email}`, {
+        fetch(`https://deplefy-server.vercel.app/transferDomain/${user?.email}`, {
             method:"PATCH",
             headers:{
                 "content-type":"application/json"
@@ -21,13 +23,15 @@ const UserDomain = () => {
         .then((res)=> res.json())
         .then((data)=>{
             console.log(data)
-            toast.success("Succesfully Transfer Domain")
+            toast.success("Succesfully Transfer Domain");
+            refetch();
+            form.reset();
         })
         .catch((err)=>console.log(err))
     }
     return (
         <div className=''>
-            <h1 className='text-5xl text-center font-bold faq dark:text-lime-700'>Transfer Your Domain</h1>
+            <h1 className='text-4xl md:text-5xl text-center font-bold faq dark:text-lime-700'>Transfer Your Domain</h1>
             <h1 className='faq font-semibold text-center mt-5 dark:text-slate-500'>Enter the domain that you would like to transfer to Hostinger</h1>
 
             <form action="" onSubmit={handleSubmit}>
@@ -44,10 +48,10 @@ const UserDomain = () => {
 
 
 
-            <div className=' w-full px-4'>
-                <h1 className='text-4xl text-center font-semibold faq dark:text-lime-700 mt-40'>Why Transfer Your Domain?</h1>
+            <div className=' w-full md:px-4'>
+                <h1 className='text-3xl md:text-4xl text-center font-semibold faq dark:text-lime-700 mt-40'>Why Transfer Your Domain?</h1>
 
-                <div className=' grid grid-cols-1 md:grid-cols-3 gap-14 mt-16 mb-12 '>
+                <div className='px-4 text-justify grid grid-cols-1 md:grid-cols-3 gap-14 mt-16 mb-12 '>
 
                     <div>
                         <h1 className='faq dark:text-white text-2xl font-semibold'>User-Friendly Control Panel</h1>
