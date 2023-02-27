@@ -8,11 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@lottiefiles/react-lottie-player": "^3.5.2",
     "@material-tailwind/react": "^1.2.5",
-    "@mui/material": "^5.11.5",
+    "@mui/icons-material": "^5.11.9",
+    "@mui/material": "^5.11.10",
+    "@mui/styled-engine-sc": "^5.11.9",
     "@next/font": "13.1.1",
     "@react-google-maps/api": "^2.18.1",
     "@strapi/strapi": "^4.6.1",
@@ -36,6 +38,7 @@
     "simple-peer": "^9.11.1",
     "socket.io-client": "^4.5.4",
     "stripe": "^11.11.0",
+    "styled-components": "^5.3.6",
     "typewriter-effect": "^2.19.0"
   }
 }

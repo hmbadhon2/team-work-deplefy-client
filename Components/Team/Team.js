@@ -25,7 +25,7 @@ const Team = () => {
 
       <div className='border w-full md:w-1/2 md:px-4 py-7 mb-14  border-gray-300'>
         {profileImage[0]?.teamName ? <h1 className=' text-lg md:text-3xl mb-3'>Settings for <span>Register {profileImage[0]?.teamName}</span></h1> : <h1 className=' text-lg md:text-3xl mb-3'>Settings for <span>Register team name</span></h1>}
-        <h2 className=' text-sm md:text-xl mb-3'>{profileImage?.length ? profileImage?.length : 1} team member</h2>
+        <h2 className=' text-sm md:text-xl mb-3'>{profileImage?.length ? profileImage?.length : 1} Team member</h2>
         <h1 className=' text-sm md:text-xl mb-3'>Team created on {moment(profileImage[0]?.date).format('LL')} ({moment(profileImage[0]?.date).startOf('hour').fromNow()}).</h1>
       </div>
 

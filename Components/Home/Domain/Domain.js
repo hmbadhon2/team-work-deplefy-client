@@ -7,7 +7,6 @@ import { ShareContext } from "../../../ShareProvider/ShareProvider";
 const Domain = () => {
     const { user } = useContext(AuthContext);
     const{refetch}=useContext(ShareContext)
-    console.log(user?.email)
 
     const handleDomain = (event)=>{
        

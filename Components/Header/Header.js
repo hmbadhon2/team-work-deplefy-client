@@ -91,9 +91,6 @@ const Header = () => {
 		<li onClick={() => setNavbar(!navbar)} className="">
 			<Link rel="noopener noreferrer" href="/Contact" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Contact</Link>
 		</li>
-		{/* <li className="">
-			<a rel="noopener noreferrer" href="/Teams" className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-info">Team settings</a>
-		</li> */}
 		<li onClick={() => setNavbar(!navbar)} className="">
 			<Link rel="noopener noreferrer" href="/Builds" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Builds</Link>
 		</li>
@@ -104,6 +101,9 @@ const Header = () => {
 		<li onClick={() => setNavbar(!navbar)} className="">
 			<Link rel="noopener noreferrer" href="/Faq" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">FAQ</Link>
 		</li>
+		{/* <li onClick={() => setNavbar(!navbar)} className="">
+			<Link rel="noopener noreferrer" href="/Other" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Other</Link>
+		</li> */}
 		<li>
 			<div>
 				{

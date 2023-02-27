@@ -5,9 +5,9 @@ import PayData from '../Components/PayData/PayData';
 const PayInformation = () => {
     return (
         <div className='md:max-w-[1140px] md:mx-auto my-16'>
-            <Chart></Chart>
+            
             <PayData></PayData>
-           
+            <Chart></Chart>
         </div>
     );
 };

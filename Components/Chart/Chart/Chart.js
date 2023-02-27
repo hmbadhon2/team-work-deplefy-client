@@ -26,11 +26,11 @@ const Chart = () => {
 
 
   return (
-    <div className="overflow-hidden my-12">
+    <div className="overflow-hidden my-12 flex justify-center">
 
       <PieChart width={730} height={250}>
 
-        <Pie data={data} dataKey="money" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
+        <Pie data={data} dataKey="money" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="rgb(73,115,18)" label />
       </PieChart>
 
     </div>
