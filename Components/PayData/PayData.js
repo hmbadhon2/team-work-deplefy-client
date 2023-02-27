@@ -16,8 +16,10 @@ const PayData = () => {
     })
     return (
         <div>
+            <h2 className="md:text-3xl dark:text-white pl-3 md:pl-0 mb-5">My Pay Information</h2>
       <div>     
 <div className="relative overflow-x-auto hidden lg:flex">
+
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-900 bg-indigo-200 dark:bg-slate-900 uppercase dark:text-gray-400">
             <tr>

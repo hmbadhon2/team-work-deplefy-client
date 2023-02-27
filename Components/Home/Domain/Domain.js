@@ -49,7 +49,7 @@ const Domain = () => {
                          name="domain" 
                          id=""
                          placeholder="Set your domain name"
-                         className="w-full rounded-full p-2 md:w-64 bg-slate-100 my-4 md:my-0" 
+                         className="w-full rounded-full p-2 md:w-64 bg-slate-100 text-black my-4 md:my-0" 
                          />
                          
                         {/* <input 

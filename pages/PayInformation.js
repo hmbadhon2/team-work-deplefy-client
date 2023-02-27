@@ -1,13 +1,16 @@
 import React from 'react';
 import Chart from '../Components/Chart/Chart/Chart';
 import PayData from '../Components/PayData/PayData';
+import DashboardLayout from './DashboardLayout';
 
 const PayInformation = () => {
     return (
-        <div className='md:max-w-[1140px] md:mx-auto my-16'>
+        <div>
             
-            <PayData></PayData>
+           <DashboardLayout>
+           <PayData></PayData>
             <Chart></Chart>
+           </DashboardLayout>
         </div>
     );
 };

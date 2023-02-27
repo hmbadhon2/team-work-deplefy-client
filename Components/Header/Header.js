@@ -95,15 +95,13 @@ const Header = () => {
 			<Link rel="noopener noreferrer" href="/Builds" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Builds</Link>
 		</li>
 		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/dashboard" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Dashboard</Link>
+			<Link rel="noopener noreferrer" href="/DashboardLayout" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Dashboard</Link>
 		</li>
 
 		<li onClick={() => setNavbar(!navbar)} className="">
 			<Link rel="noopener noreferrer" href="/Faq" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">FAQ</Link>
 		</li>
-		{/* <li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/Other" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Other</Link>
-		</li> */}
+
 		<li>
 			<div>
 				{
