@@ -15,6 +15,8 @@ import { ShareContext } from "../ShareProvider/ShareProvider";
 const Dashboard = ({children}) => {
     const { user } = useContext(AuthContext);
     const [isAdmin] = useAdmin(user?.email);
+    const[layout, setLayout]=useState(false)
+  
     const { userAdmin, setUserAdmin } = useState([]);
 
 
