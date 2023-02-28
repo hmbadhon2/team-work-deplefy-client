@@ -110,7 +110,7 @@ const CheckoutFrom = ({pricingData}) => {
     return (
         <div>
            <form onSubmit={handleSubmit}>
-           <CardElement name="number" className='md:ml-5 md:mr-36 overflow-hidden dark:text-white'
+           <CardElement
           options={{
             style: {
               base: {
