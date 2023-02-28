@@ -94,7 +94,7 @@ const User = () => {
 
     return (
         <div className=' dark:text-black'>
-            <h2 className="md:text-3xl dark:text-white pl-3 md:pl-0 mb-5">All Users</h2>
+            <h2 className="md:text-3xl font-bold dark:text-white pl-3 md:pl-0 mb-5">All Users</h2>
             <div>
                 <div className="overflow-hidden hidden lg:flex shadow-md sm:rounded-lg">
                     <table className="w-full text-left text-gray-500 dark:text-gray-400">
