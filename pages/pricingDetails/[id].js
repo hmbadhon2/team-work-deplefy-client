@@ -6,6 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutFrom from '../../Components/Checkout/CheckoutFrom';
 import {Player} from '@lottiefiles/react-lottie-player'
+import CheckoutForm from "../../Components/Checkout/CheckoutFrom";
 
 
 
@@ -146,10 +147,16 @@ const pricingDetails = ({pricingData}) => {
      
         
   <div className="mt-5">
-  <Elements stripe={stripePromise}>
+  {/* <Elements stripe={stripePromise}>
       
-      <CheckoutFrom  pricingData={pricingData}/>
-    </Elements>
+      <CheckoutFrom  
+      pricingData={pricingData}/>
+    </Elements> */}
+
+
+<Elements stripe={stripePromise}>
+             <CheckoutForm pricingData={pricingData}></CheckoutForm>
+            </Elements>
   </div>
 
       {/* <button type="button" className="text-white ml-4 font-bold mt-6 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 dark dark:bg-gradient-to-r dark:from-lime-400 dark:via-lime-400 dark:to-lime-500 dark:hover:bg-gradient-to-br dark:focus:ring-4 dark:focus:outline-none   rounded-lg px-5 py-2.5 text-center mr-2 mb-2"> <label htmlFor="my-modal-4" className="">Add to Card</label></button> */}
