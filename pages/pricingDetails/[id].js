@@ -10,7 +10,7 @@ import CheckoutForm from "../../Components/Checkout/CheckoutFrom";
 
 
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
+const stripePromise = loadStripe('pk_test_51MdczFJDrwjsqtKRSJEg7oNxKXsNYGB8siVXUcL1pxaoW5xIvfLbd5LugP5rwT7YXaSfqSgpWr3enF1lfrruZ55t00Od3AeYPx');
 console.log(stripePromise)
 
 
