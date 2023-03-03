@@ -58,7 +58,7 @@ const Dashboard = ({children}) => {
                         </div>
 
                     }
-                    <li className="manu-item -mb-1 font-bold text-gray-500 dark:hover:text-lime-700"><Link href="/PayInformation">Payment Information</Link></li>
+                    <li className="manu-item -mb-1 font-bold text-gray-500 dark:hover:text-lime-700"><Link href="/PayInformation">Pay Information</Link></li>
                 </div>
 
             </ul>

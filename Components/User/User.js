@@ -3,28 +3,53 @@ import moment from 'moment/moment';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import Link from "next/link";
+import { Pagination } from 'antd';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import { useEffect } from 'react';
 
 
 
 const User = () => {
-    const [myAd, setMyAd] = useState([]);
-    const { data: users = [], isLoading, refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await fetch('https://deplefy-server.vercel.app/users');
-            const data = await res.json();
-            return data;
+ 
+
+
+    const { user } = useContext(AuthContext)
+
+
+    const [PayInformation, setPeyInformation] = useState([]);
+    const [total, setTotal] = useState("")
+    const [page, setPage] = useState(2)
+    const [postPerPage, setPostPerPage] = useState(2)
+
+    useEffect(() => {
+        fetch('https://deplefy-server.vercel.app/users')
+            .then(res => res.json())
+            .then(data => {
+                setPeyInformation(data);
+                setTotal(data.length)
+            })
+    }, [])
+
+
+    const indexofLastPage = page + postPerPage;
+    const indexofFirstPage = indexofLastPage - postPerPage;
+    const currentPosts = PayInformation.slice(indexofFirstPage, indexofLastPage);
+
+    const onShowSizeChange = (current, pageSize) => {
+        setPostPerPage(pageSize)
+    }
+
+
+    const itemRender = (current, type, originalElement) => {
+        if (type === 'prev') {
+            return <a>Previous</a>
         }
-    });
-
-
-    const [currentPage, setCurrentPage] = useState(1)
-    const recordsPerPage = 3;
-    const lastIndex = currentPage * recordsPerPage;
-    const firstIndex = lastIndex - recordsPerPage;
-    const records = users.slice(firstIndex, lastIndex)
-    const npage = Math.ceil(users.length / recordsPerPage);
-    const numbers = [...Array(npage + 1).keys()].slice(1)
+        if (type === 'next') {
+            return <a>Next</a>
+        }
+        return originalElement;
+    }
 
     const handleMakeAdmin = id => {
         fetch(`https://deplefy-server.vercel.app/users/admin/${id}`, {
@@ -125,7 +150,7 @@ const User = () => {
                         </thead>
                         <tbody className='text-black dark:text-white'>
                             {
-                                records.map((user, i) => <tr>
+                                currentPosts.map((user, i) => <tr>
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {i + 1}
                                     </th>
@@ -161,7 +186,7 @@ const User = () => {
 
                 <div className='lg:hidden'>
                     {
-                        records?.map((user, i) =>
+                        currentPosts?.map((user, i) =>
                             <div key={user._id} className="relative overflow-x-auto dark:text-white">
                                 <table className="w-full shadow-md text-sm text-left my-5">
 
@@ -235,42 +260,23 @@ const User = () => {
                         )
                     }
                 </div>
-                <div className=''>
-                    <ul className='page-item flex justify-center mt-2'>
-                        <li className='page-item'>
-                            <Link href="#" passHref className='page-link' onClick={prePage}>Prev</Link>
-                        </li>
-                        {
-                            numbers.map((n, i) => (
-                                <li className={`page-item mx-2  ${currentPage === n ? 'active' : ''}`} key={i} >
-                                    <Link href="" passHref className='page-item' onClick={() => changeCPage(n)}>{n}</Link>
-                                </li>
-                            ))
-                        }
-                        <li className='page-item'>
-                            <Link href="#" passHref className='page-link' onClick={nextPage}>Next</Link>
-                        </li>
-                    </ul>
+                <div className='flex justify-center mt-2'>
 
+                    <Pagination onChange={(value) => setPage(value)}
+                        pageSize={postPerPage}
+                        total={total} current={page}
+                        showSizeChanger
+                        showQuickJumper
+                        onShowSizeChange={onShowSizeChange}
+                        itemRender={itemRender}
+                    />
 
                 </div>
             </div>
         </div>
 
     );
-    function prePage() {
-        if (currentPage !== firstIndex) {
-            setCurrentPage(currentPage - 1)
-        }
-    }
-    function changeCPage(_id) {
-        setCurrentPage(_id)
-    }
-    function nextPage() {
-        if (currentPage !== lastIndex) {
-            setCurrentPage(currentPage + 1)
-        }
-    }
+
 };
 
 export default User;

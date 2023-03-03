@@ -67,7 +67,7 @@ const UserProfile = () => {
 
 	return (
 		<div>
-			<div className="mx-3 p-8 md:w-2/3 lg:w-1/2 border  flex justify-between sm:space-x-6 shadow-lg  dark:text-gray-100">
+			<div className="mx-3 p-8 md:w-2/3 lg:w-1/2 border  flex justify-between  shadow-lg  dark:text-gray-100">
 
 				<div className="flex flex-col space-y-4">
 					<div className=''>
@@ -79,7 +79,7 @@ const UserProfile = () => {
 						<h2 className='text-justify'>Joined Deflify on {moment(profileImage[0]?.date).format('LL')} ({moment(profileImage[0]?.date).startOf('hour').fromNow()}). Created {siteData.length} sites. Collaborates on {profileImage?.length ? profileImage?.length : 1} team.</h2>
 					</div>
 				</div>
-				<div className="flex-shrink-0 md:mr-6 mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
+				<div className="flex-shrink-0 md:mr-0   sm:w-32 sm:mb-0">
 					<div>
 						{profileImage[0]?.image ? <img src={profileImage[0]?.image} alt="" className="self-center flex-shrink-0 w-16 h-16 md:w-28 md:h-28 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" /> :
 							<div>

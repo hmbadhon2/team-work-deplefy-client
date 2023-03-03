@@ -43,7 +43,7 @@ const Domain = () => {
             <div className="p-12 text-center">
                 <h3 className="text-3xl text-white font-semibold dark:text-black mb-10"> Do You Want Your Premium Domain?</h3>
                 <form onSubmit={handleDomain} className="p-5 rounded-3xl md:p-2  md:mx-24 bg-white md:rounded-full mb-10">
-                    <div className="md:flex md:flex-row justify-between">
+                    <div className="md:flex justify-between">
                         <input 
                          type="text" 
                          name="domain" 
@@ -67,7 +67,7 @@ const Domain = () => {
                     </div>
 
                 </form>
-                <div className="mx-24 flex flex-row text-center justify-around text-white"> 
+                <div className="px-24 flex flex-row text-center justify-around text-white"> 
                         <h3><span className="text-black text-3xl mr-2">.net</span> $14.99</h3>
                         <h3><span className="text-cyan-400 text-3xl mr-2">.com</span> $14.99</h3>
                         <h3><span className="text-orange-600 dark:text-black text-3xl mr-2">.store</span> $14.99</h3>

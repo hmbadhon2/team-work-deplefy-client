@@ -31,11 +31,11 @@ const Header = () => {
 
 	if (!mounted) return null;
 
-	if (isFetching) {
-		return <div>
-			<div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
-		</div>
-	}
+	// if (isFetching) {
+	// 	return <div>
+	// 		<div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+	// 	</div>
+	// }
 
 	const renderThemeChanger = () => {
 
@@ -63,17 +63,17 @@ const Header = () => {
 	const dropDownItems = (
 		<>
 			<li>
-				<Link href="/Profile" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">View Profile</Link>
+				<Link href="/Profile" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-700 dark:text-gray-500 dark:hover:text-lime-700">View Profile</Link>
 			</li>
 			<li>
-				<Link href='/Teams' passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Team Settings</Link>
+				<Link href='/Teams' passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-700 dark:text-gray-500 dark:hover:text-lime-700">Team Settings</Link>
 			</li>
 			<li>
-			<Link rel="noopener noreferrer" href="/Domain" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Domain</Link>
+			<Link rel="noopener noreferrer" href="/Domain" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-700 dark:text-gray-500 dark:hover:text-lime-700">Domain</Link>
 		    </li>
 
 			<li>
-				<Link onClick={handleLogOut} href="#" passHref className="manu-item flex items-center -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Log Out</Link>
+				<Link onClick={handleLogOut} href="#" passHref className="manu-item flex items-center -mb-1 font-bold text-gray-700 dark:text-gray-500 dark:hover:text-lime-700">Log Out</Link>
 			</li>
 		</>
 	);
