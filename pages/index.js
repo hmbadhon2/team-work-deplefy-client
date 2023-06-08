@@ -8,6 +8,7 @@ import ChoseUs from '../Components/Home/ChooseUs/ChoseUs';
 import DataCenter from '../Components/Home/DataCenter/DataCenter';
 import GoogleMap from '../Components/Home/GoogleMap/GoogleMap';
 import Industry from '../Components/Home/Industry/Industry';
+import HappyCustomer from '../Components/Home/HappyCustomer/HappyCustomer';
 
 
 const Index = () => {
@@ -38,9 +39,9 @@ const Index = () => {
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <Subscribe/>
         </div>
-        {/* <div className='md:max-w-[1140px] md:mx-auto my-12' >
-            <GoogleMap/>
-        </div> */}
+       <div className='md:max-w-[1140px] md:mx-auto'>
+       <HappyCustomer></HappyCustomer>
+       </div>
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <Practice/>
         </div>
