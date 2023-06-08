@@ -82,7 +82,7 @@ const Header = () => {
 
 	const manuItem = <>
 		<li onClick={() => setNavbar(!navbar)} className="">
-			<Link rel="noopener noreferrer" href="/Home" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Home</Link>
+			<Link rel="noopener noreferrer" href="/" passHref className="manu-item flex items-center px-4 -mb-1 font-bold text-gray-500 dark:hover:text-lime-700">Home</Link>
 		</li>
 
 		<li onClick={() => setNavbar(!navbar)} className="">

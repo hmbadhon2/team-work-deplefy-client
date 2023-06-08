@@ -7,6 +7,7 @@ import Domain from '../Components/Home/Domain/Domain';
 import ChoseUs from '../Components/Home/ChooseUs/ChoseUs';
 import DataCenter from '../Components/Home/DataCenter/DataCenter';
 import GoogleMap from '../Components/Home/GoogleMap/GoogleMap';
+import Industry from '../Components/Home/Industry/Industry';
 
 
 const Index = () => {
@@ -29,6 +30,10 @@ const Index = () => {
         </div>
         <div className="bg-gradient-to-tr from-violet-900  to-blue-600  text-white dark:bg-gradient-to-r dark:from-lime-900 dark:to-lime-500 dark:text-black py-12 my-12 rounded" >
             <DataCenter/>
+        </div>
+
+        <div className='md:max-w-[1140px] md:mx-auto my-12' >
+            <Industry></Industry>
         </div>
         <div className='md:max-w-[1140px] md:mx-auto my-12' >
             <Subscribe/>
