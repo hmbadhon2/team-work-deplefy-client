@@ -28,7 +28,7 @@ const Pricing = () => {
     return (
         <div>
 
-           <section className="py-20">
+           <section className="px-4 lg:px-0 py-20">
                 <div className=" mx-auto">
                     <div className="max-w-2xl mx-auto mb-16 text-center">
                     
