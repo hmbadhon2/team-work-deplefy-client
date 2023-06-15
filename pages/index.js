@@ -21,7 +21,10 @@ const Index = () => {
         <div className='md:max-w-[1140px] md:mx-auto my-12 '>
             <Domain/>
         </div>
+        <div className='md:max-w-[1140px] md:mx-auto my-12 '>
         <BestInterest></BestInterest>  
+        </div>
+       
         <div className='md:max-w-[1140px] md:mx-auto my-12'>
             <Pricing/>
         </div>   
